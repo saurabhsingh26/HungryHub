@@ -17,10 +17,14 @@ const Body = () => {
     // Optional chaining
     setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
   }
-  if (listOfRestaurant.length === 0){
-    return <ShimmerContainer />;
-  }
-    return (
+
+  // Conditional Rendering
+
+  // if (listOfRestaurant.length === 0){
+  //   return <ShimmerContainer />;
+  // }
+  
+    return listOfRestaurant.length === 0 ? <ShimmerContainer /> :  (
       <div className="body">
         {console.log('rendered')}
         <div className="filter">
