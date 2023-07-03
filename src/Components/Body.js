@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react'
 import RestaurantCard from './RestaurantCard';
-import { resList } from '../RestaurantsList';
 // Not using key(not acceptable) <<< index as key <<< unique id (best practice)
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState(resList);
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  // console.log(listOfRestaurant);
   useEffect(() => {
     fetchData();
   },[])
@@ -13,9 +13,8 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
     // console.log(json.data.cards[2].data.data.cards);
-    // setListOfRestaurant(json.data.cards[2].data.data.cards);
+    setListOfRestaurant(json.data.cards[2].data.data.cards);
   }
   return (
     <div className="body">
