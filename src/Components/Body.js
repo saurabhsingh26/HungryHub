@@ -4,7 +4,9 @@ import ShimmerContainer from './ShimmerContainer';
 // Not using key(not acceptable) <<< index as key <<< unique id (best practice)
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  console.log(listOfRestaurant);
+  const [searchText, setSearchText] = useState("");
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  console.log(searchText);
   useEffect(() => {
     fetchData();
   },[])
@@ -16,6 +18,8 @@ const Body = () => {
     const json = await data.json();
     // Optional chaining
     setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+
   }
 
   // Conditional Rendering
@@ -23,11 +27,31 @@ const Body = () => {
   // if (listOfRestaurant.length === 0){
   //   return <ShimmerContainer />;
   // }
-  
-    return listOfRestaurant.length === 0 ? <ShimmerContainer /> :  (
+
+    return listOfRestaurant.length === 0 ? (
+      <ShimmerContainer />
+    ) : (
       <div className="body">
-        {console.log('rendered')}
+        {/* {console.log("rendered")} */}
         <div className="filter">
+          <div className="search">
+            <input
+              type="text"
+              className="search-box"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+            <button
+              onClick={() => {
+                const filteredRestaurants = listOfRestaurant.filter((res) =>
+                  res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                );
+                setFilteredRestaurants(filteredRestaurants);
+              }}
+            >
+              Search
+            </button>
+          </div>
           <div className="filter-btns">
             <button className="filter-btn">Filters</button>
             <button
@@ -46,7 +70,7 @@ const Body = () => {
           </div>
         </div>
         <div className="res-container">
-          {listOfRestaurant.map((restaurant, index) => {
+          {filteredRestaurants.map((restaurant, index) => {
             return (
               <RestaurantCard restData={restaurant} key={restaurant.data.id} />
             );
