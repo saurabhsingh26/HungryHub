@@ -1,4 +1,5 @@
 import React from 'react'
+import { CDN_URL } from '../utils';
 
 const RestaurantCard = (props) => {
   const { restData } = props;
@@ -12,11 +13,8 @@ const RestaurantCard = (props) => {
   } = restData?.data;
   return (
     <div className="res-card">
-      <img
-        className="res-logo"
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
-        alt=""
-      />
+      {/* {console.log(`CDN_URL/${cloudinaryImageId}`)} */}
+      <img className="res-logo" src={`${CDN_URL}/${cloudinaryImageId}`} alt="site-logo" />
       <div className="res-name">
         <div>
           <h4 style={{ fontSize: "17px", fontWeight: "500" }}>{name}</h4>
