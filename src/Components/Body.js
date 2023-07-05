@@ -5,7 +5,6 @@ const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  console.log(searchText);
   useEffect(() => {
     fetchData();
   },[])
@@ -30,7 +29,7 @@ const Body = () => {
               type="text"
               className="search-box"
               value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
+              onChange={(e) => {setSearchText(e.target.value)}}
             />
             <button
               onClick={() => {
@@ -51,7 +50,7 @@ const Body = () => {
                 const filteredList = listOfRestaurant.filter(
                   (res) => res.data.avgRating > 4
                 );
-                setListOfRestaurant(filteredList);
+                setFilteredRestaurants(filteredList);
               }}
             >
               Rating: 4+
