@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import ShimmerContainer from './ShimmerContainer';
+import { MENU_API } from '../utils';
 
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
+  const params = useParams();
+  const { resId } = params;
+
   useEffect(() => {
     fetchMenu();
-  },[])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   const fetchMenu = async() => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.679466959904303&lng=77.50065922737122&restaurantId=677682&submitAction=ENTER"
-    );
+    const data = await fetch(MENU_API + resId);
     const json = await data.json();
-    console.log("JSON", json.data);
     setResInfo(json.data);
   }
 

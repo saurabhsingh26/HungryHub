@@ -15,3 +15,5 @@ export const SORT_BY =
 export const SEARCH_BY_NAME =
   "https://www.swiggy.com/dapi/restaurants/search/suggest?lat=28.684097&lng=77.498642&str={}&trackingId=null";
 
+export const MENU_API =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.679466959904303&lng=77.50065922737122&restaurantId=";
