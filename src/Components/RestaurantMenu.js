@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ShimmerContainer from './ShimmerContainer';
-import { MENU_API } from '../utils';
+import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
+
   const params = useParams();
   const { resId } = params;
 
-  useEffect(() => {
-    fetchMenu();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-
-  const fetchMenu = async() => {
-    const data = await fetch(MENU_API + resId);
-    const json = await data.json();
-    setResInfo(json.data);
-  }
+  const resInfo = useRestaurantMenu(resId);
 
   if (resInfo === null){
     return <ShimmerContainer />;
   } 
-  const { name } = resInfo?.cards[0]?.card?.card?.info
+  const { name, areaName } = resInfo?.cards[0]?.card?.card?.info;
+  const { message } = resInfo?.cards[0]?.card?.card?.info?.labels[2];
+  const { lastMileTravelString } = resInfo?.cards[0]?.card?.card?.info?.sla;
   return (
-    <div>
-      <h1>{name}</h1>
-      <h2>Cusines</h2>
+    <div className="restaurant-details">
+      <div>
+        <button> BACK </button>
+      </div>
+      <div className="restaurant-name-container">
+        <div className="">
+          <p>{name}</p>
+          <p>{message}</p>
+          <p>
+            {areaName}, {lastMileTravelString}
+          </p>
+          <p>
+            {
+              resInfo?.cards[0]?.card?.card?.info?.feeDetails?.message
+            }
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

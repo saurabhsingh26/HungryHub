@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Body from "./Body";
@@ -5,6 +6,7 @@ import About from "./About";
 import  Contact  from "./Contact";
 import Error from "./Error";
 import RestaurantMenu from "./RestaurantMenu";
+
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // const appRouter = createBrowserRouter([
@@ -23,6 +25,9 @@ import RestaurantMenu from "./RestaurantMenu";
 //   },
 // ]);
 
+// import Grocery from "./Grocery";
+const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
+
 const App = () => {
   return (
     <div className="App">
@@ -32,6 +37,14 @@ const App = () => {
           <Route path="/" element={<Body />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/grocery"
+            element={
+              <Suspense fallback={<h1>Loading...</h1>} >
+                <Grocery />
+              </Suspense>
+            }
+          />
           <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
           <Route path="*" element={<Error />} />
         </Routes>
