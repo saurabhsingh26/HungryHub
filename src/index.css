@@ -1,5 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
+/*body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -16,7 +19,7 @@ code {
 .header{
   display: flex;
   justify-content: space-between;
-  /* border: 2px solid black; */
+  /* border: 2px solid black; 
   box-shadow: 0.5px 0.5px 5px 1px #888888;
   top: 0;
 }
@@ -43,7 +46,7 @@ code {
 .res-card:hover{
   box-shadow: 0.5px 0.5px 5px 1px #888888;
   /* box-shadow: rgba(28, 28, 28, 0.12) 0px 0.4rem 1.8rem;; */
-  /* box-sizing: content-box; */
+  /* box-sizing: content-box; 
 
 }
 .search{
@@ -58,7 +61,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-top: -10px; */
+  /* margin-top: -10px; 
 }
 .star-rating{
   background-color: green;
@@ -83,7 +86,7 @@ code {
   top: 0;
   height: 60px;
   /* border: 2px solid black; */
-  /* background-color: white; */
+  /* background-color: white; 
   width: 100%;
 }
 .filter-btns{
@@ -105,7 +108,7 @@ code {
   width: 100px;
 }
 
-/* Shimmer UI */
+/* Shimmer UI 
 .card {
     position: relative;
     -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
@@ -185,7 +188,7 @@ code {
 .offer-card{
   width: 200px;
   height: 60px;
-  /* background-color: red; */
+  /* background-color: red; 
   border-radius: 8px;
   padding: 5px;
   box-shadow: 0 1px 2px rgba(0,0,0,.04);
@@ -201,3 +204,5 @@ code {
   font-size: 12px;
   color: #93959F;
 }
+
+*/
