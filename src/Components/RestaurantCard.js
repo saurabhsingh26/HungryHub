@@ -36,4 +36,20 @@ const RestaurantCard = (props) => {
   );
 }
 
-export default RestaurantCard
+
+// Higher Order Component 
+// Higher Order Component is a pure function we are not modifying anything just using it.
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    const { restData } = props;
+    return (
+      <div>
+        <label className='absolute bg-black text-white m-2 p-2 rounded-md'>Promoted</label>
+        <RestaurantCard restData={restData} />
+      </div>
+    );
+  }
+};
+
+export default RestaurantCard;
