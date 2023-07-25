@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemList from './ItemList';
-const RestaurantCategory = (props) => {
-  const {data} = props
-  // console.log(data);
+const RestaurantCategory = ({data}) => {
+  const [showItem, setShowItems] = useState(false);
   const handleClick = () => {
-    // console.log('clicked')
+    setShowItems(!showItem);
   }
   return (
     <div>
@@ -12,7 +11,7 @@ const RestaurantCategory = (props) => {
         <span className='text-lg font-bold'>{data.title} ({data.itemCards.length})</span>
         <span>⬇️</span>
       </div>
-      <ItemList items={data?.itemCards}  />
+      {showItem && <ItemList items={data?.itemCards} />}
       <div className="bg-gray-100 shadow-sm h-5" ></div>
     </div>
   );
