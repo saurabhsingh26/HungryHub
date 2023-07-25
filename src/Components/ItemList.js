@@ -1,7 +1,7 @@
 import React from 'react'
 import { CDN_URL } from '../utils';
 const ItemList = ({items}) => {
-  console.log("items", items);
+  // console.log("items", items);
   return (
     <div>
       {items.map((item) => (

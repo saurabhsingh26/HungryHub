@@ -9,20 +9,20 @@ const RestaurantMenu = () => {
   const { resId } = params;
 
   const resInfo = useRestaurantMenu(resId);
-  console.log("resInfo", resInfo);
+  // console.log("resInfo", resInfo);
 
   if (resInfo === null){
     return <ShimmerContainer />;
   } 
 
   const categories =
-    resInfo?.cards[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
       (c) =>
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  console.log("categories", categories);
+  // console.log("categories", categories);
 
   // console.log(resInfo?.cards[0]?.card?.card?.info);
   // console.log(categories);
@@ -59,8 +59,11 @@ const RestaurantMenu = () => {
           </div>
         </div>
         <div className="border my-3"></div>
-        {categories?.map((category) => (
-          <RestaurantCategory data={category?.card?.card} />
+        {categories?.map((category, i) => (
+          <RestaurantCategory
+            key={category?.card?.card.title}
+            data={category?.card?.card}
+          />
         ))}
       </div>
     </div>
