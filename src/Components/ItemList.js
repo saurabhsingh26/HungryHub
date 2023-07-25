@@ -17,11 +17,11 @@ const ItemList = ({items}) => {
             </div>
             <div className="relative">
               <img
-                className="w-24 h-24 rounded-lg"
+                className="w-28 h-24 rounded-lg"
                 src={CDN_URL + "/" + item.card.info.imageId}
                 alt="item"
               />
-              <div className="absolute z-10 top-20 right-2">
+              <div className="absolute z-10 top-20 right-4">
                 <button className="p-1 w-20 rounded-lg bg-white border shadow-xl text-green-600 font-semibold">
                   ADD +
                 </button>

@@ -22,6 +22,10 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
+  if(!categories){
+    return <ShimmerContainer />; 
+  }
+
   // console.log("categories", categories);
 
   // console.log(resInfo?.cards[0]?.card?.card?.info);
