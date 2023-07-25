@@ -39,25 +39,23 @@ const RestaurantMenu = () => {
   const { lastMileTravelString } = sla;
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col w-[65%] p-3 items-between">
+      <div className="flex flex-col w-[90%] md:w-[65%] lg:w-[65%] xl:w-[65%] p-3 items-between">
         <div>
           <button> BACK </button>
         </div>
         <div className="">
           <div className="flex justify-between">
             <div>
-              <p className="text-2xl font-bold">{name}</p>
+              <p className="text-base md:text-2xl font-bold">{name}</p>
               <p>{message}</p>
               <p>
                 {areaName}, {lastMileTravelString}
               </p>
             </div>
-            <div className="flex flex-col border">
-              <div className="leading-9 flex justify-center">{avgRating}</div>
-              <div className="border"></div>
-              <div className="flex justify-center text-lg">
-                {totalRatingsString}
-              </div>
+            <div className="flex flex-col  text-xs md:text-xl min-w-[50px] text-center">
+              <div>{avgRating}</div>
+              <div className="border my-1"></div>
+              <div>{totalRatingsString}</div>
             </div>
             {/* <p>
             {

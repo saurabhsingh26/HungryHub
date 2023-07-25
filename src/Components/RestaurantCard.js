@@ -12,7 +12,7 @@ const RestaurantCard = (props) => {
     costForTwo,
   } = restData?.data;
   return (
-    <div className="m-5 p-2 w-[350px] rounded-2xl  hover:bg-red-50 hover:shadow-md">
+    <div className="m-5 p-2 w-64 rounded-2xl  hover:bg-red-50 hover:shadow-md ">
       {/* {console.log(`CDN_URL/${cloudinaryImageId}`)} */}
       <img
         className="res-logo rounded-2xl"
@@ -45,7 +45,7 @@ export const withPromotedLabel = (RestaurantCard) => {
     const { restData } = props;
     return (
       <div>
-        <label className='absolute bg-black text-white m-2 p-2 rounded-md'>Promoted</label>
+        <label className='absolute bg-black text-white mx-5 mt-2 p-1 rounded-md z-10'>Promoted</label>
         <RestaurantCard restData={restData} />
       </div>
     );

@@ -3,7 +3,7 @@ import { CDN_URL } from '../utils';
 const ItemList = ({items}) => {
   // console.log("items", items);
   return (
-    <div>
+    <div className="">
       {items.map((item) => (
         <div key={item.card.info.id}>
           {/* <div className="border my-5"></div> */}
@@ -21,9 +21,9 @@ const ItemList = ({items}) => {
                 src={CDN_URL + "/" + item.card.info.imageId}
                 alt="item"
               />
-              <div className="absolute z-10 top-20 right-4">
-                <button className="p-1 w-20 rounded-lg bg-white border shadow-xl text-green-600 font-semibold">
-                  ADD +
+              <div className="absolute z-10 top-20 right-3 sm:right-4">
+                <button className="p-0 w-14 sm:w-20 rounded-lg bg-white border shadow-xl text-green-600 font-semibold">
+                  ADD+
                 </button>
               </div>
             </div>
