@@ -8,7 +8,7 @@ const useRestaurantMenu = (resId) => {
   useEffect(() => {
     fetchMenu();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [resId]);
 
   const fetchMenu = async () => {
     const data = await fetch(MENU_API + resId);
