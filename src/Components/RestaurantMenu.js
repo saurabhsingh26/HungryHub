@@ -23,16 +23,17 @@ const RestaurantMenu = () => {
       (c) =>
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    ) || 
+    resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+      (c) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
   if(!categories){
     return <ShimmerContainer />; 
   }
 
-  // console.log("categories", categories);
-
-  // console.log(resInfo?.cards[0]?.card?.card?.info);
-  // console.log(categories);
   const { name, areaName, avgRating, totalRatingsString, labels, sla } = resInfo?.cards[0]?.card?.card?.info;
   const { message } = labels[2];
   const { lastMileTravelString } = sla;
