@@ -30,7 +30,7 @@ const Body = () => {
     return <h1>Looks like you're offline!! Please check your internet connection </h1>
   }
 
-  return !listOfRestaurant ? (
+  return listOfRestaurant.length === 0 ? (
     <ShimmerContainer />
   ) : (
     <div className="body">
