@@ -8,7 +8,7 @@ const ItemList = ({items}) => {
         <div key={item.card.info.id}>
           {/* <div className="border my-5"></div> */}
           <div className="flex justify-between py-5">
-            <div className="w-9/12">
+            <div className="w-6/12">
               <h1 className="text-md font-medium">{item.card.info.name}</h1>
               <p className="text-sm">₹{item.card.info.price / 100}</p>
               <p className="text-sm text-gray-500 truncate">
