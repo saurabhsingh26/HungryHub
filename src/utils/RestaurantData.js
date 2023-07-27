@@ -2904,6 +2904,1676 @@ const data = {
                       type: "WEBLINK",
                     },
                   },
+                  {
+                    info: {
+                      id: "182328",
+                      promoted: false,
+                      name: "The Belgian Waffle Co.",
+                      cloudinaryImageId: "eidoklhvtoj1wpjgga55",
+                      locality: "Mahadev Arcade",
+                      areaName: "Rukanpura",
+                      costForTwo: "₹300 for two",
+                      cuisines: [
+                        "Waffle",
+                        "Desserts",
+                        "Ice Cream",
+                        "Beverages",
+                      ],
+                      avgRating: 4.1,
+                      veg: true,
+                      feeDetails: {
+                        restaurantId: "182328",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 4700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 4700,
+                      },
+                      parentId: "2233",
+                      avgRatingString: "4.1",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 34,
+                        lastMileTravel: 6.6,
+                        serviceability: "SERVICEABLE",
+                        slaString: "34 mins",
+                        lastMileTravelString: "6.6 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:45:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "20% OFF",
+                        subHeader: "UPTO ₹50",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/the-belgian-waffle-co-mahadev-arcade-rukanpura-patna-182328",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "483009",
+                      promoted: true,
+                      name: "Kwality Walls Frozen Dessert and Ice Cream Shop",
+                      cloudinaryImageId: "ajfqjytbxd6dajl7vxzl",
+                      locality: "Ashokpuri Colony",
+                      areaName: "Khajpura",
+                      costForTwo: "₹200 for two",
+                      cuisines: ["Desserts", "Ice Cream", "Ice Cream Cakes"],
+                      avgRating: 4.5,
+                      veg: true,
+                      feeDetails: {
+                        restaurantId: "483009",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 3400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 3400,
+                      },
+                      parentId: "582",
+                      avgRatingString: "4.5",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 21,
+                        lastMileTravel: 5.7,
+                        serviceability: "SERVICEABLE",
+                        slaString: "21 mins",
+                        lastMileTravelString: "5.7 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 00:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "20% OFF",
+                        subHeader: "UPTO ₹50",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/kwality-walls-frozen-dessert-and-ice-cream-shop-ashokpuri-colony-khajpura-patna-483009",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "95902",
+                      promoted: false,
+                      name: "Baskin Robbins - Ice Cream Desserts",
+                      cloudinaryImageId: "85ccae4e3576f9330af102c46ca85395",
+                      locality: "Patna One Mall",
+                      areaName: "Kurji",
+                      costForTwo: "₹200 for two",
+                      cuisines: ["Ice Cream"],
+                      avgRating: 4,
+                      veg: true,
+                      feeDetails: {
+                        restaurantId: "95902",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 4700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 4700,
+                      },
+                      parentId: "5588",
+                      avgRatingString: "4.0",
+                      totalRatingsString: "100+",
+                      sla: {
+                        deliveryTime: 28,
+                        lastMileTravel: 7.5,
+                        serviceability: "SERVICEABLE",
+                        slaString: "28 mins",
+                        lastMileTravelString: "7.5 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "30% OFF",
+                        subHeader: "UPTO ₹75",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/baskin-robbins-ice-cream-desserts-one-mall-kurji-patna-95902",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "437296",
+                      promoted: false,
+                      name: "Pizza Hut",
+                      cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                      locality: "Gola road",
+                      areaName: "Khajpura",
+                      costForTwo: "₹350 for two",
+                      cuisines: ["Pizzas"],
+                      avgRating: 3.5,
+                      feeDetails: {
+                        restaurantId: "437296",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "721",
+                      avgRatingString: "3.5",
+                      totalRatingsString: "500+",
+                      sla: {
+                        deliveryTime: 23,
+                        lastMileTravel: 2.3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "23 mins",
+                        lastMileTravelString: "2.3 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      aggregatedDiscountInfoV2: {},
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/pizza-hut-gola-road-khajpura-patna-437296",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "222663",
+                      promoted: true,
+                      name: "KFC",
+                      cloudinaryImageId: "56c9ab92bd79745fd152a30fa2525426",
+                      locality: "Enclave Park",
+                      areaName: "Khajpura",
+                      costForTwo: "₹400 for two",
+                      cuisines: [
+                        "Burgers",
+                        "Biryani",
+                        "American",
+                        "Snacks",
+                        "Fast Food",
+                      ],
+                      avgRating: 4,
+                      feeDetails: {
+                        restaurantId: "222663",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "547",
+                      avgRatingString: "4.0",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 25,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "25 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 01:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "20% OFF",
+                        subHeader: "UPTO ₹50",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/kfc-enclave-park-khajpura-patna-222663",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "331777",
+                      promoted: false,
+                      name: "La Pino'z Pizza",
+                      cloudinaryImageId: "healpsfc0yuplmblcraz",
+                      locality: "Saguna",
+                      areaName: "Khajpura",
+                      costForTwo: "₹400 for two",
+                      cuisines: [
+                        "Pizzas",
+                        "Pastas",
+                        "Italian",
+                        "Desserts",
+                        "Beverages",
+                      ],
+                      avgRating: 3.8,
+                      feeDetails: {
+                        restaurantId: "331777",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "4961",
+                      avgRatingString: "3.8",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 21,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "21 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:59:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "₹125 OFF",
+                        subHeader: "ABOVE ₹399",
+                        discountTag: "FLAT DEAL",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/la-pinoz-pizza-saguna-khajpura-patna-331777",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "373842",
+                      promoted: false,
+                      name: "Bikkgane Biryani",
+                      cloudinaryImageId: "tk63mfqyofhnbsohelzp",
+                      locality: "IAS Colony",
+                      areaName: "Khajpura",
+                      costForTwo: "₹350 for two",
+                      cuisines: [
+                        "Biryani",
+                        "Hyderabadi",
+                        "Andhra",
+                        "South Indian",
+                        "North Indian",
+                        "Mughlai",
+                        "Kebabs",
+                      ],
+                      avgRating: 4,
+                      feeDetails: {
+                        restaurantId: "373842",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "5070",
+                      avgRatingString: "4.0",
+                      totalRatingsString: "5K+",
+                      sla: {
+                        deliveryTime: 23,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "23 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 00:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "50% OFF",
+                        subHeader: "UPTO ₹100",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/bikkgane-biryani-ias-colony-khajpura-patna-373842",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "468801",
+                      promoted: false,
+                      name: "UBQ by Barbeque Nation",
+                      cloudinaryImageId: "bmymstb3pn5lgjzlcyuy",
+                      locality: "Durga Infinity",
+                      areaName: "Khajpura",
+                      costForTwo: "₹300 for two",
+                      cuisines: [
+                        "North Indian",
+                        "Barbecue",
+                        "Biryani",
+                        "Kebabs",
+                        "Mughlai",
+                        "Desserts",
+                      ],
+                      avgRating: 3.7,
+                      feeDetails: {
+                        restaurantId: "468801",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 3400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 3400,
+                      },
+                      parentId: "10804",
+                      avgRatingString: "3.7",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 31,
+                        lastMileTravel: 5.7,
+                        serviceability: "SERVICEABLE",
+                        slaString: "31 mins",
+                        lastMileTravelString: "5.7 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:30:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "30% OFF",
+                        subHeader: "UPTO ₹75",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/ubq-by-barbeque-nation-durga-infinity-khajpura-patna-468801",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "106890",
+                      promoted: true,
+                      name: "Kolkata Biryani Darbar",
+                      cloudinaryImageId: "gkzxllipmyre1f42ktm2",
+                      locality: "Rajapur",
+                      areaName: "Anandpuri",
+                      costForTwo: "₹250 for two",
+                      cuisines: ["Indian", "Chinese"],
+                      avgRating: 3.6,
+                      feeDetails: {
+                        restaurantId: "106890",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 5700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 5700,
+                      },
+                      parentId: "248971",
+                      avgRatingString: "3.6",
+                      totalRatingsString: "10K+",
+                      sla: {
+                        deliveryTime: 35,
+                        lastMileTravel: 9,
+                        serviceability: "SERVICEABLE",
+                        slaString: "35 mins",
+                        lastMileTravelString: "9.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "₹125 OFF",
+                        subHeader: "ABOVE ₹199",
+                        discountTag: "FLAT DEAL",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/kolkata-biryani-darbar-rajapur-anandpuri-patna-106890",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "230250",
+                      promoted: false,
+                      name: "Pour Tous",
+                      cloudinaryImageId: "lnjmdcml4anmh5hhdwv0",
+                      locality: "Boring Road",
+                      areaName: "Patliputra Colony",
+                      costForTwo: "₹250 for two",
+                      cuisines: [
+                        "Biryani",
+                        "Chinese",
+                        "Kebabs",
+                        "North Indian",
+                      ],
+                      avgRating: 4.1,
+                      feeDetails: {
+                        restaurantId: "230250",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 5700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 5700,
+                      },
+                      parentId: "160184",
+                      avgRatingString: "4.1",
+                      totalRatingsString: "10K+",
+                      sla: {
+                        deliveryTime: 33,
+                        lastMileTravel: 8.6,
+                        serviceability: "SERVICEABLE",
+                        slaString: "33 mins",
+                        lastMileTravelString: "8.6 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "10% OFF",
+                        subHeader: "UPTO ₹40",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/pour-tous-boring-road-patliputra-colony-patna-230250",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "381368",
+                      promoted: false,
+                      name: "Cafe Hideout",
+                      cloudinaryImageId: "cnrbprcy4uly6jkrgzye",
+                      locality: "Patliputra Colony",
+                      areaName: "Khajpura",
+                      costForTwo: "₹500 for two",
+                      cuisines: ["Indian", "Chinese", "Tandoor", "Continental"],
+                      avgRating: 3.9,
+                      feeDetails: {
+                        restaurantId: "381368",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "53259",
+                      avgRatingString: "3.9",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 25,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "25 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {
+                        imageBadges: [
+                          {
+                            imageId: "newg.png",
+                            description: "Gourmet",
+                          },
+                        ],
+                      },
+                      isOpen: true,
+                      aggregatedDiscountInfoV2: {},
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {
+                            badgeObject: [
+                              {
+                                attributes: {
+                                  description: "Gourmet",
+                                  imageId: "newg.png",
+                                },
+                              },
+                            ],
+                          },
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/cafe-hideout-patliputra-colony-khajpura-patna-381368",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "373849",
+                      promoted: false,
+                      name: "Biryani Badshah",
+                      cloudinaryImageId: "zh9y3bmf3zf616a4ymfj",
+                      locality: "IAS Colony",
+                      areaName: "Khajpura",
+                      costForTwo: "₹350 for two",
+                      cuisines: [
+                        "Biryani",
+                        "Hyderabadi",
+                        "Andhra",
+                        "South Indian",
+                        "North Indian",
+                        "Mughlai",
+                        "Kebabs",
+                      ],
+                      avgRating: 4,
+                      feeDetails: {
+                        restaurantId: "373849",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "10703",
+                      avgRatingString: "4.0",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 26,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "26 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 00:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "₹125 OFF",
+                        subHeader: "ABOVE ₹249",
+                        discountTag: "FLAT DEAL",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/biryani-badshah-ias-colony-khajpura-patna-373849",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "579713",
+                      promoted: false,
+                      name: "GetAWay-Desserts",
+                      cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
+                      locality: "Gola Road Crossing",
+                      areaName: "Khajpura",
+                      costForTwo: "₹200 for two",
+                      cuisines: ["Ice Cream", "Desserts", "Healthy Food"],
+                      avgRating: 4.2,
+                      veg: true,
+                      feeDetails: {
+                        restaurantId: "579713",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2400,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2400,
+                      },
+                      parentId: "354819",
+                      avgRatingString: "4.2",
+                      totalRatingsString: "50+",
+                      sla: {
+                        deliveryTime: 18,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "18 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "₹125 OFF",
+                        subHeader: "ABOVE ₹299",
+                        discountTag: "FLAT DEAL",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/getaway-desserts-gola-road-crossing-khajpura-patna-579713",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "87861",
+                      promoted: false,
+                      name: "Dragon Flames",
+                      cloudinaryImageId: "w7nnisxu0xietgmtsmau",
+                      locality: "Boring Road",
+                      areaName: "Sri Krishnapuri",
+                      costForTwo: "₹400 for two",
+                      cuisines: ["Chinese", "Tibetan"],
+                      avgRating: 3.8,
+                      feeDetails: {
+                        restaurantId: "87861",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 5700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 5700,
+                      },
+                      parentId: "74653",
+                      avgRatingString: "3.8",
+                      totalRatingsString: "10K+",
+                      sla: {
+                        deliveryTime: 31,
+                        lastMileTravel: 9.7,
+                        serviceability: "SERVICEABLE",
+                        slaString: "31 mins",
+                        lastMileTravelString: "9.7 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "40% OFF",
+                        subHeader: "UPTO ₹80",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/dragon-flames-boring-road-sri-krishnapuri-patna-87861",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "339345",
+                      promoted: true,
+                      name: "Nirula's",
+                      cloudinaryImageId: "94c82b9d46792c198fff64899ff05bd2",
+                      locality: "Ashiyana Digha Road",
+                      areaName: "Rukanpura",
+                      costForTwo: "₹500 for two",
+                      cuisines: [
+                        "Pizzas",
+                        "Burgers",
+                        "Ice Cream",
+                        "North Indian",
+                        "Fast Food",
+                        "Pastas",
+                        "Beverages",
+                      ],
+                      avgRating: 4.1,
+                      feeDetails: {
+                        restaurantId: "339345",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 4700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 4700,
+                      },
+                      parentId: "1738",
+                      avgRatingString: "4.1",
+                      totalRatingsString: "100+",
+                      sla: {
+                        deliveryTime: 28,
+                        lastMileTravel: 6.9,
+                        serviceability: "SERVICEABLE",
+                        slaString: "28 mins",
+                        lastMileTravelString: "6.9 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      aggregatedDiscountInfoV2: {},
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/nirulas-ashiyana-digha-road-rukanpura-patna-339345",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "562924",
+                      promoted: false,
+                      name: "WarmOven Cake & Desserts",
+                      cloudinaryImageId: "e938fb5f416cc2c28b4b519cf27b04cc",
+                      locality: "Fraser Road",
+                      areaName: "Sri Krishnapuri",
+                      costForTwo: "₹200 for two",
+                      cuisines: [
+                        "Bakery",
+                        "Desserts",
+                        "Ice Cream",
+                        "Beverages",
+                      ],
+                      avgRating: 4.1,
+                      feeDetails: {
+                        restaurantId: "562924",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 5700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 5700,
+                      },
+                      parentId: "9696",
+                      avgRatingString: "4.1",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 35,
+                        lastMileTravel: 9.7,
+                        serviceability: "SERVICEABLE",
+                        slaString: "35 mins",
+                        lastMileTravelString: "9.7 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 02:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "20% OFF",
+                        subHeader: "UPTO ₹50",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/warmoven-cake-and-desserts-fraser-road-sri-krishnapuri-patna-562924",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "155011",
+                      promoted: false,
+                      name: "Arsalan Biryani",
+                      cloudinaryImageId: "ecuvekinlcsadzojdbwz",
+                      locality: "Police Colony",
+                      areaName: "Phulwari Sharif",
+                      costForTwo: "₹250 for two",
+                      cuisines: ["Indian", "Chinese", "Tandoor", "Mughlai"],
+                      avgRating: 3.6,
+                      feeDetails: {
+                        restaurantId: "155011",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 6700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 6700,
+                      },
+                      parentId: "36320",
+                      avgRatingString: "3.6",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 35,
+                        lastMileTravel: 10.2,
+                        serviceability: "SERVICEABLE",
+                        slaString: "35 mins",
+                        lastMileTravelString: "10.2 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:15:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      aggregatedDiscountInfoV2: {},
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/arsalan-biryani-police-colony-phulwari-sharif-patna-155011",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "552128",
+                      promoted: false,
+                      name: "Chicago Pizza",
+                      cloudinaryImageId: "ogbjldr9qkm1xgfc60mq",
+                      locality: "Khagaul Road",
+                      areaName: "Adampur",
+                      costForTwo: "₹200 for two",
+                      cuisines: ["Italian", "American", "Snacks", "Beverages"],
+                      avgRating: 3.7,
+                      feeDetails: {
+                        restaurantId: "552128",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 2900,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 2900,
+                      },
+                      parentId: "60277",
+                      avgRatingString: "3.7",
+                      totalRatingsString: "100+",
+                      sla: {
+                        deliveryTime: 26,
+                        lastMileTravel: 4.3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "26 mins",
+                        lastMileTravelString: "4.3 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 00:00:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      aggregatedDiscountInfoV2: {},
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/chicago-pizza-khagaul-road-adampur-patna-552128",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "387736",
+                      promoted: true,
+                      name: "Karim's",
+                      cloudinaryImageId: "4621fe9fed2e5ae3aa8a318cae201448",
+                      locality: "Khajpura Road",
+                      areaName: "Khajpura",
+                      costForTwo: "₹200 for two",
+                      cuisines: ["Indian"],
+                      avgRating: 3.7,
+                      feeDetails: {
+                        restaurantId: "387736",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 4700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 4700,
+                      },
+                      parentId: "1674",
+                      avgRatingString: "3.7",
+                      totalRatingsString: "500+",
+                      sla: {
+                        deliveryTime: 26,
+                        lastMileTravel: 6.5,
+                        serviceability: "SERVICEABLE",
+                        slaString: "26 mins",
+                        lastMileTravelString: "6.5 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-27 23:30:00",
+                        opened: true,
+                      },
+                      badges: {
+                        imageBadges: [
+                          {
+                            imageId: "newg.png",
+                            description: "Gourmet",
+                          },
+                        ],
+                      },
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {
+                            badgeObject: [
+                              {
+                                attributes: {
+                                  description: "Gourmet",
+                                  imageId: "newg.png",
+                                },
+                              },
+                            ],
+                          },
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "40% OFF",
+                        subHeader: "UPTO ₹80",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/karims-road-khajpura-patna-387736",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "519852",
+                      promoted: false,
+                      name: "Wat-a-Burger! - India ka Burger",
+                      cloudinaryImageId: "pjadwdcyd4hzljv63gj3",
+                      locality: "Boring Road",
+                      areaName: "Sri Krishnapuri",
+                      costForTwo: "₹250 for two",
+                      cuisines: [
+                        "Burgers",
+                        "Fast Food",
+                        "Continental",
+                        "American",
+                        "Beverages",
+                        "Desserts",
+                      ],
+                      avgRating: 4.1,
+                      feeDetails: {
+                        restaurantId: "519852",
+                        fees: [
+                          {
+                            name: "BASE_DISTANCE",
+                            fee: 5700,
+                          },
+                          {
+                            name: "BASE_TIME",
+                          },
+                          {
+                            name: "ANCILLARY_SURGE_FEE",
+                          },
+                        ],
+                        totalFee: 5700,
+                      },
+                      parentId: "384458",
+                      avgRatingString: "4.1",
+                      totalRatingsString: "1K+",
+                      sla: {
+                        deliveryTime: 34,
+                        lastMileTravel: 9.8,
+                        serviceability: "SERVICEABLE",
+                        slaString: "34 mins",
+                        lastMileTravelString: "9.8 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2023-07-28 00:45:00",
+                        opened: true,
+                      },
+                      badges: {},
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "40% OFF",
+                        subHeader: "UPTO ₹80",
+                      },
+                      orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/wat-a-burger-india-ka-burger-boring-road-sri-krishnapuri-patna-519852",
+                      type: "WEBLINK",
+                    },
+                  },
                 ],
                 theme: "Restaurant_Group_WebView_SEO_PB_Theme",
                 widgetType: "WIDGET_TYPE_POPULAR_BRANDS",

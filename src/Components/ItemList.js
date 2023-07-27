@@ -16,11 +16,20 @@ const ItemList = ({items}) => {
               </p>
             </div>
             <div className="relative">
-              <img
-                className="w-28 h-24 rounded-lg"
-                src={CDN_URL + "/" + item.card.info.imageId}
-                alt="item"
-              />
+              {item.card.info.imageId ? (
+                <img
+                  className="w-28 h-24 rounded-lg"
+                  src={CDN_URL + "/" + item.card.info.imageId}
+                  alt="item"
+                />
+              ) : (
+                <img
+                  className="w-28 h-24 rounded-lg"
+                  src={CDN_URL + "/e7f40335a66b230f5eda766022dfecbd"}
+                  alt="item"
+                />
+              )}
+
               <div className="absolute z-10 top-20 right-3 sm:right-4">
                 <button className="p-0 w-14 sm:w-20 rounded-lg bg-white border shadow-xl text-green-600 font-semibold">
                   ADD+
