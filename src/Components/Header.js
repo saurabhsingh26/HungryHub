@@ -1,10 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { LOGO_URL } from '../utils';
-import UserContext from '../utils/UserContext';
+
 const Header = () => {
-  const User = useContext(UserContext);
-  console.log("User", User);
+  
   return (
     <div className="flex justify-between bg-green-50 shadow-lg mb-2 w-auto items-center h-20">
       <div className="logo-container">
