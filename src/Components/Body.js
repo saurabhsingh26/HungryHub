@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import ShimmerContainer from './ShimmerContainer';
 import useOnlineStatus from '../utils/useOnlineStatus';
-
+// import data from '../utils/RestaurantData';
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -19,9 +19,13 @@ const Body = () => {
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6342587&lng=85.0584152&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-
+    // console.log("data", json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+    setListOfRestaurant(
+      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+    );
+    setFilteredRestaurants(
+      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+    );
   }
 
   const onlineStatus = useOnlineStatus();
@@ -79,10 +83,10 @@ const Body = () => {
         {filteredRestaurants.map((restaurant, index) => {
           return (
             <Link
-              to={`/restaurant/${restaurant.data.id}`}
-              key={restaurant.data.id}
+              to={`/restaurant/${restaurant.info.id}`}
+              key={restaurant.info.id}
             >
-              {restaurant.data.promoted ? (
+              {restaurant.info.promoted ? (
                 <RestaurantCardPromoted restData={restaurant} />
               ) : (
                 <RestaurantCard restData={restaurant} />
@@ -95,4 +99,4 @@ const Body = () => {
   );
 }
 
-export default Body
+export default Body;

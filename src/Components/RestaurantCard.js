@@ -8,9 +8,9 @@ const RestaurantCard = (props) => {
     cuisines,
     avgRating,
     cloudinaryImageId,
-    deliveryTime,
+    sla,
     costForTwo,
-  } = restData?.data;
+  } = restData?.info;
   return (
     <div className="m-5 p-2 w-64 rounded-2xl  hover:bg-red-50 hover:shadow-md ">
       {/* {console.log(`CDN_URL/${cloudinaryImageId}`)} */}
@@ -28,8 +28,8 @@ const RestaurantCard = (props) => {
           <p className="star-rating bg-green-500 w-7 rounded-md text-center my-1">
             {avgRating}
           </p>
-          <p style={{ color: "#535665" }}>₹{costForTwo / 100} for two</p>
-          <p style={{ color: "#535665" }}>{deliveryTime} min</p>
+          <p style={{ color: "#535665" }}>{costForTwo}</p>
+          <p style={{ color: "#535665" }}>{sla.slaString}</p>
         </div>
       </div>
     </div>
