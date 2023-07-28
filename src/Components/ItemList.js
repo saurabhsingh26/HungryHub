@@ -1,7 +1,7 @@
 import React from 'react'
 import { CDN_URL } from '../utils';
 const ItemList = ({items}) => {
-  console.log("items", items);
+  
   return (
     <div className="">
       {items.map((item) => (
@@ -18,8 +18,15 @@ const ItemList = ({items}) => {
                   <div className="bg-green-600 w-2 h-2 rounded-[50%]"></div>
                 </div>
               )}
-              <h1 className="text-md font-medium my-1">{item.card.info.name}</h1>
-              <p className="text-sm">₹{item.card.info.price / 100}</p>
+              <h1 className="text-md font-medium my-1">
+                {item.card.info.name}
+              </h1>
+              <p className="text-sm">
+                ₹
+                {item.card.info.price
+                  ? item.card.info.price / 100
+                  : item.card.info.defaultPrice / 100}
+              </p>
               <p className="text-sm text-gray-500 truncate">
                 {item.card.info.description}
               </p>
@@ -39,8 +46,8 @@ const ItemList = ({items}) => {
                 />
               )}
 
-              <div className="absolute z-10 top-20 right-3 sm:right-4">
-                <button className="p-0 w-14 sm:w-20 rounded-lg bg-white border shadow-2xl text-green-600 font-semibold">
+              <div className="absolute z-10 top-20 right-4 sm:right-4">
+                <button className="p-0 w-20 sm:w-20 rounded-lg bg-white border shadow-2xl text-green-600 font-semibold">
                   ADD+
                 </button>
               </div>

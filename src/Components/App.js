@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Body from "./Body";
 import About from "./About";
-import  Contact  from "./Contact";
 import Error from "./Error";
 import RestaurantMenu from "./RestaurantMenu";
+import OfferCard from "./Offers";
 
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -35,12 +35,12 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Body />} />
+          <Route path="/offers" element={<OfferCard />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
           <Route
             path="/grocery"
             element={
-              <Suspense fallback={<h1>Loading...</h1>} >
+              <Suspense fallback={<h1>Loading...</h1>}>
                 <Grocery />
               </Suspense>
             }

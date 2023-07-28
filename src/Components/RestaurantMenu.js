@@ -3,6 +3,7 @@ import ShimmerContainer from './ShimmerContainer';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
 import RestaurantCategory from './RestaurantCategory';
 import { useState } from 'react';
+import star from '../star.png'
 
 const RestaurantMenu = () => {
 
@@ -52,8 +53,28 @@ const RestaurantMenu = () => {
                 {areaName}, {lastMileTravelString}
               </p>
             </div>
-            <div className="flex flex-col  text-xs md:text-xl min-w-[50px] text-center">
-              <div>{avgRating}</div>
+            <div className="flex flex-col items-center  text-xs md:text-xl min-w-[50px] text-center ">
+              <div>
+                {avgRating >= 4 ? (
+                  <p className=" bg-green-500 px-1 font-bold rounded-md text-center my-1 text-white flex justify-between items-center">
+                    <span className="font-sans text-xs pr-[2px]">
+                      {avgRating}
+                    </span>
+                    <span>
+                      <img className="w-2 h-2" src={star} alt="star" />
+                    </span>
+                  </p>
+                ) : (
+                  <p className=" bg-orange-400  px-1 font-bold rounded-md text-center my-1 text-white flex justify-between items-center">
+                    <span className="font-sans text-xs pr-[2px]">
+                      {avgRating}
+                    </span>
+                    <span>
+                      <img className="w-2 h-2" src={star} alt="star" />
+                    </span>
+                  </p>
+                )}
+              </div>
               <div className="border my-1"></div>
               <div>{totalRatingsString}</div>
             </div>
