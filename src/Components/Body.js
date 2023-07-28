@@ -37,7 +37,7 @@ const Body = () => {
   }
 
   return listOfRestaurant.length === 0 ? (
-    [<Spinner />, <ShimmerContainer />]
+    [<Spinner key={0} />, <ShimmerContainer key={1} />]
   ) : (
     <div className="body">
       <div className="flex justify-center mt-20">
