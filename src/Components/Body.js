@@ -11,7 +11,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-  
+
   useEffect(() => {
     fetchData();
   },[])
@@ -59,7 +59,7 @@ const Body = () => {
                 </li>
                 <li className="mx-1 text-[17px] font-semibold" onClick={() => {
                   const filteredRating = listOfRestaurant.filter((res) => 
-                    res.info.avgRating > 4
+                    res.info.avgRating >= 4
                   )
                   setFilteredRestaurants(filteredRating);
 
