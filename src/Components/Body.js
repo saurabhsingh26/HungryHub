@@ -8,9 +8,10 @@ import Spinner from './Spinner';
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  
   useEffect(() => {
     fetchData();
   },[])
@@ -36,51 +37,46 @@ const Body = () => {
   }
 
   return listOfRestaurant.length === 0 ? (
-    [<Spinner />,<ShimmerContainer />]
+    [<Spinner />, <ShimmerContainer />]
   ) : (
     <div className="body">
-      <div className="flex m-4">
-        <div>
-          <input
-            type="text"
-            className="search-box p-2 outline"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            className="px-4 mx-2 py-2 bg-green-200 rounded-xl"
-            onClick={() => {
-              const filteredRestaurants = listOfRestaurant.filter((res) =>
-                res.data.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              setFilteredRestaurants(filteredRestaurants);
-            }}
-          >
-            Search
-          </button>
-        </div>
-        <div className="filter-btns">
-          <button className="filter-btn px-4 mx-2 py-2 bg-gray-100">
-            Filters
-          </button>
-          <button
-            className="filter-btn"
-            onClick={() => {
-              const filteredList = listOfRestaurant.filter(
-                (res) => res.data.avgRating > 4
-              );
-              setFilteredRestaurants(filteredList);
-            }}
-          >
-            Top Rated Restaurants
-          </button>
-          <button className="filter-btn">Pure Veg</button>
-          <button className="filter-btn">Delivery Time</button>
+      <div className="flex justify-center mt-20">
+        <div className="flex flex-col justify-center w-[90%] ">
+          <div className="flex justify-between items-center ">
+            <div>
+              <div className="font-bold text-[30px] flex">
+                <p className="mr-1">{filteredRestaurants.length} </p>
+                <p> restaurants</p>
+              </div>
+            </div>
+            <div className="invisible lg:visible overflow-hidden hover:cursor-pointer">
+              <ul className="flex gap-0 lg:gap-8">
+                <li className="mx-1 text-[17px] font-semibold" onClick={() => {
+                  setFilteredRestaurants(listOfRestaurant);
+                }}>Relevance</li>
+                <li className="mx-1 text-[17px] font-semibold">
+                  Delivery Time
+                </li>
+                <li className="mx-1 text-[17px] font-semibold" onClick={() => {
+                  const filteredRating = listOfRestaurant.filter((res) => 
+                    res.info.avgRating > 4
+                  )
+                  setFilteredRestaurants(filteredRating);
+
+                }}>Rating</li>
+                <li className="mx-1 text-[17px] font-semibold">
+                  Cost: Low To High
+                </li>
+                <li className="mx-1 text-[17px] font-semibold">
+                  Cost: High To Low
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border"></div>
         </div>
       </div>
-      <div className="res-container flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center">
         {filteredRestaurants.map((restaurant, index) => {
           return (
             <Link
