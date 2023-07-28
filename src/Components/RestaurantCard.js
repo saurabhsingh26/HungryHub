@@ -1,6 +1,6 @@
 import React from 'react'
 import { CDN_URL } from '../utils';
-
+import star from '../star.png'
 const RestaurantCard = (props) => {
   const { restData } = props;
   const {
@@ -21,15 +21,35 @@ const RestaurantCard = (props) => {
       />
       <div className="res-name flex justify-between">
         <div>
-          <h4 className="font-medium text-lg my-3 truncate  w-36">{name}</h4>
-          <p className="text-sm truncate  w-32">{cuisines.join(", ")}</p>
+          <h4
+            style={{ color: "#1C1C1C" }}
+            className="font-medium text-lg mt-[10px] truncate  w-36"
+          >
+            {name}
+          </h4>
+          <p style={{ color: "#696969" }} className="text-sm truncate  w-32">
+            {cuisines.join(", ")}
+          </p>
         </div>
         <div className="rating-container flex flex-col items-end my-3">
-          <p className="star-rating bg-green-500 w-7 rounded-md text-center my-1">
-            {avgRating}
-          </p>
-          <p style={{ color: "#535665" }}>{costForTwo}</p>
-          <p style={{ color: "#535665" }}>{sla.slaString}</p>
+          {avgRating >= 4 ? (
+            <p className=" bg-green-500  px-1 font-bold rounded-md text-center my-1 text-white flex justify-between items-center">
+              <span className="font-sans text-xs pr-[2px]">{avgRating}</span>
+              <span>
+                <img className="w-2 h-2" src={star} alt="star" />
+              </span>
+            </p>
+          ) : (
+            <p className=" bg-orange-400  px-1 font-bold rounded-md text-center my-1 text-white flex justify-between items-center">
+              <span className="font-sans text-xs pr-[2px]">{avgRating}</span>
+              <span>
+                <img className="w-2 h-2" src={star} alt="star" />
+              </span>
+            </p>
+          )}
+
+          <p style={{ color: "#696969" }}>{costForTwo}</p>
+          <p style={{ color: "#363636" }}>{sla.slaString}</p>
         </div>
       </div>
     </div>

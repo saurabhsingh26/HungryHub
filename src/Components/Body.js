@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import ShimmerContainer from './ShimmerContainer';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import Spinner from './Spinner';
 // import data from '../utils/RestaurantData';
 
 const Body = () => {
@@ -21,10 +22,10 @@ const Body = () => {
     const json = await data.json();
     // console.log("data", json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
     setListOfRestaurant(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
 
@@ -35,7 +36,7 @@ const Body = () => {
   }
 
   return listOfRestaurant.length === 0 ? (
-    <ShimmerContainer />
+    [<Spinner />,<ShimmerContainer />]
   ) : (
     <div className="body">
       <div className="flex m-4">
