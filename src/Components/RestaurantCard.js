@@ -1,6 +1,7 @@
 import React from 'react'
 import { CDN_URL } from '../utils';
 import star from '../star.png'
+
 const RestaurantCard = (props) => {
   const { restData } = props;
   const {
@@ -11,15 +12,17 @@ const RestaurantCard = (props) => {
     sla,
     costForTwo,
   } = restData?.info;
+
   return (
     <div className="m-5 p-2 w-64 rounded-2xl  hover:bg-red-50 hover:shadow-md ">
-      {/* {console.log(`CDN_URL/${cloudinaryImageId}`)} */}
+      {/* Restaurant Image */}
       <img
         className="res-logo rounded-2xl"
         src={`${CDN_URL}/${cloudinaryImageId}`}
-        alt="site-logo"
+        alt="card"
       />
       <div className="res-name flex justify-between">
+        {/* Restaurant Name and Cuisines */}
         <div>
           <h4
             style={{ color: "#1C1C1C" }}
@@ -31,6 +34,7 @@ const RestaurantCard = (props) => {
             {cuisines.join(", ")}
           </p>
         </div>
+        {/* Restaurant Rating, Cost and Time */}
         <div className="rating-container flex flex-col items-end my-3">
           {avgRating >= 4 ? (
             <p className=" bg-green-500  px-1 font-bold rounded-md text-center my-1 text-white flex justify-between items-center">

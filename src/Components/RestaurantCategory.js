@@ -1,10 +1,8 @@
 import React from 'react'
 import ItemList from './ItemList';
-const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
-  // console.log(data);
-  // const [showItem, setShowItems] = useState(false);
-  const { title, itemCards } = category.card.card;
 
+const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
+  const { title, itemCards } = category.card.card;
   const handleClick = () => {
     setShowIndex();
   };
@@ -15,15 +13,17 @@ const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
 
   return (
     <div>
+      {/* Restaurant Item Category Name and up, down arrow */}
       <div
         className="flex justify-between my-4 p-3 hover:cursor-pointer"
         onClick={handleClick}
       >
-        <span style={{color: "#3E4152"}} className="text-lg font-bold">
+        <span style={{ color: "#3E4152" }} className="text-lg font-bold">
           {title} ({itemCards?.length})
         </span>
         <span>{showItem ? "⬆️" : "⬇️"}</span>
       </div>
+      {/* Items inside Category Component */}
       {showItem && <ItemList items={itemCards} />}
       <div className="bg-gray-100 shadow-sm h-5"></div>
     </div>

@@ -5,6 +5,7 @@ import offers from '../utils/OffersNearMe';
 import RestaurantCard from './RestaurantCard';
 import { withOfferLabel } from './RestaurantCard';
 
+
 const OfferCard = () => {
   const [offersRestaurants, setOffersRestaurants] = useState([]);
   const RestaurantCardOffer = withOfferLabel(RestaurantCard);
@@ -14,11 +15,13 @@ const OfferCard = () => {
   }, []);
 
   const fetchOffers = async () => {
-
     setOffersRestaurants(
       offers?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+
+
   return (
     <div className="flex flex-wrap justify-center">
       {offersRestaurants.map((restaurant, index) => {

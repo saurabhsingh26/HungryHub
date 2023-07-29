@@ -11,7 +11,6 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-
   useEffect(() => {
     fetchData();
   },[])
@@ -54,45 +53,71 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   
   if (onlineStatus === false){
-    return <h1>Looks like you're offline!! Please check your internet connection. </h1>
+    return <h1 className='text-xl font-bold p-4 text-center text-red-500'>Looks like you're offline... Please check your internet connection!! </h1>
   }
 
   if (!listOfRestaurant) {
     return window.location.reload();
   }
 
+
+
   return listOfRestaurant.length === 0 ? (
     [<Spinner key={0} />, <ShimmerContainer key={1} />]
   ) : (
     <div className="body">
+      {/* Filters  */}
       <div className="flex justify-center mt-20">
         <div className="flex flex-col justify-center w-[90%] ">
           <div className="flex justify-between items-center ">
             <div>
-              <div className="font-bold text-[30px] flex">
+              <div
+                style={{ color: "#282C3F" }}
+                className="font-bold text-[28px] flex"
+              >
                 <p className="mr-1">{filteredRestaurants.length} </p>
-                <p> restaurants</p>
+                <p> Restaurants</p>
               </div>
             </div>
             <div className="invisible lg:visible overflow-hidden hover:cursor-pointer">
               <ul className="flex gap-0 lg:gap-8">
-                <li className="mx-1 text-[17px] font-semibold" onClick={() => {
-                  setFilteredRestaurants(listOfRestaurant);
-                }}>Relevance</li>
-                <li className="mx-1 text-[17px] font-semibold">
+                <li
+                  className="mx-1 text-[16px] font-medium"
+                  style={{ color: "#686B78" }}
+                  onClick={() => {
+                    setFilteredRestaurants(listOfRestaurant);
+                  }}
+                >
+                  Relevance
+                </li>
+                <li
+                  style={{ color: "#686B78" }}
+                  className="mx-1 text-[16px] font-medium"
+                >
                   Delivery Time
                 </li>
-                <li className="mx-1 text-[17px] font-semibold" onClick={() => {
-                  const filteredRating = listOfRestaurant.filter((res) => 
-                    res.info.avgRating >= 4
-                  )
-                  setFilteredRestaurants(filteredRating);
-
-                }}>Rating</li>
-                <li className="mx-1 text-[17px] font-semibold">
+                <li
+                  className="mx-1 text-[16px] font-medium"
+                  style={{ color: "#686B78" }}
+                  onClick={() => {
+                    const filteredRating = listOfRestaurant.filter(
+                      (res) => res.info.avgRating >= 4
+                    );
+                    setFilteredRestaurants(filteredRating);
+                  }}
+                >
+                  Rating
+                </li>
+                <li
+                  style={{ color: "#686B78" }}
+                  className="mx-1 text-[16px] font-medium"
+                >
                   Cost: Low To High
                 </li>
-                <li className="mx-1 text-[17px] font-semibold">
+                <li
+                  style={{ color: "#686B78" }}
+                  className="mx-1 text-[16px] font-medium"
+                >
                   Cost: High To Low
                 </li>
               </ul>
@@ -101,16 +126,13 @@ const Body = () => {
           <div className="border"></div>
         </div>
       </div>
+      {/* Body Section */}
       <div className="flex flex-wrap justify-center">
         {filteredRestaurants.map((restaurant, index) => {
           return (
             <Link
               to={`/restaurant/${restaurant.info.id}`}
               key={restaurant.info.id}
-              state={{
-                cost: restaurant.info.costForTwo,
-                time: restaurant.info.sla.slaString,
-              }}
             >
               {restaurant.info.promoted ? (
                 <RestaurantCardPromoted restData={restaurant} />

@@ -1,13 +1,15 @@
 import React from 'react'
 import { CDN_URL } from '../utils';
+
+
+
 const ItemList = ({items}) => {
-  
   return (
-    <div className="">
+    <div>
       {items.map((item) => (
         <div key={item.card.info.id}>
-          {/* <div className="border my-5"></div> */}
           <div className="flex justify-between py-5">
+            {/* Restaurant Category Item Card with color, name price and description */}
             <div className="w-6/12">
               {item?.card?.info?.itemAttribute?.vegClassifier === "NONVEG" ? (
                 <div className="border border-red-600 w-3 h-3 flex justify-center items-center">
@@ -31,6 +33,7 @@ const ItemList = ({items}) => {
                 {item.card.info.description}
               </p>
             </div>
+            {/* Restaurant Category Item Card Image and "ADD" button */}
             <div className="relative">
               {item.card.info.imageId ? (
                 <img
@@ -60,4 +63,4 @@ const ItemList = ({items}) => {
   );
 }
 
-export default ItemList
+export default ItemList;

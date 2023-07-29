@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ShimmerContainer from "./ShimmerContainer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -12,12 +12,10 @@ import rupee from "../rupee.png";
 
 const RestaurantMenu = () => {
   const params = useParams();
-  const location = useLocation();
 
   const { resId } = params; //extracting restaurant id from urls
 
   const resInfo = useRestaurantMenu(resId);
-  // console.log("resInfo", resInfo);
 
   const [showIndex, setShowIndex] = useState(null);
 
@@ -48,25 +46,41 @@ const RestaurantMenu = () => {
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
     });
-  // console.log("categories", categories[0]);
+
   if (!categories) {
     return window.location.reload();
   }
 
-  const { name, areaName, avgRating, totalRatingsString, labels, sla } =
-    resInfo?.cards[0]?.card?.card?.info;
+  const {
+    name,
+    areaName,
+    avgRating,
+    totalRatingsString,
+    labels,
+    sla,
+    costForTwoMessage,
+  } = resInfo?.cards[0]?.card?.card?.info;
+  console.log("labels", labels);
   const { message } = labels[2];
   const { lastMileTravelString } = sla;
+
+
   return (
     <div className="flex justify-center">
+      {/* Restaurant all details for a particular restaurant id */}
       <div className="flex flex-col w-[90%] md:w-[65%] lg:w-[65%] xl:w-[65%] p-3 items-between">
         <div className="mt-2 mb-6">
-          <Link to="/" className="border p-3 rounded-md font-bold text-md">
+          <Link
+            to="/"
+            className="border p-2 border-red-400 rounded-md font-bold text-md"
+          >
             BACK
           </Link>
         </div>
-        <div className="">
+        {/* Restaurants Details and rating card */}
+        <div>
           <div className="flex justify-between">
+            {/* Restaurants Name, Cuisines and Area Name */}
             <div>
               <p style={{ color: "#282C3F" }} className="text-xl font-bold">
                 {name}
@@ -78,6 +92,7 @@ const RestaurantMenu = () => {
                 {areaName}, {lastMileTravelString}
               </p>
             </div>
+            {/* Restaurants Rating Container */}
             <div className="flex flex-col items-center border justify-center text-xs min-w-[70px] text-center rounded-md h-[70px] shadow-md ">
               <div>
                 {avgRating >= 4 ? (
@@ -112,6 +127,7 @@ const RestaurantMenu = () => {
         </div>
         <div className="border my-3"></div>
         <div className="mb-10">
+          {/* Restaurant Delivery Time and Cost for Two */}
           <div
             style={{ color: "#3E4152" }}
             className="flex my-5 text-[15px] font-bold"
@@ -120,15 +136,16 @@ const RestaurantMenu = () => {
               <span>
                 <img className="w-4 h-4 mr-2" src={clock} alt="clock" />
               </span>
-              <span>{location.state.time}</span>
+              <span>30-45 MINS</span>
             </p>
             <p className="mr-7 flex items-center">
               <span>
-                <img src={rupee} alt="clock" className="w-4 h-4 mr-2" />
+                <img src={rupee} alt="rupee" className="w-4 h-4 mr-2" />
               </span>
-              <span>{location.state.cost}</span>
+              <span>{costForTwoMessage}</span>
             </p>
           </div>
+          {/* Promo Code Section */}
           <div className="flex overflow-x-auto">
             {PromoCodes.map((offer, index) => (
               <div
@@ -153,6 +170,7 @@ const RestaurantMenu = () => {
             ))}
           </div>
         </div>
+        {/* Categories Card */}
         {categories[0]?.map((category, index) => (
           // RestaurantCategory is a controlled component by RestaurantMenu.
           <RestaurantCategory
