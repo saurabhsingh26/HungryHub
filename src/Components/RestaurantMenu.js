@@ -18,6 +18,10 @@ const RestaurantMenu = () => {
     return <ShimmerContainer />;
   }
 
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   // Old way to fetch categories
   // const categories =
   //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
@@ -43,7 +47,7 @@ const RestaurantMenu = () => {
     });
   // console.log("categories", categories[0]);
   if (!categories) {
-    return <ShimmerContainer />;
+    return reloadPage();
   }
 
   const { name, areaName, avgRating, totalRatingsString, labels, sla } =
