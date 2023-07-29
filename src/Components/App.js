@@ -6,7 +6,7 @@ import About from "./About";
 import Error from "./Error";
 import RestaurantMenu from "./RestaurantMenu";
 import OfferCard from "./Offers";
-
+import ScrollToTop from "./ScrollToTop";
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
 
@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Body />} />
