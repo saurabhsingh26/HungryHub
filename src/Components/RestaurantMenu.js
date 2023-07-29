@@ -69,7 +69,7 @@ const RestaurantMenu = () => {
                 {areaName}, {lastMileTravelString}
               </p>
             </div>
-            <div className="flex flex-col items-center  text-xs md:text-xl min-w-[50px] text-center ">
+            <div className="flex flex-col items-center border justify-center text-xs min-w-[70px] text-center rounded-md h-[70px] shadow-md ">
               <div>
                 {avgRating >= 4 ? (
                   <p className=" bg-green-500 px-1 font-bold rounded-md text-center my-1 text-white flex justify-between items-center">
@@ -91,8 +91,13 @@ const RestaurantMenu = () => {
                   </p>
                 )}
               </div>
-              <div className="border my-1"></div>
-              <div>{totalRatingsString}</div>
+              <div className="border my-2 w-12"></div>
+              <div
+                style={{ color: "#8B8D97" }}
+                className="text-[11px] font-semibold tracking-tighter"
+              >
+                {totalRatingsString}
+              </div>
             </div>
             {/* <p>
             {
