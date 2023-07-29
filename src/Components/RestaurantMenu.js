@@ -60,7 +60,6 @@ const RestaurantMenu = () => {
     sla,
     costForTwoMessage,
   } = resInfo?.cards[0]?.card?.card?.info;
-  console.log("labels", labels);
   const { message } = labels[2];
   const { lastMileTravelString } = sla;
 
