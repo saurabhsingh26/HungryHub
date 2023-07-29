@@ -65,7 +65,19 @@ export const withPromotedLabel = (RestaurantCard) => {
     const { restData } = props;
     return (
       <div>
-        <label className='absolute bg-black text-white mx-5 mt-2 p-1 rounded-md z-10'>Promoted</label>
+        <label
+          style={{ background: "#3a3c41" }}
+          className="absolute text-sm font-bold text-white mx-[20.5px] mt-2 p-1 z-10"
+        >
+          PROMOTED
+        </label>
+        <label
+          style={{
+            clipPath: "polygon(0 0,100% 0,100% 100%)",
+            background: "#3a3c41",
+          }}
+          className="absolute h-2 w-2 mt-[35.8px] ml-[20.3px]"
+        ></label>
         <RestaurantCard restData={restData} />
       </div>
     );
