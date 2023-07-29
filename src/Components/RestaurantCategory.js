@@ -1,11 +1,18 @@
 import React from 'react'
 import ItemList from './ItemList';
-const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
+const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
   // console.log(data);
   // const [showItem, setShowItems] = useState(false);
+  const { title, itemCards } = category.card.card;
+
   const handleClick = () => {
     setShowIndex();
+  };
+
+  if (!itemCards) {
+    return null;
   }
+
   return (
     <div>
       <div
@@ -13,11 +20,11 @@ const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
         onClick={handleClick}
       >
         <span className="text-lg font-bold">
-          {data.title} ({data.itemCards.length})
+          {title} ({itemCards?.length})
         </span>
         <span>{showItem ? "⬆️" : "⬇️"}</span>
       </div>
-      {showItem && <ItemList items={data?.itemCards} />}
+      {showItem && <ItemList items={itemCards} />}
       <div className="bg-gray-100 shadow-sm h-5"></div>
     </div>
   );

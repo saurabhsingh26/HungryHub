@@ -6,7 +6,6 @@ import { useState } from 'react';
 import star from '../star.png'
 
 const RestaurantMenu = () => {
-
   const params = useParams();
   const { resId } = params;
 
@@ -15,27 +14,40 @@ const RestaurantMenu = () => {
 
   const [showIndex, setShowIndex] = useState(null);
 
-  if (resInfo === null){
+  if (resInfo === null) {
     return <ShimmerContainer />;
-  } 
-
-  const categories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
-      (c) =>
-        c?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    ) || 
-    resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
-      (c) =>
-        c?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
-
-  if(!categories){
-    return <ShimmerContainer />; 
   }
 
-  const { name, areaName, avgRating, totalRatingsString, labels, sla } = resInfo?.cards[0]?.card?.card?.info;
+  // Old way to fetch categories
+  // const categories =
+  //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+  //     (c) =>
+  //       c?.card?.card?.["@type"] ===
+  //       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  //   ) ||
+  //   resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+  //     (c) =>
+  //       c?.card?.card?.["@type"] ===
+  //       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  //   );
+
+  // New way to fetch categories (testing)
+  const categories = resInfo.cards
+    ?.filter((y) => y?.groupedCard)
+    ?.map((z) => {
+      return z?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+        (a) =>
+          a?.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      );
+    });
+  // console.log("categories", categories[0]);
+  if (!categories) {
+    return <ShimmerContainer />;
+  }
+
+  const { name, areaName, avgRating, totalRatingsString, labels, sla } =
+    resInfo?.cards[0]?.card?.card?.info;
   const { message } = labels[2];
   const { lastMileTravelString } = sla;
   return (
@@ -86,11 +98,11 @@ const RestaurantMenu = () => {
           </div>
         </div>
         <div className="border my-3"></div>
-        {categories?.map((category, index) => (
+        {categories[0]?.map((category, index) => (
           // RestaurantCategory is a controlled component by RestaurantMenu.
           <RestaurantCategory
             key={category?.card?.card.title}
-            data={category?.card?.card}
+            category={category}
             showItem={index === showIndex ? true : false}
             setShowIndex={() => setShowIndex(index)}
           />
