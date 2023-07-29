@@ -17,23 +17,52 @@ const Body = () => {
   },[])
   
   const fetchData  = async () => {
+    // const data = await fetch(
+    //   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6342587&lng=85.0584152&page_type=DESKTOP_WEB_LISTING"
+    // );
+    // const json = await data.json();
+    
+    // Not working for mobile devices
+    // setListOfRestaurant(
+    //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
+    // setFilteredRestaurants(
+    //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
+
+
+    // New way to fetch api for mobile and desktop (testing)
     const data = await fetch(
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6342587&lng=85.0584152&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log("data", json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
-    setListOfRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    const restaurants = json.data.cards
+      ?.filter(
+        (y) =>
+          y?.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget"
+      )?.filter(
+        (x) =>
+          x?.card?.card?.id === "top_brands_for_you" ||
+          x?.card?.card?.id === "restaurant_grid_listing"
+      )?.map((z) => z?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      
+    setListOfRestaurant(restaurants[0]);
+    setFilteredRestaurants(restaurants[0]);
   }
+
+  const reloadPage = () => {
+    window.location.reload();
+  };
 
   const onlineStatus = useOnlineStatus();
   
   if (onlineStatus === false){
-    return <h1>Looks like you're offline!! Please check your internet connection </h1>
+    return <h1>Looks like you're offline!! Please check your internet connection. </h1>
+  }
+
+  if (!listOfRestaurant) {
+    return reloadPage();
   }
 
   return listOfRestaurant.length === 0 ? (
