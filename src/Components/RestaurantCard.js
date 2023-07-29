@@ -14,7 +14,7 @@ const RestaurantCard = (props) => {
   } = restData?.info;
 
   return (
-    <div className="m-5 p-2 w-64 rounded-2xl  hover:bg-red-50 hover:shadow-md ">
+    <div className="m-5 p-2 w-64 rounded-2xl hover:shadow">
       {/* Restaurant Image */}
       <img
         className="res-logo rounded-2xl"
