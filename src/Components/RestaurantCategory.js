@@ -19,7 +19,7 @@ const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
         className="flex justify-between my-4 p-3 hover:cursor-pointer"
         onClick={handleClick}
       >
-        <span className="text-lg font-bold">
+        <span style={{color: "#3E4152"}} className="text-lg font-bold">
           {title} ({itemCards?.length})
         </span>
         <span>{showItem ? "⬆️" : "⬇️"}</span>

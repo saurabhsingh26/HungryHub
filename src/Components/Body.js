@@ -51,10 +51,6 @@ const Body = () => {
     setFilteredRestaurants(restaurants[0]);
   }
 
-  const reloadPage = () => {
-    window.location.reload();
-  };
-
   const onlineStatus = useOnlineStatus();
   
   if (onlineStatus === false){
@@ -62,7 +58,7 @@ const Body = () => {
   }
 
   if (!listOfRestaurant) {
-    return reloadPage();
+    return window.location.reload();
   }
 
   return listOfRestaurant.length === 0 ? (
@@ -111,6 +107,10 @@ const Body = () => {
             <Link
               to={`/restaurant/${restaurant.info.id}`}
               key={restaurant.info.id}
+              state={{
+                cost: restaurant.info.costForTwo,
+                time: restaurant.info.sla.slaString,
+              }}
             >
               {restaurant.info.promoted ? (
                 <RestaurantCardPromoted restData={restaurant} />

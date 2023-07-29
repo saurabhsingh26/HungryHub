@@ -1,0 +1,147 @@
+const PromoCodes = [
+  {
+    info: {
+      header: "FLAT ₹125 OFF",
+      offerTag: "FLAT DEAL",
+      offerTagColor: "#E46D47",
+      offerIds: ["d312cdfa-ac59-41ed-b2b8-e2939aa8fc01"],
+      expiryTime: "1970-01-01T00:00:00Z",
+      couponCode: "USE SWIGGYWEEKENDS",
+      description: "ABOVE ₹199",
+      offerType: "offers",
+      restId: "562616",
+      offerLogo: "offers/generic",
+      descriptionTextColor: "#7302060C",
+    },
+    cta: {
+      type: "OFFER_HALF_CARD",
+    },
+  },
+  {
+    info: {
+      header: "50% OFF UPTO ₹100",
+      offerTagColor: "#E46D47",
+      offerIds: ["900aabc8-d2cf-49e7-9b7d-03e21ffd16fe"],
+      expiryTime: "1970-01-01T00:00:00Z",
+      couponCode: "USE TRYNEW",
+      description: "ABOVE ₹149",
+      offerType: "offers",
+      restId: "562616",
+      offerLogo: "offers/generic",
+      descriptionTextColor: "#7302060C",
+    },
+    cta: {
+      type: "OFFER_HALF_CARD",
+    },
+  },
+  {
+    info: {
+      header: "FLAT 15% OFF",
+      offerTag: "FLAT DEAL",
+      offerTagColor: "#E46D47",
+      offerIds: ["967caf75-c1a1-46ff-9482-d9de1e74f2ca"],
+      expiryTime: "1970-01-01T00:00:00Z",
+      couponCode: "USE PARTY",
+      description: "ABOVE ₹1000",
+      offerType: "offers",
+      restId: "562616",
+      offerLogo: "offers/generic",
+      descriptionTextColor: "#7302060C",
+    },
+    cta: {
+      type: "OFFER_HALF_CARD",
+    },
+  },
+  // {
+  //   info: {
+  //     header: "FLAT ₹150 OFF",
+  //     offerTag: "FLAT DEAL",
+  //     offerTagColor: "#E46D47",
+  //     offerIds: ["3fe95084-40ab-4535-a2b7-356786ccf4e1"],
+  //     expiryTime: "1970-01-01T00:00:00Z",
+  //     couponCode: "USE FLATDEAL",
+  //     description: "ABOVE ₹749",
+  //     offerType: "offers",
+  //     restId: "562616",
+  //     offerLogo: "offers/generic",
+  //     descriptionTextColor: "#7302060C",
+  //   },
+  //   cta: {
+  //     type: "OFFER_HALF_CARD",
+  //   },
+  // },
+  // {
+  //   info: {
+  //     header: "30% OFF UPTO ₹75",
+  //     offerTagColor: "#E46D47",
+  //     logoBottom: "rng/md/ads/production/3a937ddacd3adb70c4543c4895213123",
+  //     offerIds: ["e914d8fd-1192-49a8-97c9-24e29cd698e4"],
+  //     expiryTime: "1970-01-01T00:00:00Z",
+  //     couponCode: "NO CODE REQUIRED",
+  //     description: "ABOVE ₹199",
+  //     offerType: "offers",
+  //     restId: "562616",
+  //     offerLogo: "rng/md/ads/production/3a937ddacd3adb70c4543c4895213123",
+  //     descriptionTextColor: "#7302060C",
+  //   },
+  //   cta: {
+  //     type: "OFFER_HALF_CARD",
+  //   },
+  // },
+  // {
+  //   info: {
+  //     header: "FLAT ₹125 OFF",
+  //     offerTag: "FLAT DEAL",
+  //     offerTagColor: "#E46D47",
+  //     offerIds: ["cbb75cf9-4f85-44c3-8c56-ef876700d2ad"],
+  //     expiryTime: "1970-01-01T00:00:00Z",
+  //     couponCode: "USE FLAT125",
+  //     description: "ABOVE ₹999",
+  //     offerType: "offers",
+  //     restId: "78862",
+  //     offerLogo: "offers/generic",
+  //     descriptionTextColor: "#7302060C",
+  //   },
+  //   cta: {
+  //     type: "OFFER_HALF_CARD",
+  //   },
+  // },
+  // {
+  //   info: {
+  //     header: "30% OFF UPTO ₹75",
+  //     offerTagColor: "#E46D47",
+  //     logoBottom: "rng/md/ads/production/3a937ddacd3adb70c4543c4895213123",
+  //     offerIds: ["e914d8fd-1192-49a8-97c9-24e29cd698e4"],
+  //     expiryTime: "1970-01-01T00:00:00Z",
+  //     couponCode: "NO CODE REQUIRED",
+  //     description: "ABOVE ₹199",
+  //     offerType: "offers",
+  //     restId: "78862",
+  //     offerLogo: "rng/md/ads/production/3a937ddacd3adb70c4543c4895213123",
+  //     descriptionTextColor: "#7302060C",
+  //   },
+  //   cta: {
+  //     type: "OFFER_HALF_CARD",
+  //   },
+  // },
+  // {
+  //   info: {
+  //     header: "15% OFF UPTO ₹300",
+  //     offerTagColor: "#E46D47",
+  //     logoBottom: "rng/md/ads/production/15fb1cfe885005447dc8375e7970600f",
+  //     offerIds: ["ab6ca12d-e322-409c-8396-4b287bdeaf02"],
+  //     expiryTime: "1970-01-01T00:00:00Z",
+  //     couponCode: "USE CITIFOODIE",
+  //     description: "ABOVE ₹1200",
+  //     offerType: "offers",
+  //     restId: "78862",
+  //     offerLogo: "rng/md/ads/production/15fb1cfe885005447dc8375e7970600f",
+  //     descriptionTextColor: "#7302060C",
+  //   },
+  //   cta: {
+  //     type: "OFFER_HALF_CARD",
+  //   },
+  // },
+];
+
+export default PromoCodes;

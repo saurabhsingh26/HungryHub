@@ -1,13 +1,20 @@
-import { useParams } from 'react-router-dom';
-import ShimmerContainer from './ShimmerContainer';
-import useRestaurantMenu from '../utils/useRestaurantMenu';
-import RestaurantCategory from './RestaurantCategory';
-import { useState } from 'react';
-import star from '../star.png'
+import { useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ShimmerContainer from "./ShimmerContainer";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
+import PromoCodes from "../utils/PromoCode";
+import star from "../star.png";
+import clock from "../clock.png";
+import rupee from "../rupee.png";
+
 
 const RestaurantMenu = () => {
   const params = useParams();
-  const { resId } = params;
+  const location = useLocation();
+
+  const { resId } = params; //extracting restaurant id from urls
 
   const resInfo = useRestaurantMenu(resId);
   // console.log("resInfo", resInfo);
@@ -17,10 +24,6 @@ const RestaurantMenu = () => {
   if (resInfo === null) {
     return <ShimmerContainer />;
   }
-
-  const reloadPage = () => {
-    window.location.reload();
-  };
 
   // Old way to fetch categories
   // const categories =
@@ -47,7 +50,7 @@ const RestaurantMenu = () => {
     });
   // console.log("categories", categories[0]);
   if (!categories) {
-    return reloadPage();
+    return window.location.reload();
   }
 
   const { name, areaName, avgRating, totalRatingsString, labels, sla } =
@@ -57,15 +60,21 @@ const RestaurantMenu = () => {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col w-[90%] md:w-[65%] lg:w-[65%] xl:w-[65%] p-3 items-between">
-        <div>
-          <button> BACK </button>
+        <div className="mt-2 mb-6">
+          <Link to="/" className="border p-3 rounded-md font-bold text-md">
+            BACK
+          </Link>
         </div>
         <div className="">
           <div className="flex justify-between">
             <div>
-              <p className="text-base md:text-2xl font-bold">{name}</p>
-              <p>{message}</p>
-              <p>
+              <p style={{ color: "#282C3F" }} className="text-xl font-bold">
+                {name}
+              </p>
+              <p style={{ color: "#7E808C" }} className="text-[13px]">
+                {message}
+              </p>
+              <p style={{ color: "#7E808C" }} className="text-[13px]">
                 {areaName}, {lastMileTravelString}
               </p>
             </div>
@@ -99,14 +108,51 @@ const RestaurantMenu = () => {
                 {totalRatingsString}
               </div>
             </div>
-            {/* <p>
-            {
-              resInfo?.cards[0]?.card?.card?.info?.feeDetails?.message
-            }
-          </p> */}
           </div>
         </div>
         <div className="border my-3"></div>
+        <div className="mb-10">
+          <div
+            style={{ color: "#3E4152" }}
+            className="flex my-5 text-[15px] font-bold"
+          >
+            <p className="mr-7 flex items-center">
+              <span>
+                <img className="w-4 h-4 mr-2" src={clock} alt="clock" />
+              </span>
+              <span>{location.state.time}</span>
+            </p>
+            <p className="mr-7 flex items-center">
+              <span>
+                <img src={rupee} alt="clock" className="w-4 h-4 mr-2" />
+              </span>
+              <span>{location.state.cost}</span>
+            </p>
+          </div>
+          <div className="flex overflow-x-auto">
+            {PromoCodes.map((offer, index) => (
+              <div
+                className="border min-w-[15rem] h-16 rounded-lg mr-4 text-center flex justify-center items-center"
+                key={index}
+              >
+                <div>
+                  <h1
+                    style={{ color: "#686B78" }}
+                    className="text-sm font-bold"
+                  >
+                    {offer.info.header}
+                  </h1>
+                  <p
+                    style={{ color: "#93959F" }}
+                    className="text-xs font-semibold"
+                  >
+                    {offer.info.couponCode} | {offer.info.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         {categories[0]?.map((category, index) => (
           // RestaurantCategory is a controlled component by RestaurantMenu.
           <RestaurantCategory
@@ -119,6 +165,6 @@ const RestaurantMenu = () => {
       </div>
     </div>
   );
-}
+};
 
 export default RestaurantMenu;
