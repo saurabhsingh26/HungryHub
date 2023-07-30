@@ -93,6 +93,18 @@ const Body = () => {
                 <li
                   style={{ color: "#686B78" }}
                   className="mx-1 text-[16px] font-medium"
+                  onClick={() => {
+                    const filteredDeliveryTime = listOfRestaurant
+                      .slice() //shallow copy of listOfRestaurant into filteredLowToHight. It is not changing the original "listOfRestaurant" array.
+                      // And when we click on Relevance then it render original "listOfRestaurant" not the sorted one.
+                      .sort(
+                        (a, b) =>
+                          a?.info?.sla?.deliveryTime -
+                          b?.info?.sla?.deliveryTime
+                      )
+                      .slice();
+                    setFilteredRestaurants(filteredDeliveryTime);
+                  }}
                 >
                   Delivery Time
                 </li>
@@ -100,9 +112,10 @@ const Body = () => {
                   className="mx-1 text-[16px] font-medium"
                   style={{ color: "#686B78" }}
                   onClick={() => {
-                    const filteredRating = listOfRestaurant.filter(
-                      (res) => res.info.avgRating >= 4
-                    );
+                    const filteredRating = listOfRestaurant
+                      .slice()
+                      .sort((a, b) => b?.info?.avgRating - a?.info?.avgRating)
+                      .slice();
                     setFilteredRestaurants(filteredRating);
                   }}
                 >
@@ -111,12 +124,34 @@ const Body = () => {
                 <li
                   style={{ color: "#686B78" }}
                   className="mx-1 text-[16px] font-medium"
+                  onClick={() => {
+                    const filteredLowToHight = listOfRestaurant
+                      .slice() //shallow copy of listOfRestaurant into filteredLowToHight. It is not changing the original "listOfRestaurant" array.
+                      .sort(
+                        (a, b) =>
+                          a?.info?.costForTwo?.match(/\d+/)[0] -
+                          b?.info?.costForTwo?.match(/\d+/)[0]
+                      )
+                      .slice();
+                    setFilteredRestaurants(filteredLowToHight);
+                  }}
                 >
                   Cost: Low To High
                 </li>
                 <li
                   style={{ color: "#686B78" }}
                   className="mx-1 text-[16px] font-medium"
+                  onClick={() => {
+                    const filteredHightToLow = listOfRestaurant
+                      .slice()
+                      .sort(
+                        (a, b) =>
+                          b?.info?.costForTwo?.match(/\d+/)[0] -
+                          a?.info?.costForTwo?.match(/\d+/)[0]
+                      )
+                      .slice();
+                    setFilteredRestaurants(filteredHightToLow);
+                  }}
                 >
                   Cost: High To Low
                 </li>
