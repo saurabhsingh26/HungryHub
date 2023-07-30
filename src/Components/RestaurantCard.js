@@ -93,7 +93,7 @@ export const withOfferLabel = (RestaurantCard) => {
     const {restData} = props;
     return (
       <div>
-        <label className="absolute bg-red-300 text-white font-black mx-16 mt-[7.95rem] p-1 rounded-md z-10 truncate">
+        <label style={{backgroundColor: '#256FEF'}} className="absolute text-white text-sm mx-7 mt-[7.8rem] px-1">
           {restData.info.offer}
         </label>
         <RestaurantCard restData={restData} />

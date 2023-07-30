@@ -1,16 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { LOGO_URL } from '../utils';
-
+import swiggy from '../swiggy.png'
 const Header = () => {
   
   return (
-    <div className="flex justify-between bg-green-50 shadow-lg mb-2 w-auto items-center h-20">
-      <div className="logo-container">
-        <img className="logo w-32" src={LOGO_URL} alt="logo" />
+    <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 lg:p-8">
+      <div className="logo-container hover:scale-110 hover:duration-300 cursor-pointer">
+        <img className="w-[34px]" src={swiggy} alt="logo" />
       </div>
-      <div className="flex items-center">
-        <ul className="flex p-3">
+      <div
+        style={{ color: "#3D4152" }}
+        className="flex items-center text-base font-medium"
+      >
+        <ul className="flex">
           <li className="pr-3">
             <Link to="/">Home</Link>
           </li>
@@ -31,4 +33,4 @@ const Header = () => {
   );
 }
 
-export default Header
+export default Header;
