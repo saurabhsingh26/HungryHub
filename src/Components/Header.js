@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import swiggy from '../swiggy.png'
+
 const Header = () => {
+
+  // Subscribing to the store using Selector
+  const cartItems = useSelector((store) => store.cart.items)
+  // console.log("cartItems", cartItems);
   
   return (
     <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 lg:p-8">
@@ -26,7 +32,7 @@ const Header = () => {
           <li className="pr-3">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li>Cart-{cartItems.length}</li>
         </ul>
       </div>
     </div>
