@@ -80,7 +80,7 @@ const RestaurantMenu = () => {
           <div className="flex justify-between">
             {/* Restaurants Name, Cuisines and Area Name */}
             <div>
-              <p style={{ color: "#282C3F" }} className="text-xl font-bold">
+              <p style={{ color: "#282C3F" }} className="text-xl font-bold w-11/12">
                 {name}
               </p>
               <p style={{ color: "#7E808C" }} className="text-[13px]">
