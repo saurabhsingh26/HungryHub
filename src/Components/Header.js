@@ -32,7 +32,7 @@ const Header = () => {
           <li className="pr-3">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart-{cartItems.length}</li>
+          <li>Cart {cartItems.length}</li>
         </ul>
       </div>
     </div>
