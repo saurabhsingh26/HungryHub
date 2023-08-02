@@ -7,6 +7,8 @@ import Error from "./Error";
 import RestaurantMenu from "./RestaurantMenu";
 import OfferCard from "./Offers";
 import ScrollToTop from "./ScrollToTop";
+import Cart from "./Cart";
+
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
 
@@ -29,13 +31,12 @@ const App = () => {
             }
           />
           <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
     </div>
   );
-}
-
-
+};
 
 export default App;

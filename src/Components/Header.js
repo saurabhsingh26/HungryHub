@@ -6,7 +6,7 @@ import swiggy from "../swiggy.png";
 const Header = () => {
   // Subscribing to the store using Selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log("cartItems", cartItems);
+  // console.log("cartItems", cartItems);
 
   return (
     <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 lg:p-8">
@@ -31,7 +31,9 @@ const Header = () => {
           <li className="pr-3">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart {cartItems.length}</li>
+          <li className="pr-3">
+            <Link to="/cart">Cart {cartItems.length}</Link>
+          </li>
         </ul>
       </div>
     </div>
