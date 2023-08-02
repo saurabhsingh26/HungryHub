@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   // console.log(cartItems);
+
+  if(cartItems.length === 0){
+    return <h1>Your cart is empty</h1>;
+  }
   return (
     <div style={{ backgroundColor: "#E4E7E9" }} className="flex">
       <div className="flex flex-col w-6/12 mx-10">
@@ -82,8 +86,8 @@ const Cart = () => {
             </div>
           </div>
           <div className="item-details">
-            {cartItems.map((item) => (
-              <div className="flex justify-between items-center">
+            {cartItems.map((item, index) => (
+              <div className="flex justify-between items-center" key={index}>
                 {/* {console.log("item", item)} */}
                 <div className="flex">
                   {item?.card?.info?.itemAttribute?.vegClassifier ===
