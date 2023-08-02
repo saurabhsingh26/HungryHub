@@ -11,22 +11,20 @@ const CategoryItem = ({ item }) => {
   const [isAdded, setIsAdded] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const cartItems = useSelector((store) => store.cart.items);
-  // const isPresent = cartItems.findIndex(item);
+
   useEffect(() => {
     const isPresentAt = cartItems.findIndex(
       (el) => el.card.info.id === item.card.info.id
     );
-    console.log("isPresentAt", isPresentAt);
     setIsAdded(isPresentAt >= 0);
     setQuantity(cartItems?.[isPresentAt]?.inStock);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartItems]);
 
-  // console.log("isPresent", isPresent);
   const dispatch = useDispatch();
   // Dispatch an action
   const handleAddItem = (item) => {
-    dispatch(addItem({ ...item, inStock:1}));
+    dispatch(addItem({ ...item, inStock: 1 }));
   };
   return (
     <div key={item.card.info.id}>
@@ -69,14 +67,16 @@ const CategoryItem = ({ item }) => {
 
           <div className="absolute z-10 top-20 right-4 sm:right-4">
             {isAdded && quantity ? (
-              <div className="flex justify-between sm:w-20 bg-white border shadow-2xl text-green-600 font-semibold px-2">
+              <div className="flex justify-between w-[78px] bg-white border shadow-2xl text-green-600 font-semibold">
                 <button
+                  className="w-6"
                   onClick={() => dispatch(decreaseQuantity(item.card.info.id))}
                 >
                   -
                 </button>
-                <h1>{quantity}</h1>
+                <div className="w-2">{quantity}</div>
                 <button
+                  className="w-6"
                   onClick={() => dispatch(increaseQuantity(item.card.info.id))}
                 >
                   +

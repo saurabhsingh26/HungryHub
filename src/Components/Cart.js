@@ -5,13 +5,37 @@ import {
   decreaseQuantity,
   increaseQuantity,
 } from "../Redux/features/cartSlice";
+import emptycart from "../emptycart.png";
+
+
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
   const dispatch = useDispatch();
 
   if (cartItems.length === 0) {
-    return <h1>Your cart is empty</h1>;
+    return (
+      // Empty cart
+      <div className="flex flex-col items-center justify-between">
+        <div>
+          <img className="w-80 h-72 my-5" src={emptycart} alt="empty-cart" />
+        </div>
+        <div style={{ color: "#535665" }} className="text-xl font-semibold">
+          Your cart is empty
+        </div>
+        <div style={{ color: "#7E808C" }} className="text-sm my-2">
+          You can go to home page to view more restaurants
+        </div>
+        <div className="my-5">
+          <Link
+            to="/"
+            style={{ backgroundColor: "#FC8019" }}
+            className="text-white p-3 font-semibold"
+          >
+            SEE RESTAURANTS NEAR YOU
+          </Link>
+        </div>
+      </div>
+    );
   }
   return (
     <div
@@ -95,9 +119,8 @@ const Cart = () => {
           </div>
           <div className="item-details">
             {cartItems.map((item, index) => (
-              <div className="flex justify-between items-center" key={index}>
-                {console.log("item", item)}
-                <div className="flex">
+              <div className="flex items-center" key={index}>
+                <div className="flex w-1/12">
                   {item?.card?.info?.itemAttribute?.vegClassifier ===
                   "NONVEG" ? (
                     <div className="border border-red-600 w-3 h-3 flex justify-center items-center">
@@ -109,21 +132,26 @@ const Cart = () => {
                     </div>
                   )}
                 </div>
-                <div>
-                  <h1 className="text-md font-medium my-1 text-black">
+                <div className="w-6/12">
+                  <h1
+                    style={{ color: "#282C3F" }}
+                    className="text-sm font-medium my-1 text-black"
+                  >
                     {item?.card?.info?.name}
                   </h1>
                 </div>
-                <div className="flex justify-between sm:w-20 bg-white border shadow-2xl text-green-600 font-semibold px-2">
+                <div className="flex justify-between sm:w-[70px] bg-white border shadow-2xl text-green-600 font-semibold mx-4">
                   <button
+                    className="w-6"
                     onClick={() =>
                       dispatch(decreaseQuantity(item.card.info.id))
                     }
                   >
                     -
                   </button>
-                  <h1>{item.inStock}</h1>
+                  <div className="w-2">{item.inStock}</div>
                   <button
+                    className="w-6"
                     onClick={() =>
                       dispatch(increaseQuantity(item.card.info.id))
                     }
@@ -131,7 +159,7 @@ const Cart = () => {
                     +
                   </button>
                 </div>
-                <div>
+                <div className="w-1/12">
                   ₹
                   {(item.inStock *
                     (item.card.info.price
