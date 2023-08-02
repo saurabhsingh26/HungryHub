@@ -9,8 +9,11 @@ const Cart = () => {
     return <h1>Your cart is empty</h1>;
   }
   return (
-    <div style={{ backgroundColor: "#E4E7E9" }} className="flex">
-      <div className="flex flex-col w-6/12 mx-10">
+    <div
+      style={{ backgroundColor: "#E4E7E9" }}
+      className="flex flex-col-reverse md:flex-row"
+    >
+      <div className="invisible md:visible overflow-hidden flex flex-col w-12/12 md:w-6/12 mx-10">
         <div className="bg-white p-10 my-8 ">
           <div>
             <h1 style={{ color: "#282C3F" }} className="text-lg">
@@ -64,7 +67,7 @@ const Cart = () => {
           </h1>
         </div>
       </div>
-      <div className="w-5/12">
+      <div className="w-12/12 md:w-6/12 mx-10">
         <div className="restaurant-details bg-white my-8 p-4 ">
           <div className="flex">
             <div className="w-14 h-14">
