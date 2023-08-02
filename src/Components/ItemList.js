@@ -1,9 +1,15 @@
-import React from 'react'
-import { CDN_URL } from '../utils';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { CDN_URL } from "../utils";
+import { addItem } from "../Redux/features/cartSlice";
 
+const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+  // Dispatch an action
+  const handleAddItem = () => {
+    dispatch(addItem("pizza"));
+  };
 
-
-const ItemList = ({items}) => {
   return (
     <div>
       {items.map((item) => (
@@ -50,7 +56,10 @@ const ItemList = ({items}) => {
               )}
 
               <div className="absolute z-10 top-20 right-4 sm:right-4">
-                <button className="p-0 w-20 sm:w-20 rounded-lg bg-white border shadow-2xl text-green-600 font-semibold">
+                <button
+                  className="p-0 w-20 sm:w-20 rounded-lg bg-white border shadow-2xl text-green-600 font-semibold"
+                  onClick={handleAddItem}
+                >
                   ADD+
                 </button>
               </div>
@@ -61,6 +70,6 @@ const ItemList = ({items}) => {
       ))}
     </div>
   );
-}
+};
 
 export default ItemList;
