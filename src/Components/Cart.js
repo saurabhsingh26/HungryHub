@@ -122,7 +122,7 @@ const Cart = () => {
                   >
                     -
                   </button>
-                  <h1>{item.card.info.inStock}</h1>
+                  <h1>{item.inStock}</h1>
                   <button
                     onClick={() =>
                       dispatch(increaseQuantity(item.card.info.id))
@@ -133,7 +133,7 @@ const Cart = () => {
                 </div>
                 <div>
                   ₹
-                  {(item.card.info.inStock *
+                  {(item.inStock *
                     (item.card.info.price
                       ? item.card.info.price
                       : item.card.info.defaultPrice)) /

@@ -8,7 +8,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   const length = cartItems.reduce((acc, curr) => {
-    acc = acc + curr.card.info.inStock;
+    acc = acc + curr.inStock;
     return acc;
   }, 0);
 

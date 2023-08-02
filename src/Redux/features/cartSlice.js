@@ -15,8 +15,8 @@ const cartSlice = createSlice({
       if (itemIndex < 0) {
         state.items.push(action.payload);
       } else {
-        state.items[itemIndex].card.info.inStock =
-          state.items[itemIndex].card.info.inStock + 1;
+        state.items[itemIndex].inStock =
+          state.items[itemIndex].inStock + 1;
       }
       console.log("state.items", current(state.items));
     },
@@ -30,15 +30,16 @@ const cartSlice = createSlice({
       const item = state.items.find(
         (element) => element.card.info.id === action.payload
       );
-      item.card.info.inStock = item.card.info.inStock + 1;
+      // console.log("line 33", current(item));
+      item.inStock = item.inStock + 1;
     },
     decreaseQuantity: (state, action) => {
       const item = state.items.find(
         (element) => element.card.info.id === action.payload
       );
-      item.card.info.inStock = item.card.info.inStock - 1;
-      if(item.card.info.inStock === 0){
-        const index = state.items.findIndex((el) => el.card.info.inStock === 0);
+      item.inStock = item.inStock - 1;
+      if(item.inStock === 0){
+        const index = state.items.findIndex((el) => el.inStock === 0);
         state.items.splice(index,1);
       }
     },

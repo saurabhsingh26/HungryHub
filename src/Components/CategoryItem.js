@@ -16,8 +16,9 @@ const CategoryItem = ({ item }) => {
     const isPresentAt = cartItems.findIndex(
       (el) => el.card.info.id === item.card.info.id
     );
+    console.log("isPresentAt", isPresentAt);
     setIsAdded(isPresentAt >= 0);
-    setQuantity(cartItems?.[isPresentAt]?.card.info.inStock);
+    setQuantity(cartItems?.[isPresentAt]?.inStock);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartItems]);
 
@@ -25,7 +26,7 @@ const CategoryItem = ({ item }) => {
   const dispatch = useDispatch();
   // Dispatch an action
   const handleAddItem = (item) => {
-    dispatch(addItem(item));
+    dispatch(addItem({ ...item, inStock:1}));
   };
   return (
     <div key={item.card.info.id}>
