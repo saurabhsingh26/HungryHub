@@ -1,9 +1,27 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils";
-import { addItem } from "../Redux/features/cartSlice";
+import {
+  addItem,
+  decreaseQuantity,
+  increaseQuantity,
+} from "../Redux/features/cartSlice";
 
-const CategoryItem = ({item}) => {
+const CategoryItem = ({ item }) => {
+  const [isAdded, setIsAdded] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+  const cartItems = useSelector((store) => store.cart.items);
+  // const isPresent = cartItems.findIndex(item);
+  useEffect(() => {
+    const isPresentAt = cartItems.findIndex(
+      (el) => el.card.info.id === item.card.info.id
+    );
+    setIsAdded(isPresentAt >= 0);
+    setQuantity(cartItems?.[isPresentAt]?.card.info.inStock);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cartItems]);
+
+  // console.log("isPresent", isPresent);
   const dispatch = useDispatch();
   // Dispatch an action
   const handleAddItem = (item) => {
@@ -49,12 +67,28 @@ const CategoryItem = ({item}) => {
           )}
 
           <div className="absolute z-10 top-20 right-4 sm:right-4">
-            <button
-              className="p-0 w-20 sm:w-20 rounded-lg bg-white border shadow-2xl text-green-600 font-semibold"
-              onClick={() => handleAddItem(item)}
-            >
-              ADD+
-            </button>
+            {isAdded && quantity ? (
+              <div className="flex justify-between sm:w-20 bg-white border shadow-2xl text-green-600 font-semibold px-2">
+                <button
+                  onClick={() => dispatch(decreaseQuantity(item.card.info.id))}
+                >
+                  -
+                </button>
+                <h1>{quantity}</h1>
+                <button
+                  onClick={() => dispatch(increaseQuantity(item.card.info.id))}
+                >
+                  +
+                </button>
+              </div>
+            ) : (
+              <button
+                className="p-0 w-20 sm:w-20 rounded-lg bg-white border shadow-2xl text-green-600 font-semibold"
+                onClick={() => handleAddItem(item)}
+              >
+                ADD+
+              </button>
+            )}
           </div>
         </div>
       </div>

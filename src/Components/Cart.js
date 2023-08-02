@@ -1,11 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+} from "../Redux/features/cartSlice";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   // console.log(cartItems);
+  const dispatch = useDispatch();
 
-  if(cartItems.length === 0){
+  if (cartItems.length === 0) {
     return <h1>Your cart is empty</h1>;
   }
   return (
@@ -91,7 +96,7 @@ const Cart = () => {
           <div className="item-details">
             {cartItems.map((item, index) => (
               <div className="flex justify-between items-center" key={index}>
-                {/* {console.log("item", item)} */}
+                {console.log("item", item)}
                 <div className="flex">
                   {item?.card?.info?.itemAttribute?.vegClassifier ===
                   "NONVEG" ? (
@@ -110,11 +115,30 @@ const Cart = () => {
                   </h1>
                 </div>
                 <div className="flex justify-between sm:w-20 bg-white border shadow-2xl text-green-600 font-semibold px-2">
-                  <button>-</button>
-                  <h1>1</h1>
-                  <button>+</button>
+                  <button
+                    onClick={() =>
+                      dispatch(decreaseQuantity(item.card.info.id))
+                    }
+                  >
+                    -
+                  </button>
+                  <h1>{item.card.info.inStock}</h1>
+                  <button
+                    onClick={() =>
+                      dispatch(increaseQuantity(item.card.info.id))
+                    }
+                  >
+                    +
+                  </button>
                 </div>
-                <div>₹300</div>
+                <div>
+                  ₹
+                  {(item.card.info.inStock *
+                    (item.card.info.price
+                      ? item.card.info.price
+                      : item.card.info.defaultPrice)) /
+                    100}
+                </div>
               </div>
             ))}
           </div>
