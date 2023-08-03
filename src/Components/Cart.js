@@ -317,6 +317,15 @@ const Cart = () => {
               </div>
             </div>
           </div>
+          <div className="flex justify-end">
+            <Link
+              to="/order/success"
+              onClick={() => dispatch(clearCart())}
+              className="p-3 font-bold text-md bg-green-600 text-white w-[100%] text-center"
+            >
+              PROCEED TO PAY
+            </Link>
+          </div>
         </div>
       </div>
     </div>
