@@ -4,9 +4,9 @@ import ShimmerContainer from "./ShimmerContainer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import PromoCodes from "../utils/PromoCode";
-import star from "../star.png";
-import clock from "../clock.png";
-import rupee from "../rupee.png";
+import star from "../assets/star.png";
+import clock from "../assets/clock.png";
+import rupee from "../assets/rupee.png";
 
 const RestaurantMenu = () => {
   const params = useParams();

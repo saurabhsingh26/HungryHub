@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import swiggy from "../swiggy.png";
+import swiggy from "../assets/swiggy.png";
 
 const Header = () => {
   // Subscribing to the store using Selector
@@ -28,13 +28,13 @@ const Header = () => {
           <li className="pr-3">
             <Link to="/offers">Offers</Link>
           </li>
-          <li className="pr-3">
+          {/* <li className="pr-3">
             <Link to="/about">About</Link>
-          </li>
+          </li> */}
 
-          <li className="pr-3">
+          {/* <li className="pr-3">
             <Link to="/grocery">Grocery</Link>
-          </li>
+          </li> */}
           <li className="pr-3">
             <Link to="/cart">Cart {length}</Link>
           </li>

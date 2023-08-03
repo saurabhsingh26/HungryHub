@@ -21,3 +21,6 @@ export const MENU_API =
 
 export const WHATS_ON_YOUR_MIND =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5940947&lng=85.1375645&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const DOWNLOAD_APP_LOGO =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/";

@@ -1,5 +1,5 @@
-import React from 'react'
-import congo from '../congo.jpg'
+import React from "react";
+import congo from "../assets/congo.jpg";
 const Congratulations = () => {
   return (
     <div className="flex flex-col items-center h-[100vh] px-4">
@@ -19,6 +19,6 @@ const Congratulations = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Congratulations
+export default Congratulations;

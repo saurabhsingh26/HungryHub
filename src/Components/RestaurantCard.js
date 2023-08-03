@@ -1,6 +1,6 @@
 import React from 'react'
 import { CDN_URL } from '../utils';
-import star from '../star.png'
+import star from "../assets/star.png";
 
 const RestaurantCard = (props) => {
   const { restData } = props;

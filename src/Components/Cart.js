@@ -6,7 +6,7 @@ import {
   increaseQuantity,
   clearCart,
 } from "../Redux/features/cartSlice";
-import emptycart from "../emptycart.png";
+import emptycart from "../assets/emptycart.png";
 
 const Cart = () => {
   const [checked, setChecked] = useState();
@@ -20,7 +20,7 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return (
       // Empty cart
-      <div className="flex flex-col items-center justify-between">
+      <div className="flex flex-col items-center justify-between mb-12">
         <div>
           <img className="w-80 h-72 my-5" src={emptycart} alt="empty-cart" />
         </div>
