@@ -144,6 +144,7 @@ const Cart = () => {
         {/* Right section - order details */}
         <div className="w-[100%] md:w-[42%] lg:w-[31%]">
           <div className="restaurant-details bg-white p-4">
+            {/* Header */}
             <div className="flex mb-6">
               <div className="w-14 h-14 mr-4">
                 <img
@@ -163,7 +164,9 @@ const Cart = () => {
                 </p>
               </div>
             </div>
+            {/* Items */}
             <div className="flex flex-col overflow-y-auto h-72 px-3">
+              {/* Items details */}
               <div className="item-details">
                 {cartItems.map((item, index) => (
                   <div className="flex items-center" key={index}>
@@ -217,6 +220,7 @@ const Cart = () => {
                   </div>
                 ))}
               </div>
+              {/* Instructions Input */}
               <div className="my-4 mr-2">
                 <input
                   style={{ backgroundColor: "#F2F2F2" }}
@@ -225,6 +229,7 @@ const Cart = () => {
                   placeholder="Any suggestions? We will pass it on..."
                 />
               </div>
+              {/* No-Contact Delivery */}
               <div className="border flex px-3 py-1 mr-1">
                 <div className="mr-3">
                   <input type="checkbox" className="" onChange={handleChange} />
@@ -251,6 +256,7 @@ const Cart = () => {
                 </div>
                 {/* {input.?[checked] ? (<h1>hello</h1>) : (<h1>hi</h1>)} */}
               </div>
+              {/* Bill Details */}
               <div className="flex flex-col mr-2">
                 <div style={{ color: "#282C3F" }} className="text-sm mt-3">
                   Bill Details
@@ -283,6 +289,7 @@ const Cart = () => {
                 className="border mt-7 mb-1"
               ></div>
             </div>
+            {/* Total Pay */}
             <div
               style={{ color: "#282C3F" }}
               className="flex justify-between text-sm font-bold px-6 py-3"
@@ -293,6 +300,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
+          {/* cancellations policy */}
           <div className="mt-6 bg-white p-6">
             <div className="flex flex-col border p-4">
               <div
@@ -317,6 +325,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
+          {/* Proceed to pay */}
           <div className="flex justify-end">
             <Link
               to="/order/success"
