@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import ShimmerContainer from "./ShimmerContainer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -8,9 +8,9 @@ import star from "../star.png";
 import clock from "../clock.png";
 import rupee from "../rupee.png";
 
-
 const RestaurantMenu = () => {
   const params = useParams();
+  const navigate = useNavigate();
 
   const { resId } = params; //extracting restaurant id from urls
 
@@ -62,14 +62,13 @@ const RestaurantMenu = () => {
   const { message } = labels[2];
   const { lastMileTravelString } = sla;
 
-
   return (
     <div className="flex justify-center">
       {/* Restaurant all details for a particular restaurant id */}
       <div className="flex flex-col w-[90%] md:w-[65%] lg:w-[65%] xl:w-[65%] p-3 items-between">
         <div className="mt-2 mb-6">
           <Link
-            to="/"
+            onClick={() => navigate(-1)}
             className="border p-2 border-red-400 rounded-md font-bold text-md"
           >
             BACK
@@ -80,7 +79,10 @@ const RestaurantMenu = () => {
           <div className="flex justify-between">
             {/* Restaurants Name, Cuisines and Area Name */}
             <div>
-              <p style={{ color: "#282C3F" }} className="text-xl font-bold w-11/12">
+              <p
+                style={{ color: "#282C3F" }}
+                className="text-xl font-bold w-11/12"
+              >
                 {name}
               </p>
               <p style={{ color: "#7E808C" }} className="text-[13px]">
