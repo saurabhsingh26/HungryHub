@@ -91,8 +91,8 @@ const Cart = () => {
                 To place your order now, log in to your existing account or sign
                 up.
               </p>
-              <div className="flex flex-wrap justify-between item mt-8">
-                <div className="border inline-block py-2 px-11">
+              <div className="flex flex-wrap mt-8">
+                <div className="border inline-block py-2 px-11 mx-1 my-1">
                   <Link to="#">
                     <p
                       style={{ color: "#60B246" }}
@@ -110,7 +110,7 @@ const Cart = () => {
                 </div>
                 <div
                   style={{ backgroundColor: "#7BBB64" }}
-                  className="border inline-block py-2 px-11"
+                  className="border inline-block py-2 px-11 mx-1 my-1"
                 >
                   <Link to="#">
                     <p
@@ -321,7 +321,7 @@ const Cart = () => {
             <Link
               to="/order/success"
               onClick={() => dispatch(clearCart())}
-              className="p-3 font-bold text-md bg-green-600 text-white w-[100%] text-center"
+              className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
             >
               PROCEED TO PAY
             </Link>
