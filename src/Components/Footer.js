@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="flex flex-wrap bg-black text-white justify-around p-10">
       <div className="flex flex-col">
         <div className="flex items-center">
-          <img src={swiggy} alt="swiggy" className="h-6 mr-2" />
+          <img src={swiggy} alt="swiggy" className="h-7 mr-2" />
           <div className="text-3xl font-bold">Swiggy</div>
         </div>
         <div className="leading-loose my-4">
