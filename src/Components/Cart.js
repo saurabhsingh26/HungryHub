@@ -81,7 +81,7 @@ const Cart = () => {
       </div>
       <div className="flex flex-col-reverse md:flex-row md:justify-between md:p-4 lg:p-8">
         {/* left section - account details */}
-        <div className="invisible md:visible overflow-hidden flex flex-col md:w-[55%] lg:w-[67%]">
+        <div className="invisible md:visible overflow-hidden flex flex-col w-0 h-0 md:w-[55%] md:h-auto lg:w-[67%] lg:h-auto">
           <div className="bg-white p-10 mb-3">
             <div>
               <h1 style={{ color: "#282C3F" }} className="text-lg font-bold">
