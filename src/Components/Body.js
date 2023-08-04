@@ -4,6 +4,7 @@ import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import ShimmerContainer from './ShimmerContainer';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import Spinner from './Spinner';
+import HomeFooter from './HomeFooter';
 // import data from '../utils/RestaurantData';
 
 const Body = () => {
@@ -178,6 +179,7 @@ const Body = () => {
           );
         })}
       </div>
+      <HomeFooter />
     </div>
   );
 }
