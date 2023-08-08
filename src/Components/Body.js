@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
-import ShimmerContainer from './ShimmerContainer';
+import Shimmer from './Shimmer';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import Spinner from './Spinner';
 import HomeFooter from './HomeFooter';
@@ -64,7 +64,7 @@ const Body = () => {
 
 
   return listOfRestaurant.length === 0 ? (
-    [<Spinner key={0} />, <ShimmerContainer key={1} />]
+    [<Spinner key={0} />, <Shimmer key={1} />]
   ) : (
     <div className="body">
       {/* Filters  */}

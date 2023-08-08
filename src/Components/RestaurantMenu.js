@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import ShimmerContainer from "./ShimmerContainer";
+import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import PromoCodes from "../utils/PromoCode";
@@ -19,7 +19,7 @@ const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) {
-    return <ShimmerContainer />;
+    return <Shimmer />;
   }
 
   // Old way to fetch categories
