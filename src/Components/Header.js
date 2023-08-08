@@ -14,9 +14,9 @@ const Header = () => {
 
   return (
     <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 lg:p-8">
-      <div className="logo-container hover:scale-110 hover:duration-300 cursor-pointer">
+      <Link to="/" className="logo-container hover:scale-110 hover:duration-300">
         <img className="w-[34px]" src={swiggy} alt="logo" />
-      </div>
+      </Link>
       <div
         style={{ color: "#3D4152" }}
         className="flex items-center text-base font-medium"

@@ -3,6 +3,7 @@ import RestaurantByCity from "../utils/RestaurantByCity";
 import CuisinesNearMe from "../utils/CuisinesNearMe";
 import AppDetails from "../utils/AppDetails";
 import { APP_LOGO } from "../utils/constants";
+import { Link } from "react-router-dom";
 const HomeFooter = () => {
   return (
     <div>
@@ -13,12 +14,14 @@ const HomeFooter = () => {
         </div>
         <div className="flex flex-wrap justify-center items-center">
           {RestaurantByCity.map((city, index) => (
-            <div
+            <Link
+              to={city.link}
               key={index}
+              style={{ color: "#02060CBF" }}
               className="w-56 border text-center p-2 rounded-lg truncate m-2"
             >
               Best Restaurant in {city.text}
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -28,12 +31,14 @@ const HomeFooter = () => {
         </div>
         <div className="flex flex-wrap justify-center items-center">
           {CuisinesNearMe.map((cuisine, index) => (
-            <div
+            <Link
+              to={cuisine.link}
               key={index}
+              style={{ color: "#02060CBF" }}
               className="w-56 border text-center p-2 rounded-lg truncate m-2"
             >
               {cuisine.text}
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -42,12 +47,20 @@ const HomeFooter = () => {
           Explore Every Restaurants Near Me
         </div>
         <div className="flex flex-wrap justify-center items-center">
-          <div className="w-80 border text-center p-2 rounded-lg truncate m-2">
-            <p>Explore Restaurants Near Me</p>
-          </div>
-          <div className="w-80 border text-center py-2 px-2 rounded-lg truncate m-2">
-            <p>Explore Top Rated Restaurants Near Me</p>
-          </div>
+          <Link
+            to="https://www.swiggy.com/restaurants-near-me"
+            style={{ color: "#02060CBF" }}
+            className="w-80 border text-center p-2 rounded-lg truncate m-2"
+          >
+            Explore Restaurants Near Me
+          </Link>
+          <Link
+            to="https://www.swiggy.com/best-restaurants-near-me"
+            style={{ color: "#02060CBF" }}
+            className="w-80 border text-center py-2 px-2 rounded-lg truncate m-2"
+          >
+            Explore Top Rated Restaurants Near Me
+          </Link>
         </div>
       </div>
       {/* App details */}
@@ -63,13 +76,17 @@ const HomeFooter = () => {
           <p>the Swiggy app now</p>
         </div>
         <div className="w-[100px] lg:min-w-[190px]">
-          <img
-            src={APP_LOGO + AppDetails.card.card.androidAppImage}
-            alt="android"
-          />
+          <Link to={AppDetails.card.card.androidAppLink}>
+            <img
+              src={APP_LOGO + AppDetails.card.card.androidAppImage}
+              alt="android"
+            />
+          </Link>
         </div>
         <div className="w-[100px] lg:min-w-[190px]">
-          <img src={APP_LOGO + AppDetails.card.card.iosAppImage} alt="ios" />
+          <Link to={AppDetails.card.card.iosAppLink}>
+            <img src={APP_LOGO + AppDetails.card.card.iosAppImage} alt="ios" />
+          </Link>
         </div>
       </div>
     </div>
