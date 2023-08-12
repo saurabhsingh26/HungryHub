@@ -24,3 +24,6 @@ export const WHATS_ON_YOUR_MIND =
 
 export const APP_LOGO =
   "https://corsproxy.io/?https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/";
+
+export const SEARCH =
+  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/suggest?lat=25.603916&lng=85.1360248&trackingId=undefined&str=";

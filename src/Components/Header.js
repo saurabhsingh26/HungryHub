@@ -23,7 +23,7 @@ const Header = () => {
       >
         <ul className="flex">
           <li className="pr-3">
-            <Link to="/">Home</Link>
+            <Link to="/search">Search</Link>
           </li>
           <li className="pr-3">
             <Link to="/offers">Offers</Link>

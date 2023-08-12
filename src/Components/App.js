@@ -10,6 +10,7 @@ import ScrollToTop from "./ScrollToTop";
 import Cart from "./Cart";
 import Congratulations from "./Congratulations";
 import Footer from "./Footer";
+import Search from "./Search";
 
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
@@ -22,6 +23,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Body />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/offers" element={<OfferCard />} />
           <Route path="/about" element={<About />} />
           <Route
