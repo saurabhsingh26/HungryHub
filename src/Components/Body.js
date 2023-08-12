@@ -1,10 +1,11 @@
-import React, {useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
-import Shimmer from './Shimmer';
-import useOnlineStatus from '../utils/useOnlineStatus';
-import Spinner from './Spinner';
-import HomeFooter from './HomeFooter';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import Spinner from "./Spinner";
+import HomeFooter from "./HomeFooter";
+import BodyCarousel from "./BodyCarousel";
 // import data from '../utils/RestaurantData';
 
 const Body = () => {
@@ -14,14 +15,29 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  },[])
-  
-  const fetchData  = async () => {
+  }, []);
+
+  const handleClick = () => {
+    const targetSection = document.getElementById("visible-part");
+    var interval = setInterval(function () {
+      var targetSectionCoordinates = targetSection.getBoundingClientRect();
+      if (
+        targetSectionCoordinates.top >= 0 &&
+        targetSectionCoordinates.top <= 10
+      ) {
+        clearInterval(interval);
+        return;
+      }
+      window.scrollBy(0, 5);
+    }, 2);
+  };
+
+  const fetchData = async () => {
     // const data = await fetch(
     //   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.6342587&lng=85.0584152&page_type=DESKTOP_WEB_LISTING"
     // );
     // const json = await data.json();
-    
+
     // Not working for mobile devices
     // setListOfRestaurant(
     //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -29,7 +45,6 @@ const Body = () => {
     // setFilteredRestaurants(
     //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // );
-
 
     // New way to fetch api for mobile and desktop (testing)
     const data = await fetch(
@@ -41,34 +56,53 @@ const Body = () => {
         (y) =>
           y?.card?.card?.["@type"] ===
           "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget"
-      )?.filter(
+      )
+      ?.filter(
         (x) =>
           x?.card?.card?.id === "top_brands_for_you" ||
           x?.card?.card?.id === "restaurant_grid_listing"
-      )?.map((z) => z?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      
+      )
+      ?.map((z) => z?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
     setListOfRestaurant(restaurants[0]);
     setFilteredRestaurants(restaurants[0]);
-  }
+  };
 
   const onlineStatus = useOnlineStatus();
-  
-  if (onlineStatus === false){
-    return <h1 className='text-xl font-bold p-4 text-center text-red-500'>Looks like you're offline... Please check your internet connection!! </h1>
+
+  if (onlineStatus === false) {
+    return (
+      <h1 className="text-xl font-bold p-4 text-center text-red-500">
+        Looks like you're offline... Please check your internet connection!!
+      </h1>
+    );
   }
 
   if (!listOfRestaurant) {
     return window.location.reload();
   }
 
-
-
   return listOfRestaurant.length === 0 ? (
     [<Spinner key={0} />, <Shimmer key={1} />]
   ) : (
     <div className="body">
+      {/* Carousel */}
+      <div className="h-0 invisible lg:h-auto lg:visible overflow-hidden mb-6">
+        <BodyCarousel />
+      </div>
+      {/* Carousel for mobile */}
+      <div
+        className="flex justify-center visible lg:invisible lg:h-0 overflow-hidden -mb-20"
+        onClick={handleClick}
+      >
+        <img
+          className="w-[90%]"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/faxdufvkcllzse67eqry"
+          alt="home-carousel"
+        />
+      </div>
       {/* Filters  */}
-      <div className="flex justify-center mt-20">
+      <div className="flex justify-center mt-20" id="visible-part">
         <div className="flex flex-col justify-center w-[90%] ">
           <div className="flex justify-between items-center ">
             <div>
@@ -182,6 +216,6 @@ const Body = () => {
       <HomeFooter />
     </div>
   );
-}
+};
 
 export default Body;
