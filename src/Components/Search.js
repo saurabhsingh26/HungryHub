@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CDN_URL } from "../utils/constants";
 import SearchCuisines from "../utils/SearchCuisines";
+
 const Search = () => {
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -13,7 +14,7 @@ const Search = () => {
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/v3?lat=25.5940947&lng=85.1375645&str=Domino%27s%20Pizza&submitAction=SUGGESTION&metaData=" +
         metaData
     );
-    console.log("data", data);
+    // console.log("data", data);
     const { id } =
       data?.data?.cards?.[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.[0]
         ?.card?.card?.info;
@@ -104,7 +105,7 @@ const Search = () => {
               {SearchCuisines.map((cuisine) => (
                 <div
                   key={cuisine.id}
-                  className="min-w-[144px] min-h-[180px]"
+                  className="min-w-[50px] min-h-[80px] lg:min-w-[144px] lg:min-h-[180px]"
                   onClick={() => handleClick(cuisine.action.text)}
                 >
                   <img
