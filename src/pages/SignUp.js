@@ -8,7 +8,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
-  const [signingUp, setSigningUp] = useState();
+  const [signingUp, setSigningUp] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -106,7 +106,7 @@ const SignUp = () => {
               style={{ backgroundColor: "#FC8019" }}
               className="text-white p-3 cursor-pointer text-lg font-bold"
             >
-              {signingUp ? "Loading..." : "Continue"}
+              {signingUp ? "SIGNING UP..." : "SIGN UP"}
             </button>
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>

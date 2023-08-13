@@ -1,14 +1,68 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import jwt from "jwt-decode";
+import { setUser } from "../Redux/features/userSlice";
+import { getFormBody } from "../utils";
+import { HUNGRYHUB } from "../utils/constants";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false);
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.user.user);
+  // console.log("user", user);
+
+  useEffect(() => {
+    const userToken = localStorage.getItem("__hungryhub_token__");
+    if (userToken) {
+      const user = jwt(userToken);
+      dispatch(setUser({ user }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login");
-  }
+    setLoggingIn(true);
+    const bodyString = getFormBody({
+      email: email,
+      password: password,
+    });
+
+    try {
+      const response = await fetch(`${HUNGRYHUB}/api/v1/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: bodyString,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        localStorage.setItem("__hungryhub_token__", data.data.token);
+        navigate("/offers");
+        setLoggingIn(false);
+      }
+
+      setLoggingIn(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if (user.isLoggedIn) {
+      navigate("/offers");
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
+
   return (
     <div className="flex justify-center">
       <div className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] pt-5 pb-10 min-h-[100vh]">
@@ -49,10 +103,11 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button
+              disabled={loggingIn}
               style={{ backgroundColor: "#FC8019" }}
               className="text-white p-3 text-lg font-bold"
             >
-              LOGIN
+              {loggingIn ? "LOGGING IN..." : "LOG IN"}
             </button>
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>
