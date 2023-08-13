@@ -50,7 +50,7 @@ const Login = () => {
             />
             <button
               style={{ backgroundColor: "#FC8019" }}
-              className="text-white p-3"
+              className="text-white p-3 text-lg font-bold"
             >
               LOGIN
             </button>

@@ -104,7 +104,7 @@ const SignUp = () => {
             <button
               disabled={signingUp}
               style={{ backgroundColor: "#FC8019" }}
-              className="text-white p-3 cursor-pointer"
+              className="text-white p-3 cursor-pointer text-lg font-bold"
             >
               {signingUp ? "Loading..." : "Continue"}
             </button>
