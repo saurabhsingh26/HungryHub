@@ -27,3 +27,5 @@ export const APP_LOGO =
 
 export const SEARCH =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/suggest?lat=25.603916&lng=85.1360248&trackingId=undefined&str=";
+
+export const HUNGRYHUB = "https://corsproxy.io/?https://hungryhub.onrender.com";

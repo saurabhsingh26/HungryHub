@@ -14,7 +14,10 @@ const Header = () => {
 
   return (
     <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 lg:p-8">
-      <Link to="/" className="logo-container hover:scale-110 hover:duration-300">
+      <Link
+        to="/"
+        className="logo-container hover:scale-110 hover:duration-300"
+      >
         <img className="w-[34px]" src={swiggy} alt="logo" />
       </Link>
       <div
@@ -37,6 +40,9 @@ const Header = () => {
           </li> */}
           <li className="pr-3">
             <Link to="/cart">Cart {length}</Link>
+          </li>
+          <li className="pr-3">
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </div>

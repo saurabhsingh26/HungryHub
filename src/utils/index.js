@@ -17,3 +17,16 @@ export {
   SEARCH_BY_NAME,
   MENU_API,
 };
+
+export const getFormBody = (params) => {
+  let formBody = [];
+
+  for (let property in params) {
+    let encodedKey = encodeURIComponent(property);
+    let encodedValue = encodeURIComponent(params[property]);
+
+    formBody.push(encodedKey + "=" + encodedValue);
+  }
+
+  return formBody.join("&");
+};
