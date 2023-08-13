@@ -15,7 +15,7 @@ const HomeFooter = () => {
         <div className="flex flex-wrap justify-center items-center">
           {RestaurantByCity.map((city, index) => (
             <Link
-              to={city.link}
+              to="/"
               key={index}
               style={{ color: "#02060CBF" }}
               className="w-56 border text-center p-2 rounded-lg truncate m-2"
@@ -32,7 +32,7 @@ const HomeFooter = () => {
         <div className="flex flex-wrap justify-center items-center">
           {CuisinesNearMe.map((cuisine, index) => (
             <Link
-              to={cuisine.link}
+              to="/"
               key={index}
               style={{ color: "#02060CBF" }}
               className="w-56 border text-center p-2 rounded-lg truncate m-2"
@@ -48,14 +48,14 @@ const HomeFooter = () => {
         </div>
         <div className="flex flex-wrap justify-center items-center">
           <Link
-            to="https://www.swiggy.com/restaurants-near-me"
+            to="/"
             style={{ color: "#02060CBF" }}
             className="w-80 border text-center p-2 rounded-lg truncate m-2"
           >
             Explore Restaurants Near Me
           </Link>
           <Link
-            to="https://www.swiggy.com/best-restaurants-near-me"
+            to="/"
             style={{ color: "#02060CBF" }}
             className="w-80 border text-center py-2 px-2 rounded-lg truncate m-2"
           >
