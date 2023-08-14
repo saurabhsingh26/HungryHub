@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
 import { setUser } from "../Redux/features/userSlice";
@@ -13,17 +13,6 @@ const Login = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((store) => store.user.user);
-  // console.log("user", user);
-
-  useEffect(() => {
-    const userToken = localStorage.getItem("__hungryhub_token__");
-    if (userToken) {
-      const user = jwt(userToken);
-      dispatch(setUser({ user }));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,25 +32,26 @@ const Login = () => {
       });
 
       const data = await response.json();
+      // console.log('data',data);
 
       if (data.success) {
         localStorage.setItem("__hungryhub_token__", data.data.token);
-        navigate("/offers");
-        setLoggingIn(false);
+        const userToken = localStorage.getItem("__hungryhub_token__");
+        if (userToken) {
+          const userDetails = jwt(userToken);
+          dispatch(setUser(userDetails));
+          navigate("/offers");
+          setLoggingIn(false);
+        }
       }
 
       setLoggingIn(false);
+
     } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(() => {
-    if (user.isLoggedIn) {
-      navigate("/offers");
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
 
   return (
     <div className="flex justify-center">
