@@ -9,8 +9,6 @@ import { withOfferLabel } from './RestaurantCard';
 const OfferCard = () => {
   const [offersRestaurants, setOffersRestaurants] = useState([]);
   const RestaurantCardOffer = withOfferLabel(RestaurantCard);
-  
-  document.title = "Restaurants With Great Offers Near You";
   useEffect(() => {
     fetchOffers();
   }, []);
