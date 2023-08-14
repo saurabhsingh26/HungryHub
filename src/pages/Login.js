@@ -35,7 +35,7 @@ const Login = () => {
       });
 
       const data = await response.json();
-      
+
 
       if (data.success) {
         localStorage.setItem("__hungryhub_token__", data.data.token);
@@ -58,7 +58,7 @@ const Login = () => {
   };
 
   if(isUserLoggedIn){
-    navigate(-1);
+    navigate('/cart');
   }
 
   return (
