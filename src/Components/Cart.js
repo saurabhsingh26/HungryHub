@@ -69,10 +69,10 @@ const Cart = () => {
       <div className="flex justify-between pt-3 pb-2 px-2 md:px-4 lg:px-8 md:pt-6 lg:pt-6">
         <div className="">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/offer")}
             className="border p-2 border-red-400 rounded-md font-bold text-md bg-white"
           >
-            BACK
+            OFFERS
           </button>
         </div>
         <div className="">
