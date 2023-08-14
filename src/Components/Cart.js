@@ -7,12 +7,16 @@ import {
   clearCart,
 } from "../Redux/features/cartSlice";
 import emptycart from "../assets/emptycart.png";
+import location from '../assets/location.png'
 
 const Cart = () => {
   const [checked, setChecked] = useState();
   const cartItems = useSelector((store) => store.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const userDetails = useSelector((store) => store.account.user);
+
   const handleChange = (e) => {
     setChecked(e.target.checked);
   };
@@ -82,59 +86,110 @@ const Cart = () => {
       <div className="flex flex-col-reverse md:flex-row md:justify-between md:p-4 lg:p-8">
         {/* left section - account details */}
         <div className="invisible md:visible overflow-hidden flex flex-col w-0 h-0 md:w-[55%] md:h-auto lg:w-[67%] lg:h-auto">
-          <div className="bg-white p-10 mb-3">
-            <div>
-              <h1 style={{ color: "#282C3F" }} className="text-lg font-bold">
-                Account
-              </h1>
-              <p style={{ color: "#7E808C" }} className="text-base">
-                To place your order now, log in to your existing account or sign
-                up.
-              </p>
-              <div className="flex flex-wrap mt-8">
-                <div className="border inline-block py-2 px-11 mx-1 my-1">
-                  <Link to="#">
-                    <p
-                      style={{ color: "#60B246" }}
-                      className="text-[13px] w-28"
-                    >
-                      Have an account?
-                    </p>
-                    <h1
-                      style={{ color: "#60B246" }}
-                      className="text-sm font-bold"
-                    >
-                      LOG IN
-                    </h1>
-                  </Link>
-                </div>
-                <div
-                  style={{ backgroundColor: "#7BBB64" }}
-                  className="border inline-block py-2 px-11 mx-1 my-1"
-                >
-                  <Link to="#">
-                    <p
-                      style={{ color: "#ffffff" }}
-                      className="text-[13px] w-28"
-                    >
-                      New to Swiggy?
-                    </p>
-                    <h1
-                      style={{ color: "#ffffff" }}
-                      className="text-sm font-bold"
-                    >
-                      SIGN UP
-                    </h1>
-                  </Link>
+          {userDetails.isLoggedIn ? (
+            <div className="bg-white p-10 mb-3">
+              <div style={{ color: "#282C3F" }} className="text-lg font-bold">
+                Logged in &nbsp; &nbsp; ✅
+              </div>
+              <div
+                style={{ color: "#282C3F" }}
+                className="text-lg font-medium mt-4"
+              >
+                {userDetails.name}
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white p-10 mb-3">
+              <div>
+                <h1 style={{ color: "#282C3F" }} className="text-lg font-bold">
+                  Account
+                </h1>
+                <p style={{ color: "#7E808C" }} className="text-base">
+                  To place your order now, log in to your existing account or
+                  sign up.
+                </p>
+                <div className="flex flex-wrap mt-8">
+                  <div className="border inline-block py-2 px-11 mx-1 my-1 hover:shadow">
+                    <Link to="/login">
+                      <p
+                        style={{ color: "#60B246" }}
+                        className="text-[13px] w-28"
+                      >
+                        Have an account?
+                      </p>
+                      <h1
+                        style={{ color: "#60B246" }}
+                        className="text-sm font-bold text-center"
+                      >
+                        LOG IN
+                      </h1>
+                    </Link>
+                  </div>
+                  <div
+                    style={{ backgroundColor: "#7BBB64" }}
+                    className="border inline-block py-2 px-11 mx-1 my-1 hover:shadow"
+                  >
+                    <Link to="/create">
+                      <p
+                        style={{ color: "#ffffff" }}
+                        className="text-[13px] w-28"
+                      >
+                        New to Swiggy?
+                      </p>
+                      <h1
+                        style={{ color: "#ffffff" }}
+                        className="text-sm font-bold text-center"
+                      >
+                        SIGN UP
+                      </h1>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="bg-white p-10 mb-3">
-            <h1 style={{ color: "#93959F" }} className="text-lg font-bold">
-              Delivery address
-            </h1>
-          </div>
+          )}
+          {userDetails.isLoggedIn ? (
+            <div className="bg-white p-10 mb-3">
+              <div style={{ color: "#282C3F" }} className="text-lg font-bold">
+                Select delivery address
+              </div>
+              <div
+                style={{ color: "#7E808C" }}
+                className="text-base font-medium mt-4"
+              >
+                You have a saved address in this location
+              </div>
+              <div className="border p-8 flex items-start mt-4">
+                <div>
+                  <img src={location} alt="location" className="w-5 h-5 mt-1" />
+                </div>
+                <div className="ml-5">
+                  <div
+                    style={{ color: "#282C3F" }}
+                    className="text-base font-semibold"
+                  >
+                    Home
+                  </div>
+                  <div style={{ color: "#93959F" }} className="text-sm my-4">
+                    {userDetails.address}
+                  </div>
+                  <button
+                    style={{ backgroundColor: "#60B246" }}
+                    className=" text-white text-sm font-bold py-2 px-4"
+                  >
+                    DELIVER HERE
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white p-10 mb-3">
+              <h1 style={{ color: "#93959F" }} className="text-lg font-bold">
+                Delivery address
+              </h1>
+            </div>
+          )}
+
           <div className="bg-white p-10">
             <h1 style={{ color: "#93959F" }} className="text-lg font-bold">
               Payment
@@ -327,13 +382,21 @@ const Cart = () => {
           </div>
           {/* Proceed to pay */}
           <div className="flex justify-end">
-            <Link
-              to="/order/success"
-              onClick={() => dispatch(clearCart())}
-              className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
-            >
-              PROCEED TO PAY
-            </Link>
+            {userDetails.isLoggedIn ? (
+              <Link
+                to="/order/success"
+                onClick={() => dispatch(clearCart())}
+                className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
+              >
+                PROCEED TO PAY
+              </Link>
+            ) : (
+              <button disabled={true}
+                className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
+              >
+                LOGIN TO ORDER
+              </button>
+            )}
           </div>
         </div>
       </div>
