@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import jwt from "jwt-decode";
+import { toast } from "react-toastify";
 import { removeUser, setUser } from "../Redux/features/userSlice";
 import swiggy from "../assets/swiggy.png";
 
@@ -19,6 +20,7 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem("__hungryhub_token__");
     dispatch(removeUser())
+    toast.success("Logged out successfully");
   }
 
   useEffect(() => {
