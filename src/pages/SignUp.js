@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { HUNGRYHUB } from "../utils/constants";
 import { getFormBody } from "../utils";
 
@@ -9,6 +10,9 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [signingUp, setSigningUp] = useState(false);
+
+  const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -43,6 +47,10 @@ const SignUp = () => {
       console.log(err);
     }
   };
+
+  if (isUserLoggedIn) {
+    navigate(-1);
+  }
 
   return (
     <div className="flex justify-center">

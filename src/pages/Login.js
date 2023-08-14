@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
 import { setUser } from "../Redux/features/userSlice";
@@ -10,6 +10,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loggingIn, setLoggingIn] = useState(false);
+
+  const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn)
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -52,6 +54,9 @@ const Login = () => {
     }
   };
 
+  if(isUserLoggedIn){
+    navigate(-1);
+  }
 
   return (
     <div className="flex justify-center">
