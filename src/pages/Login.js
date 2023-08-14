@@ -44,6 +44,7 @@ const Login = () => {
           const userDetails = jwt(userToken);
           dispatch(setUser(userDetails));
           toast.success("Sign in successfully");
+          navigate("/cart")
           setLoggingIn(false);
         }
       }else{

@@ -83,9 +83,9 @@ const Cart = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col-reverse md:flex-row md:justify-between md:p-4 lg:p-8">
+      <div className="flex flex-col md:flex-row md:justify-between md:p-4 lg:p-8">
         {/* left section - account details */}
-        <div className="invisible md:visible overflow-hidden flex flex-col w-0 h-0 md:w-[55%] md:h-auto lg:w-[67%] lg:h-auto">
+        <div className=" flex flex-col  md:w-[55%] md:h-auto lg:w-[67%] lg:h-auto">
           {userDetails.isLoggedIn ? (
             <div className="bg-white p-10 mb-3">
               <div style={{ color: "#282C3F" }} className="text-lg font-bold">
@@ -161,7 +161,11 @@ const Cart = () => {
               </div>
               <div className="border p-8 flex items-start mt-4">
                 <div>
-                  <img src={location} alt="location" className="w-5 h-5 mt-1" />
+                  <img
+                    src={location}
+                    alt="location"
+                    className="w-20 h-4 sm:w-20 sm:h-10 md:w-16 md:h-5 lg:w-10 lg:h-6 mt-1"
+                  />
                 </div>
                 <div className="ml-5">
                   <div
@@ -190,10 +194,16 @@ const Cart = () => {
             </div>
           )}
 
-          <div className="bg-white p-10">
-            <h1 style={{ color: "#93959F" }} className="text-lg font-bold">
-              Payment
-            </h1>
+          <div className="bg-white p-10 mb-3">
+            {userDetails.isLoggedIn ? (
+              <h1 style={{ color: "#93959F" }} className="text-lg font-bold">
+                Payment &nbsp; ✅
+              </h1>
+            ) : (
+              <h1 style={{ color: "#93959F" }} className="text-lg font-bold">
+                Payment
+              </h1>
+            )}
           </div>
         </div>
         {/* Right section - order details */}
@@ -391,7 +401,8 @@ const Cart = () => {
                 PROCEED TO PAY
               </Link>
             ) : (
-              <button disabled={true}
+              <button
+                disabled={true}
                 className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
               >
                 LOGIN TO ORDER
