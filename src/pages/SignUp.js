@@ -120,7 +120,7 @@ const SignUp = () => {
             </button>
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>
-                By clicking on Login, I accept the
+                By clicking on Login, I accept the &nbsp;
               </span>
               Terms & Conditions & Privacy Policy
             </p>
