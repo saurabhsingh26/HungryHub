@@ -7,10 +7,11 @@ import {
   clearCart,
 } from "../Redux/features/cartSlice";
 import emptycart from "../assets/emptycart.png";
-import location from '../assets/location.png'
+import location from "../assets/location.png";
 
 const Cart = () => {
   const [checked, setChecked] = useState();
+  const [tick, setTick] = useState(false);
   const cartItems = useSelector((store) => store.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -164,7 +165,7 @@ const Cart = () => {
                   <img
                     src={location}
                     alt="location"
-                    className="w-20 h-4 sm:w-20 sm:h-10 md:w-16 md:h-5 lg:w-10 lg:h-6 mt-1"
+                    className="w-20 h-4 sm:w-20 sm:h-10 md:w-16 md:h-5 lg:w-8 lg:h-6 mt-1"
                   />
                 </div>
                 <div className="ml-5">
@@ -177,12 +178,26 @@ const Cart = () => {
                   <div style={{ color: "#93959F" }} className="text-sm my-4">
                     {userDetails.address}
                   </div>
-                  <button
-                    style={{ backgroundColor: "#60B246" }}
-                    className=" text-white text-sm font-bold py-2 px-4"
-                  >
-                    DELIVER HERE
-                  </button>
+                  {tick ? (
+                    <div className="flex items-center">
+                      <button
+                        disabled={true}
+                        style={{ backgroundColor: "#60B246" }}
+                        className=" text-white text-sm font-bold py-2 px-4"
+                      >
+                        COOL!
+                      </button>
+                      <span className="ml-4">✅</span>
+                    </div>
+                  ) : (
+                    <button
+                      style={{ backgroundColor: "#60B246" }}
+                      className=" text-white text-sm font-bold py-2 px-4"
+                      onClick={() => setTick(true)}
+                    >
+                      DELIVER HERE
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
