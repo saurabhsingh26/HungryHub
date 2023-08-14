@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { HUNGRYHUB } from "../utils/constants";
 import { getFormBody } from "../utils";
 
@@ -38,13 +39,14 @@ const SignUp = () => {
 
       if (data.success) {
         navigate("/login");
+        toast.success(data.message);
+        setSigningUp(false);
+      } else {
+        toast.warn(data.message);
         setSigningUp(false);
       }
-
-      setSigningUp(false);
-      
     } catch (err) {
-      console.log(err);
+      toast.error(err);
     }
   };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
+import { toast } from "react-toastify";
 import { setUser } from "../Redux/features/userSlice";
 import { getFormBody } from "../utils";
 import { HUNGRYHUB } from "../utils/constants";
@@ -34,7 +35,7 @@ const Login = () => {
       });
 
       const data = await response.json();
-      // console.log('data',data);
+      
 
       if (data.success) {
         localStorage.setItem("__hungryhub_token__", data.data.token);
@@ -42,15 +43,16 @@ const Login = () => {
         if (userToken) {
           const userDetails = jwt(userToken);
           dispatch(setUser(userDetails));
-          navigate("/offers");
+          toast.success("Sign in successfully");
           setLoggingIn(false);
         }
+      }else{
+        toast.warn(data.message);
+        setLoggingIn(false);
       }
 
-      setLoggingIn(false);
-
     } catch (err) {
-      console.log(err);
+      toast.error(err);
     }
   };
 
