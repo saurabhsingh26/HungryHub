@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import jwt from "jwt-decode";
 import { toast } from "react-toastify";
 import { removeUser, setUser } from "../Redux/features/userSlice";
+import useWindowSize from "../utils/useWindowSize";
 import swiggy from "../assets/logo.svg";
 import offer from '../assets/offers.svg'
 import search from '../assets/search.svg'
@@ -28,6 +29,7 @@ const Header = () => {
     dispatch(removeUser())
     toast.success("Logged out successfully");
   }
+  const size = useWindowSize();
 
   useEffect(() => {
     const token = localStorage.getItem("__hungryhub_token__");
@@ -40,74 +42,85 @@ const Header = () => {
 
 
   return (
-    <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 lg:p-8">
+    <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 md:p-8">
       <Link
         to="/"
-        className="logo-container hover:scale-110 hover:duration-300 pl-8"
+        className="logo-container hover:scale-110 hover:duration-300"
       >
-        <img className="w-[34px]" src={swiggy} alt="logo" />
+        <img className="w-[30px] md:w-[34px]" src={swiggy} alt="logo" />
       </Link>
       <div
         style={{ color: "#3D4152" }}
         className="flex items-center text-base font-medium"
       >
-        <ul className="flex">
-          <li className="pr-10">
-            <Link to="/search" className="flex items-center">
-              <img src={search} alt="search" />
-              <span className="pl-3">Search</span>
-            </Link>
-          </li>
-          <li className="pr-10">
-            <Link to="/offers" className="flex items-center">
-              <img src={offer} alt="offer" />
-              <span className="pl-3">Offers</span>
-            </Link>
-          </li>
-          {/* <li className="pr-3">
+        {size.width >= 768 ? (
+          <ul className="flex">
+            <li className="pr-10">
+              <Link to="/search" className="flex items-center">
+                <img src={search} alt="search" />
+                <span className="pl-3">Search</span>
+              </Link>
+            </li>
+            <li className="pr-10">
+              <Link to="/offers" className="flex items-center">
+                <img src={offer} alt="offer" />
+                <span className="pl-3">Offers</span>
+              </Link>
+            </li>
+            {/* <li className="pr-3">
             <Link to="/about">About</Link>
           </li> */}
 
-          {/* <li className="pr-3">
+            {/* <li className="pr-3">
             <Link to="/grocery">Grocery</Link>
           </li> */}
 
-          <li className="pr-10">
-            {userInfo ? (
-              <button onClick={handleLogout} className="text-red-500">
-                Logout
-              </button>
-            ) : (
-              <Link to="/login" className="flex items-center">
-                <img src={signIn} alt="signIn" />
-                <span className="pl-3">Sign In</span>
-              </Link>
-            )}
-          </li>
+            <li className="pr-10">
+              {userInfo ? (
+                <button onClick={handleLogout} className="text-red-500">
+                  Logout
+                </button>
+              ) : (
+                <Link to="/login" className="flex items-center">
+                  <img src={signIn} alt="signIn" />
+                  <span className="pl-3">Sign In</span>
+                </Link>
+              )}
+            </li>
 
-          <li>
-            {length !== 0 ? (
-              <Link to="/cart" className="flex items-center">
-                <img src={cart2} alt="cart" />
-                <span className="pl-3">Cart</span>
-                <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative -top-[1px] right-[62px]">
-                  {length}
-                </span>
+            <li>
+              {length !== 0 ? (
+                <Link to="/cart" className="flex items-center">
+                  <img src={cart2} alt="cart" />
+                  <span className="pl-3">Cart</span>
+                  <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative -top-[1px] right-[62px]">
+                    {length}
+                  </span>
+                </Link>
+              ) : (
+                <Link to="/cart" className="flex items-center">
+                  <img src={cart} alt="cart" />
+                  <span className="pl-3">Cart</span>
+                  <span
+                    style={{ color: "#686b78" }}
+                    className="flex justify-center items-center min-w-[18px]  text-sm text-center  relative -top-[1.5px] right-[62px]"
+                  >
+                    {length}
+                  </span>
+                </Link>
+              )}
+            </li>
+          </ul>
+        ) : (
+          <ul className="flex">
+            <li className="">
+              <Link to="/offers" className="flex items-center">
+                <img src={offer} alt="offer" />
+                <span className="pl-3">Offers</span>
               </Link>
-            ) : (
-              <Link to="/cart" className="flex items-center">
-                <img src={cart} alt="cart" />
-                <span className="pl-3">Cart</span>
-                <span
-                  style={{ color: "#686b78" }}
-                  className="flex justify-center items-center min-w-[18px]  text-sm text-center  relative -top-[1.5px] right-[62px]"
-                >
-                  {length}
-                </span>
-              </Link>
-            )}
-          </li>
-        </ul>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
