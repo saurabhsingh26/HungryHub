@@ -87,7 +87,7 @@ const Body = () => {
   ) : (
     <div className="body">
       {/* Carousel */}
-      <div className="h-0 invisible lg:h-auto lg:visible overflow-hidden mb-6">
+      <div className="h-0 invisible lg:h-auto lg:visible overflow-hidden mb-10 mt-4">
         <BodyCarousel />
       </div>
       {/* Carousel for mobile */}
