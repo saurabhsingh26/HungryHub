@@ -1,11 +1,10 @@
-import React from 'react'
-import ItemList from './ItemList';
+import React, { useState } from "react";
+import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
+const RestaurantCategory = ({ category }) => {
   const { title, itemCards } = category.card.card;
-  const handleClick = () => {
-    setShowIndex();
-  };
+
+  const [showItem, setShowItem] = useState(false);
 
   if (!itemCards) {
     return null;
@@ -16,7 +15,7 @@ const RestaurantCategory = ({ category, showItem, setShowIndex }) => {
       {/* Restaurant Item Category Name and up, down arrow */}
       <div
         className="flex justify-between my-4 p-3 hover:cursor-pointer"
-        onClick={handleClick}
+        onClick={() => setShowItem(!showItem)}
       >
         <span style={{ color: "#3E4152" }} className="text-lg font-bold">
           {title} ({itemCards?.length})

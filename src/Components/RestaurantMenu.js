@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -15,8 +14,6 @@ const RestaurantMenu = () => {
   const { resId } = params; //extracting restaurant id from urls
 
   const resInfo = useRestaurantMenu(resId);
-
-  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -188,8 +185,6 @@ const RestaurantMenu = () => {
             <RestaurantCategory
               key={category?.card?.card.title}
               category={category}
-              showItem={index === showIndex ? true : false}
-              setShowIndex={() => setShowIndex(index)}
             />
           ))
         )}
