@@ -85,7 +85,7 @@ const Header = () => {
             )}
           </li>
 
-          <li className="pr-10">
+          <li>
             {length !== 0 ? (
               <Link to="/cart" className="flex items-center">
                 <img src={cart2} alt="cart" />
