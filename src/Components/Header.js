@@ -54,13 +54,13 @@ const Header = () => {
         <ul className="flex">
           <li className="pr-10">
             <Link to="/search" className="flex items-center">
-              <img src={search} alt="search" className="w-[17px] h-[17px]" />
+              <img src={search} alt="search" />
               <span className="pl-3">Search</span>
             </Link>
           </li>
           <li className="pr-10">
             <Link to="/offers" className="flex items-center">
-              <img src={offer} alt="offer" className="w-[19px] h-[19px]" />
+              <img src={offer} alt="offer" />
               <span className="pl-3">Offers</span>
             </Link>
           </li>
@@ -79,7 +79,7 @@ const Header = () => {
               </button>
             ) : (
               <Link to="/login" className="flex items-center">
-                <img src={signIn} alt="signIn" className="w-[19px] h-[19px]" />
+                <img src={signIn} alt="signIn" />
                 <span className="pl-3">Sign In</span>
               </Link>
             )}
@@ -88,17 +88,20 @@ const Header = () => {
           <li className="pr-10">
             {length !== 0 ? (
               <Link to="/cart" className="flex items-center">
-                <img src={cart2} alt="cart" className="w-[19px] h-[19px]" />
+                <img src={cart2} alt="cart" />
                 <span className="pl-3">Cart</span>
-                <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative top-[0.5px] right-[61px]">
+                <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative -top-[1px] right-[62px]">
                   {length}
                 </span>
               </Link>
             ) : (
               <Link to="/cart" className="flex items-center">
-                <img src={cart} alt="cart" className="w-[19px] h-[19px]" />
+                <img src={cart} alt="cart" />
                 <span className="pl-3">Cart</span>
-                <span className="flex justify-center items-center min-w-[18px]  text-sm text-center  relative -top-[1px] right-[61px]">
+                <span
+                  style={{ color: "#686b78" }}
+                  className="flex justify-center items-center min-w-[18px]  text-sm text-center  relative -top-[1.5px] right-[62px]"
+                >
                   {length}
                 </span>
               </Link>
