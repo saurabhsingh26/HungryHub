@@ -74,7 +74,7 @@ const CategoryItem = ({ item }) => {
                 >
                   -
                 </button>
-                <div className="w-2">{quantity}</div>
+                <span>{quantity}</span>
                 <button
                   className="w-6"
                   onClick={() => dispatch(increaseQuantity(item.card.info.id))}

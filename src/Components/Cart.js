@@ -279,7 +279,7 @@ const Cart = () => {
                       >
                         -
                       </button>
-                      <div className="w-2">{item.inStock}</div>
+                      <span>{item.inStock}</span>
                       <button
                         className="w-6"
                         onClick={() =>

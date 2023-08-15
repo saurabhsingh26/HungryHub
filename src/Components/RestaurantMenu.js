@@ -5,8 +5,8 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import PromoCodes from "../utils/PromoCode";
 import star from "../assets/star.png";
-import clock from "../assets/clock.png";
-import rupee from "../assets/rupee.png";
+import clock from "../assets/clock.svg";
+import rupee from "../assets/rupee.svg";
 
 const RestaurantMenu = () => {
   const params = useParams();
