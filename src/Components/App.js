@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import Search from "./Search";
 import { Login, SignUp, Profile } from "../pages";
 import FixedFooter from "./FixedFooter";
+import ProtectedRoute from "./ProtectedRoute";
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
 
@@ -29,7 +30,14 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<SignUp />} />
-          <Route path="/users/profile" element={<Profile />} />
+          <Route
+            path="/users/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/grocery"
             element={
@@ -40,7 +48,14 @@ const App = () => {
           />
           <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/order/success" element={<Congratulations />} />
+          <Route
+            path="/order/success"
+            element={
+              <ProtectedRoute>
+                <Congratulations />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<Error />} />
         </Routes>
         <FixedFooter />
