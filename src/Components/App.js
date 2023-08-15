@@ -12,6 +12,7 @@ import Congratulations from "./Congratulations";
 import Footer from "./Footer";
 import Search from "./Search";
 import { Login, SignUp, Profile } from "../pages";
+import FixedFooter from "./FixedFooter";
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/order/success" element={<Congratulations />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <FixedFooter />
         <Footer />
       </Router>
     </div>
