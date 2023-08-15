@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import jwt from "jwt-decode";
-import { toast } from "react-toastify";
-import { removeUser, setUser } from "../Redux/features/userSlice";
+import { setUser } from "../Redux/features/userSlice";
 import useWindowSize from "../utils/useWindowSize";
 import swiggy from "../assets/logo.svg";
 import offer from '../assets/offers.svg'
@@ -16,7 +15,7 @@ import cart2 from "../assets/cart2.svg";
 const Header = () => {
   // Subscribing to the store using Selector
   const cartItems = useSelector((store) => store.cart.items);
-  const userInfo = useSelector((store) => store.account.user.isLoggedIn);
+  const userInfo = useSelector((store) => store.account.user);
   const dispatch = useDispatch();
 
   const length = cartItems.reduce((acc, curr) => {
@@ -24,11 +23,6 @@ const Header = () => {
     return acc;
   }, 0);
 
-  const handleLogout = () => {
-    localStorage.removeItem("__hungryhub_token__");
-    dispatch(removeUser())
-    toast.success("Logged out successfully");
-  }
   const size = useWindowSize();
 
   useEffect(() => {
@@ -76,10 +70,11 @@ const Header = () => {
           </li> */}
 
             <li className="pr-10">
-              {userInfo ? (
-                <button onClick={handleLogout} className="text-red-500">
-                  Logout
-                </button>
+              {userInfo.isLoggedIn ? (
+                <Link to="/users/profile" className="flex items-center">
+                  <img src={signIn} alt="signIn" />
+                  <span className="pl-3">{userInfo.name}</span>
+                </Link>
               ) : (
                 <Link to="/login" className="flex items-center">
                   <img src={signIn} alt="signIn" />

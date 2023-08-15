@@ -11,8 +11,7 @@ import Cart from "./Cart";
 import Congratulations from "./Congratulations";
 import Footer from "./Footer";
 import Search from "./Search";
-import { Login, SignUp } from "../pages";
-
+import { Login, SignUp, Profile } from "../pages";
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
 
@@ -29,6 +28,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<SignUp />} />
+          <Route path="/users/profile" element={<Profile />} />
           <Route
             path="/grocery"
             element={
