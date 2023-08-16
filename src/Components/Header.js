@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import jwt from "jwt-decode";
 import { setUser } from "../Redux/features/userSlice";
 import useWindowSize from "../utils/useWindowSize";
 import swiggy from "../assets/logo.svg";
-import offer from '../assets/offers.svg'
-import search from '../assets/search.svg'
-import signIn from '../assets/signin.svg'
-import cart from '../assets/cart.svg'
-import cart2 from "../assets/cart2.svg";
-
+import { ReactComponent as Offer } from "../assets/offers.svg";
+import { ReactComponent as Search } from "../assets/search.svg";
+import { ReactComponent as SignIn } from "../assets/signin.svg";
+import { ReactComponent as EmptyCart } from "../assets/cart.svg";
+import { ReactComponent as NonEmptyCart } from "../assets/cart2.svg";
 
 const Header = () => {
   // Subscribing to the store using Selector
@@ -31,18 +30,17 @@ const Header = () => {
       const userDetails = jwt(token);
       dispatch(setUser(userDetails));
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   return (
     <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 md:p-8">
-      <Link
+      <NavLink
         to="/"
         className="logo-container hover:scale-110 hover:duration-300"
       >
         <img className="w-[30px] md:w-[34px]" src={swiggy} alt="logo" />
-      </Link>
+      </NavLink>
       <div
         style={{ color: "#3D4152" }}
         className="flex items-center text-base font-medium"
@@ -50,51 +48,51 @@ const Header = () => {
         {size.width >= 768 ? (
           <ul className="flex">
             <li className="pr-10">
-              <Link to="/search" className="flex items-center">
-                <img src={search} alt="search" />
+              <NavLink to="/search" className="flex items-center">
+                <Search className="svg-class" />
                 <span className="pl-3">Search</span>
-              </Link>
+              </NavLink>
             </li>
             <li className="pr-10">
-              <Link to="/offers" className="flex items-center">
-                <img src={offer} alt="offer" />
+              <NavLink to="/offers" className="flex items-center">
+                <Offer className="svg-class" />
                 <span className="pl-3">Offers</span>
-              </Link>
+              </NavLink>
             </li>
             {/* <li className="pr-3">
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li> */}
 
             {/* <li className="pr-3">
-            <Link to="/grocery">Grocery</Link>
+            <NavLink to="/grocery">Grocery</NavLink>
           </li> */}
 
             <li className="pr-10">
               {userInfo.isLoggedIn ? (
-                <Link to="/users/profile" className="flex items-center">
-                  <img src={signIn} alt="signIn" />
+                <NavLink to="/users/profile" className="flex items-center">
+                  <SignIn className="svg-class" />
                   <span className="pl-3">{userInfo.name}</span>
-                </Link>
+                </NavLink>
               ) : (
-                <Link to="/login" className="flex items-center">
-                  <img src={signIn} alt="signIn" />
+                <NavLink to="/login" className="flex items-center">
+                  <SignIn className="svg-class" />
                   <span className="pl-3">Sign In</span>
-                </Link>
+                </NavLink>
               )}
             </li>
 
             <li>
               {length !== 0 ? (
-                <Link to="/cart" className="flex items-center">
-                  <img src={cart2} alt="cart" />
+                <NavLink to="/cart" className="flex items-center">
+                  <NonEmptyCart className="svg-class" />
                   <span className="pl-3">Cart</span>
                   <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative -top-[1px] right-[62px]">
                     {length}
                   </span>
-                </Link>
+                </NavLink>
               ) : (
-                <Link to="/cart" className="flex items-center">
-                  <img src={cart} alt="cart" />
+                <NavLink to="/cart" className="flex items-center">
+                  <EmptyCart className="svg-class" />
                   <span className="pl-3">Cart</span>
                   <span
                     style={{ color: "#686b78" }}
@@ -102,17 +100,17 @@ const Header = () => {
                   >
                     {length}
                   </span>
-                </Link>
+                </NavLink>
               )}
             </li>
           </ul>
         ) : (
           <ul className="flex">
             <li className="">
-              <Link to="/offers" className="flex items-center">
-                <img src={offer} alt="offer" />
+              <NavLink to="/offers" className="flex items-center">
+                <Offer className="svg-class" />
                 <span className="pl-3">Offers</span>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         )}
