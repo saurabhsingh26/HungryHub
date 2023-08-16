@@ -187,7 +187,7 @@ const Cart = () => {
                         style={{ backgroundColor: "#60B246" }}
                         className=" text-white text-sm font-bold py-2 px-4"
                       >
-                        COOL!
+                        COOL !
                       </button>
                       <span className="ml-4">✅</span>
                     </div>
@@ -412,15 +412,17 @@ const Cart = () => {
             {userDetails.isLoggedIn ? (
               <Link
                 to="/order/success"
+                style={{ backgroundColor: "#7BBB64" }}
                 onClick={() => dispatch(clearCart())}
-                className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
+                className="p-3 font-bold text-md text-white w-[100%] text-center"
               >
-                PROCEED TO PAY
+                CLICK TO ORDER
               </Link>
             ) : (
               <button
                 disabled={true}
-                className="p-3 font- text-md bg-green-600 text-white w-[100%] text-center"
+                style={{ backgroundColor: "#7BBB64" }}
+                className="p-3 font-bold text-md text-white w-[100%] text-center"
               >
                 LOGIN TO ORDER
               </button>
