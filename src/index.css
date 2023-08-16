@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.active{
+  color:#FC8019;
+}
+
+.active .svg-class{
+  stroke: #FC8019;
+	stroke-width: 0;
+	fill: #FC8019;
+}

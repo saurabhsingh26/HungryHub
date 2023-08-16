@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useWindowSize from "../utils/useWindowSize";
-import signIn from "../assets/signin.svg";
-import search from "../assets/search.svg";
-import logo from "../assets/logo.svg";
-import cart3 from "../assets/cart3.svg";
+import { ReactComponent as SignIn } from "../assets/signin.svg";
+import { ReactComponent as Search } from "../assets/search.svg";
+import { ReactComponent as Logo } from "../assets/logo.svg";
+import { ReactComponent as Cart } from "../assets/cart3.svg";
 
 const FixedFooter = () => {
   const userInfo = useSelector((store) => store.account.user);
@@ -26,38 +26,26 @@ const FixedFooter = () => {
           >
             <ul className="flex justify-between items-center py-3 px-4 border tracking-tighter font-semibold">
               <li>
-                <Link to="/" className="flex flex-col items-center">
-                  <img src={logo} alt="search" className="w-[22px] h-[22px]" />
+                <NavLink to="/" className="flex flex-col items-center">
+                  <Logo className="svg-class w-[22px] h-[22px]" />
                   <span className="mt-1">SWIGGY</span>
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/search" className="flex flex-col items-center">
-                  <img
-                    src={search}
-                    alt="search"
-                    className="w-[22px] h-[22px]"
-                  />
+                <NavLink to="/search" className="flex flex-col items-center">
+                  <Search className="svg-class w-[22px] h-[22px]" />
                   <span className="mt-1">SEARCH</span>
-                </Link>
+                </NavLink>
               </li>
               <li>
                 {length === 0 ? (
-                  <Link to="/cart" className="flex flex-col items-center">
-                    <img
-                      src={cart3}
-                      alt="search"
-                      className="w-[22px] h-[22px]"
-                    />
+                  <NavLink to="/cart" className="flex flex-col items-center">
+                    <Cart className="svg-class w-[22px] h-[22px]" />
                     <span className="mt-1">CART</span>
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/cart" className="flex flex-col items-center">
-                    <img
-                      src={cart3}
-                      alt="search"
-                      className="w-[22px] h-[22px]"
-                    />
+                  <NavLink to="/cart" className="flex flex-col items-center">
+                    <Cart className="svg-class w-[22px] h-[22px]" />
                     <div className="flex">
                       <span className="mt-1 pl-4">CART</span>
                       <span
@@ -67,31 +55,23 @@ const FixedFooter = () => {
                         {length}
                       </span>
                     </div>
-                  </Link>
+                  </NavLink>
                 )}
               </li>
               <li className="">
                 {userInfo.isLoggedIn ? (
-                  <Link
+                  <NavLink
                     to="/users/profile"
                     className="flex flex-col items-center"
                   >
-                    <img
-                      src={signIn}
-                      alt="signIn"
-                      className="w-[22px] h-[22px]"
-                    />
+                    <SignIn className="svg-class w-[22px] h-[22px]" />
                     <span className="mt-1">ACCOUNT</span>
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/login" className="flex flex-col items-center">
-                    <img
-                      src={signIn}
-                      alt="signIn"
-                      className="w-[22px] h-[22px]"
-                    />
+                  <NavLink to="/login" className="flex flex-col items-center">
+                    <SignIn className="svg-class w-[22px] h-[22px]" />
                     <span className="mt-1">ACCOUNT</span>
-                  </Link>
+                  </NavLink>
                 )}
               </li>
             </ul>
