@@ -12,3 +12,15 @@
 	stroke-width: 0;
 	fill: #FC8019;
 }
+
+::-webkit-scrollbar{
+  border-radius: 20px;
+  height: 0px;
+}
+::-webkit-scrollbar-track{
+  background-color: #CFD8DC;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #90A4AE;
+  border-radius: 30px; 
+}
