@@ -23,7 +23,7 @@ const Footer = () => {
           <Link to="https://github.com/saurabhsingh26">
             <img src={github} alt="github" className="w-7 h-7" />
           </Link>
-          <Link to="https://www.saurabhsingh.tech/">
+          <Link to="https://saurabhsinghayodhya.vercel.app/">
             <img src={globe} alt="globe" className="w-7 h-7" />
           </Link>
           <Link to="https://www.instagram.com/saurabhsingh_26/">
