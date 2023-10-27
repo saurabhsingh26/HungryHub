@@ -17,16 +17,19 @@ const Footer = () => {
           &copy; 2023 Swiggy Clone by Saurabh
         </div>
         <div className="flex justify-around">
-          <Link to="https://www.linkedin.com/in/saurabh-raj-singh/">
+          <Link
+            target="_blank"
+            to="https://www.linkedin.com/in/saurabh-raj-singh/"
+          >
             <img src={linkedin} alt="linkedin" className="w-7 h-7" />
           </Link>
-          <Link to="https://github.com/saurabhsingh26">
+          <Link target="_blank" to="https://github.com/saurabhsingh26">
             <img src={github} alt="github" className="w-7 h-7" />
           </Link>
-          <Link to="https://saurabhsinghayodhya.vercel.app/">
+          <Link target="_blank" to="https://saurabhsinghayodhya.tech/">
             <img src={globe} alt="globe" className="w-7 h-7" />
           </Link>
-          <Link to="https://www.instagram.com/saurabhsingh_26/">
+          <Link target="_blank" to="https://www.instagram.com/saurabhsingh_26/">
             <img src={instagram} alt="instagram" className="w-7 h-7" />
           </Link>
         </div>
