@@ -11,6 +11,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [signingUp, setSigningUp] = useState(false);
+  const [show, setShow] = useState(false);
 
   const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn);
 
@@ -95,14 +96,26 @@ const SignUp = () => {
               required
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              className="p-3 outline-none border rounded"
-              type="password"
-              value={password}
-              placeholder="Password"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="flex items-center justify-between gap-2">
+              <input
+                className="p-3 outline-none border rounded w-full"
+                type={show ? "text" : "password"}
+                value={password}
+                placeholder="Password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <img
+                className="w-7 h-7 cursor-pointer"
+                src={
+                  show
+                    ? "https://cdn-icons-png.flaticon.com/128/709/709612.png"
+                    : "https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
+                }
+                alt="eye"
+                onClick={() => setShow(!show)}
+              />
+            </div>
             <input
               className="p-3 outline-none border rounded my-4"
               type="text"
@@ -120,7 +133,7 @@ const SignUp = () => {
             </button>
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>
-                By clicking on Login, I accept the &nbsp;
+                By clicking on Sign Up, I accept the &nbsp;
               </span>
               Terms & Conditions & Privacy Policy
             </p>

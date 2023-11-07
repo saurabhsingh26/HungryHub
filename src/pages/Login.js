@@ -11,6 +11,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loggingIn, setLoggingIn] = useState(false);
+  const [show, setShow] = useState(false);
+
 
   const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn)
 
@@ -94,14 +96,26 @@ const Login = () => {
               required
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              className="p-3 outline-none border rounded my-4"
-              type="password"
-              value={password}
-              placeholder="Password"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="flex items-center justify-between gap-2">
+              <input
+                className="p-3 outline-none border rounded my-4 w-full"
+                type={show ? "text" : "password"}
+                value={password}
+                placeholder="Password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <img
+                className="w-7 h-7 cursor-pointer"
+                src={
+                  show
+                    ? "https://cdn-icons-png.flaticon.com/128/709/709612.png"
+                    : "https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
+                }
+                alt="eye"
+                onClick={() => setShow(!show)}
+              />
+            </div>
             <button
               disabled={loggingIn}
               style={{ backgroundColor: "#FC8019" }}
