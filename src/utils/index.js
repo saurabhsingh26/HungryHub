@@ -6,6 +6,8 @@ import {
   SORT_BY,
   SEARCH_BY_NAME,
   MENU_API,
+  RESTAURANT_INFO,
+  SUGGESTION,
 } from "./constants";
 
 export {
@@ -16,6 +18,8 @@ export {
   SORT_BY,
   SEARCH_BY_NAME,
   MENU_API,
+  RESTAURANT_INFO,
+  SUGGESTION,
 };
 
 export const getFormBody = (params) => {

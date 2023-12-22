@@ -1240,7 +1240,7 @@ const offers = {
                       areaName: "Tirupati",
                       costForTwo: "",
                       cuisines: ["Healthy Food", "Chinese"],
-                      avgRating: 4.2,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "80107",
                         fees: [
@@ -1320,7 +1320,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["American"],
-                      avgRating: 3.9,
+                      avgRating: 4.1,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -1401,7 +1401,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Bakery", "Desserts"],
-                      avgRating: 4.4,
+                      avgRating: 4.5,
                       feeDetails: {
                         restaurantId: "80056",
                         fees: [
@@ -1482,7 +1482,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Home Food", "North Indian"],
-                      avgRating: 4,
+                      avgRating: 4.1,
                       feeDetails: {
                         restaurantId: "80775",
                         fees: [
@@ -1563,7 +1563,7 @@ const offers = {
                       areaName: "Korlagunta",
                       costForTwo: "",
                       cuisines: ["American", "Fast Food"],
-                      avgRating: 3.7,
+                      avgRating: 4.1,
                       feeDetails: {
                         restaurantId: "417917",
                         fees: [
@@ -1643,7 +1643,7 @@ const offers = {
                       areaName: "Tata Nagar",
                       costForTwo: "",
                       cuisines: ["Biryani", "North Indian"],
-                      avgRating: 3.7,
+                      avgRating: 3.9,
                       feeDetails: {
                         restaurantId: "87108",
                         fees: [
@@ -1810,7 +1810,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Asian", "Chinese"],
-                      avgRating: 4,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "87109",
                         fees: [
@@ -1890,7 +1890,7 @@ const offers = {
                       areaName: "Sri Padmavati Mahila Visvavidyalayam",
                       costForTwo: "",
                       cuisines: ["North Indian", "Indian"],
-                      avgRating: 3.7,
+                      avgRating: 3.8,
                       feeDetails: {
                         restaurantId: "80072",
                         fees: [
@@ -1971,7 +1971,7 @@ const offers = {
                       areaName: "Tata Nagar",
                       costForTwo: "",
                       cuisines: ["Chinese", "Asian"],
-                      avgRating: 3.6,
+                      avgRating: 4,
                       veg: true,
                       feeDetails: {
                         restaurantId: "401857",
@@ -2049,7 +2049,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Biryani", "North Indian"],
-                      avgRating: 4.2,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2130,7 +2130,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["North Indian", "Chinese"],
-                      avgRating: 3.8,
+                      avgRating: 4.1,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2211,7 +2211,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Kebabs", "Fast Food"],
-                      avgRating: 4.1,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2292,7 +2292,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Biryani", "North Indian"],
-                      avgRating: 4.2,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2454,7 +2454,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Bakery", "Beverages"],
-                      avgRating: 4.2,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2535,7 +2535,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Biryani", "Hyderabadi"],
-                      avgRating: 4.2,
+                      avgRating: 4.4,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2616,7 +2616,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Snacks", "Fast Food"],
-                      avgRating: 4.1,
+                      avgRating: 4.2,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2697,7 +2697,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Tibetan", "Healthy Food"],
-                      avgRating: 3.9,
+                      avgRating: 4.1,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [
@@ -2778,7 +2778,7 @@ const offers = {
                       areaName: "Tirumala",
                       costForTwo: "",
                       cuisines: ["Biryani", "Mughlai"],
-                      avgRating: 4.2,
+                      avgRating: 4.3,
                       feeDetails: {
                         restaurantId: "131588",
                         fees: [

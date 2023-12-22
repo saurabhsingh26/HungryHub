@@ -1,9 +1,9 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import carousel1 from "../assets/carousel1.png";
-import carousel2 from "../assets/carousel2.png";
-import carousel3 from "../assets/carousel3.png";
+// import carousel1 from "../assets/carousel1.png";
+// import carousel2 from "../assets/carousel2.png";
+// import carousel3 from "../assets/carousel3.png";
 import carousel4 from "../assets/carousel4.png";
 import carousel5 from "../assets/carousel5.png";
 import carousel6 from "../assets/carousel6.png";
@@ -70,13 +70,25 @@ const BodyCarousel = () => {
           partialVisible={true}
         >
           <div onClick={handleClick}>
-            <img className="w-[27rem] h-64" src={carousel1} alt="" />
+            <img
+              className="w-[27rem] h-64"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/63439465f0824c81088e0d8f00c24dd0"
+              alt=""
+            />
           </div>
           <div onClick={handleClick}>
-            <img className="w-[27rem] h-64" src={carousel2} alt="" />
+            <img
+              className="w-[27rem] h-64"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/7c92c3744ea5da6c0204cb8ec2918410"
+              alt=""
+            />
           </div>
           <div onClick={handleClick}>
-            <img className="w-[27rem] h-64" src={carousel3} alt="" />
+            <img
+              className="w-[27rem] h-64"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/967140f5e000b2f1e35f54a7c965e7dc"
+              alt=""
+            />
           </div>
           <div onClick={handleClick}>
             <img className="w-[27rem] h-64" src={carousel4} alt="" />

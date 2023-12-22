@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { CDN_URL } from "../utils/constants";
+import { CDN_URL, SUGGESTION, RESTAURANT_INFO } from "../utils/constants";
 import SearchCuisines from "../utils/SearchCuisines";
 
 const Search = () => {
@@ -10,10 +10,7 @@ const Search = () => {
   // console.log("suggestions", suggestions);
   const navigate = useNavigate();
   const getRestInfo = async (metaData) => {
-    const { data } = await axios(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/v3?lat=25.5940947&lng=85.1375645&str=Domino%27s%20Pizza&submitAction=SUGGESTION&metaData=" +
-        metaData
-    );
+    const { data } = await axios(`${RESTAURANT_INFO}` + metaData);
     // console.log("data", data);
     const { id } =
       data?.data?.cards?.[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.[0]
@@ -23,9 +20,7 @@ const Search = () => {
 
   useEffect(() => {
     const getSuggestions = async () => {
-      const data = await fetch(
-        `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/suggest?lat=25.6342587&lng=85.0584152&trackingId=undefined&str=${value}`
-      );
+      const data = await fetch(`${SUGGESTION}${value}`);
       // console.log('Hitted');
       const json = await data.json();
       setSuggestions(
