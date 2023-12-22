@@ -15,6 +15,8 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId);
 
+  // console.log(resInfo);
+
   if (resInfo === null) {
     return <Shimmer />;
   }
@@ -43,6 +45,15 @@ const RestaurantMenu = () => {
       );
     });
 
+  // working for both desktop and mobile 
+  const restaurantData = resInfo.cards?.filter(
+    (y) =>
+      y?.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
+  );
+
+  // console.log("new", restaurantData[0]);
+
   if (!categories) {
     return window.location.reload();
   }
@@ -55,7 +66,7 @@ const RestaurantMenu = () => {
     labels,
     sla,
     costForTwoMessage,
-  } = resInfo?.cards[0]?.card?.card?.info;
+  } = restaurantData[0]?.card?.card?.info;
   const { message } = labels[2];
   const { lastMileTravelString } = sla;
 
