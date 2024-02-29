@@ -35,6 +35,7 @@ const Login = () => {
         },
         body: bodyString,
       });
+      console.log(response)
 
       const data = await response.json();
 

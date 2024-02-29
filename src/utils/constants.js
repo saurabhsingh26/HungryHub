@@ -28,7 +28,7 @@ export const APP_LOGO =
 export const SEARCH =
   "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Fsearch%2Fsuggest%3Flat%3D25.603916%26lng%3D85.1360248%26trackingId%3Dundefined%26str%3D";
 
-export const HUNGRYHUB = "https://hungry-hub-api.vercel.app/";
+export const HUNGRYHUB = "https://hungry-hub-api.vercel.app";
 
 // export const HUNGRYHUB = "https://corsproxy.io/?https://hungryhub.onrender.com";
 
