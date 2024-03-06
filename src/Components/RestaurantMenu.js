@@ -45,7 +45,7 @@ const RestaurantMenu = () => {
       );
     });
 
-  // working for both desktop and mobile 
+  // working for both desktop and mobile
   const restaurantData = resInfo.cards?.filter(
     (y) =>
       y?.card?.card?.["@type"] ===
@@ -196,6 +196,7 @@ const RestaurantMenu = () => {
             <RestaurantCategory
               key={category?.card?.card.title}
               category={category}
+              restaurantData={restaurantData}
             />
           ))
         )}

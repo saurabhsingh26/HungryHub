@@ -3,14 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils";
 import {
   addItem,
+  clearCart,
   decreaseQuantity,
   increaseQuantity,
+  setCurrentRest,
 } from "../Redux/features/cartSlice";
 
-const CategoryItem = ({ item }) => {
+const CategoryItem = ({ item, restaurantData }) => {
   const [isAdded, setIsAdded] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const cartItems = useSelector((store) => store.cart.items);
+  const restDetails = useSelector((store) => store.cart.restDetails);
+  const newRestInfo = restaurantData[0]?.card?.card?.info;
 
   useEffect(() => {
     const isPresentAt = cartItems.findIndex(
@@ -24,7 +28,18 @@ const CategoryItem = ({ item }) => {
   const dispatch = useDispatch();
   // Dispatch an action
   const handleAddItem = (item) => {
-    dispatch(addItem({ ...item, inStock: 1 }));
+    if (restDetails === null) {
+      dispatch(setCurrentRest(newRestInfo));
+      dispatch(addItem({ ...item, inStock: 1 }));
+    } else {
+      if (restDetails?.name === newRestInfo?.name) {
+        dispatch(addItem({ ...item, inStock: 1 }));
+      } else {
+        dispatch(clearCart());
+        dispatch(addItem({ ...item, inStock: 1 }));
+        dispatch(setCurrentRest(newRestInfo));
+      }
+    }
   };
   return (
     <div key={item.card.info.id}>

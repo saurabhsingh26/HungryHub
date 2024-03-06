@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ category }) => {
+const RestaurantCategory = ({ category, restaurantData }) => {
   const { title, itemCards } = category.card.card;
 
   const [showItem, setShowItem] = useState(false);
@@ -23,7 +23,9 @@ const RestaurantCategory = ({ category }) => {
         <span>{showItem ? "⬆️" : "⬇️"}</span>
       </div>
       {/* Items inside Category Component */}
-      {showItem && <ItemList items={itemCards} />}
+      {showItem && (
+        <ItemList items={itemCards} restaurantData={restaurantData} />
+      )}
       <div className="bg-gray-100 shadow-sm h-5"></div>
     </div>
   );

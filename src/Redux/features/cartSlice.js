@@ -4,6 +4,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
+    restDetails: null,
   },
   reducers: {
     addItem: (state, action) => {
@@ -15,6 +16,14 @@ const cartSlice = createSlice({
         state.items.push(action.payload);
       } else {
         state.items[itemIndex].inStock = state.items[itemIndex].inStock + 1;
+      }
+    },
+    setCurrentRest: (state, action) => {
+      if (state.restDetails === null) {
+        state.restDetails = action.payload;
+      } else {
+        state.restDetails = null;
+        state.restDetails = action.payload;
       }
     },
     removeItem: (state) => {
@@ -48,6 +57,7 @@ export const {
   clearCart,
   increaseQuantity,
   decreaseQuantity,
+  setCurrentRest,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

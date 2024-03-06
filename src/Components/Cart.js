@@ -8,6 +8,7 @@ import {
 } from "../Redux/features/cartSlice";
 import emptycart from "../assets/emptycart.png";
 import location from "../assets/location.png";
+import { CDN_URL } from "../utils";
 
 const Cart = () => {
   const [checked, setChecked] = useState();
@@ -17,6 +18,9 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const userDetails = useSelector((store) => store.account.user);
+  const restDetails = useSelector((store) => store.cart.restDetails);
+
+  // console.log(restDetails);
 
   const handleChange = (e) => {
     setChecked(e.target.checked);
@@ -227,22 +231,24 @@ const Cart = () => {
         <div className="w-[100%] md:w-[42%] lg:w-[31%]">
           <div className="restaurant-details bg-white p-4">
             {/* Header */}
-            <div className="flex mb-6">
-              <div className="w-14 h-14 mr-4">
+            <div className="flex items-center mb-6">
+              <div className="w-[50px] h-[50px] mr-4">
                 <img
-                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/Image-login_btpq7r"
+                  className="w-[100%] h-[100%]"
+                  src={`${CDN_URL}/${restDetails?.cloudinaryImageId}`}
                   alt="restaurant"
                 />
               </div>
               <div>
-                <h1
+                <Link
+                  to={`/restaurant/${restDetails?.id}`}
                   style={{ color: "#282C3F" }}
                   className="text-[17px] font-bold"
                 >
-                  Enjoy your meal
-                </h1>
+                  {restDetails?.name}
+                </Link>
                 <p style={{ color: "#686B78" }} className="text-[13px]">
-                  Order now
+                  {restDetails?.areaName}
                 </p>
               </div>
             </div>
