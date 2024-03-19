@@ -7,10 +7,12 @@ import Spinner from "./Spinner";
 import HomeFooter from "./HomeFooter";
 import BodyCarousel from "./BodyCarousel";
 // import data from '../utils/RestaurantData';
+import PopupComp from "./PopupComp";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [popup, setPopup] = useState(true);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
@@ -51,7 +53,7 @@ const Body = () => {
     //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     // );
     const data = await fetch(
-      "dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.7040592%26lng%3D77.10249019999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     const restaurants = json.data.cards
@@ -86,7 +88,11 @@ const Body = () => {
   }
 
   return listOfRestaurant.length === 0 ? (
-    [<Spinner key={0} />, <Shimmer key={1} />]
+    [
+      <Spinner key={0} />,
+      <PopupComp key={1} popup={popup} setPopup={setPopup} />,
+      <Shimmer key={2} />,
+    ]
   ) : (
     <div className="body">
       {/* Carousel */}
