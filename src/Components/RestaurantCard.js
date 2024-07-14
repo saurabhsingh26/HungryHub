@@ -1,26 +1,22 @@
-import React from 'react'
-import { CDN_URL } from '../utils';
+import React from "react";
+import { CDN_URL } from "../utils";
 import star from "../assets/star.png";
 
 const RestaurantCard = (props) => {
   const { restData } = props;
-  const {
-    name,
-    cuisines,
-    avgRating,
-    cloudinaryImageId,
-    sla,
-    costForTwo,
-  } = restData?.info;
+  const { name, cuisines, avgRating, cloudinaryImageId, sla, costForTwo } =
+    restData?.info;
 
   return (
-    <div className="m-5 p-2 w-64 rounded-2xl hover:shadow">
+    <div className="p-2 m-0 w-[326px] rounded-2xl hover:shadow">
       {/* Restaurant Image */}
-      <img
-        className="res-logo rounded-2xl"
-        src={`${CDN_URL}/${cloudinaryImageId}`}
-        alt="card"
-      />
+      <div className="w-[310px] h-[200px]">
+        <img
+          className="res-logo rounded-2xl w-[100%] h-[100%] bg-cover"
+          src={`${CDN_URL}/${cloudinaryImageId}`}
+          alt="card"
+        />
+      </div>
       <div className="res-name flex justify-between">
         {/* Restaurant Name and Cuisines */}
         <div>
@@ -58,10 +54,9 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
-}
+};
 
-
-// Higher Order Component 
+// Higher Order Component
 // Higher Order Component is a pure function we are not modifying anything just using it.
 
 export const withPromotedLabel = (RestaurantCard) => {
@@ -85,21 +80,24 @@ export const withPromotedLabel = (RestaurantCard) => {
         <RestaurantCard restData={restData} />
       </div>
     );
-  }
+  };
 };
 
 export const withOfferLabel = (RestaurantCard) => {
   return (props) => {
-    const {restData} = props;
+    const { restData } = props;
     return (
       <div>
-        <label style={{backgroundColor: '#256FEF'}} className="absolute text-white text-sm mx-7 mt-[7.8rem] px-1">
+        <label
+          style={{ backgroundColor: "#256FEF" }}
+          className="absolute text-white text-sm mx-2 mt-[11rem] px-1"
+        >
           {restData.info.offer}
         </label>
         <RestaurantCard restData={restData} />
       </div>
     );
-  }
-}
+  };
+};
 
 export default RestaurantCard;

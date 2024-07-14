@@ -1,39 +1,44 @@
+export const RESTAURANTS_URL =
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
 export const CDN_URL =
-  "https://corsproxy.org/?https%3A%2F%2Fres.cloudinary.com%2Fswiggy%2Fimage%2Fupload%2Ffl_lossy%2Cf_auto%2Cq_auto%2Cw_508%2Ch_320%2Cc_fill";
+  // "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill";
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660";
 
 export const LOGO_URL =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.logodesign.net%2Flogo%2Fsmoking-burger-with-lettuce-3624ld.png";
+  "https://thingproxy.freeboard.io/fetch/https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png";
 
 export const POPULAR_CUISINES =
-  "https://corsproxy.org/?https%3A%2F%2Fres.cloudinary.com%2Fswiggy%2Fimage%2Fupload%2Ffl_lossy%2Cf_auto%2Cq_auto";
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto";
 
-export const DISH_BY_CATEGORY =
-  "http://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fsearch%3Fquery%3D";
+export const DISH_BY_CATEGORY = "https://www.swiggy.com/search?query=";
 
 export const SORT_BY =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.684097%26lng%3D77.498642%26sortBy%3D%7B%7D%26page_type%3DDESKTOP_WEB_LISTING";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.684097&lng=77.498642&sortBy={}&page_type=DESKTOP_WEB_LISTING";
 
 export const SEARCH_BY_NAME =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Fsearch%2Fsuggest%3Flat%3D28.684097%26lng%3D77.498642%26str%3D%7B%7D%26trackingId%3Dnull";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=28.684097&lng=77.498642&str={}&trackingId=null";
 
 export const MENU_API =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D12.9351929%26lng%3D77.62448069999999%26restaurantId%3D";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 
 export const WHATS_ON_YOUR_MIND =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D25.5940947%26lng%3D85.1375645%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5940947&lng=85.1375645&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 export const APP_LOGO =
-  "https://corsproxy.org/?https%3A%2F%2Fres.cloudinary.com%2Fswiggy%2Fimage%2Fupload%2Ffl_lossy%2Cf_auto%2Cq_auto%2Cw_284%2F";
+  // "https://thingproxy.freeboard.io/fetch/https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/";
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";
 
 export const SEARCH =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Fsearch%2Fsuggest%3Flat%3D25.603916%26lng%3D85.1360248%26trackingId%3Dundefined%26str%3D";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=25.603916&lng=85.1360248&trackingId=undefined&str=";
 
+// export const HUNGRYHUB = "https://hungryhub.onrender.com";
 export const HUNGRYHUB = "https://hungry-hub-api.vercel.app";
 
 // export const HUNGRYHUB = "https://corsproxy.io/?https://hungryhub.onrender.com";
 
 export const RESTAURANT_INFO =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Fsearch%2Fv3%3Flat%3D25.5940947%26lng%3D85.1375645%26str%3DDomino%2527s%2520Pizza%26submitAction%3DSUGGESTION%26metaData%3D";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/v3?lat=25.5940947&lng=85.1375645&str=Domino%27s%20Pizza&submitAction=SUGGESTION&metaData=";
 
 export const SUGGESTION =
-  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Fsearch%2Fsuggest%3Flat%3D25.6342587%26lng%3D85.0584152%26trackingId%3Dundefined%26str%3D";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=25.6342587&lng=85.0584152&trackingId=undefined&str=";

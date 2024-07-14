@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ItemList from "./ItemList";
+import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
 const RestaurantCategory = ({ category, restaurantData }) => {
   const { title, itemCards } = category.card.card;
@@ -14,13 +15,13 @@ const RestaurantCategory = ({ category, restaurantData }) => {
     <div>
       {/* Restaurant Item Category Name and up, down arrow */}
       <div
-        className="flex justify-between my-4 p-3 hover:cursor-pointer"
+        className="flex justify-between my-4 px-4 hover:cursor-pointer"
         onClick={() => setShowItem(!showItem)}
       >
         <span style={{ color: "#3E4152" }} className="text-lg font-bold">
           {title} ({itemCards?.length})
         </span>
-        <span>{showItem ? "⬆️" : "⬇️"}</span>
+        <span>{showItem ? <UpOutlined /> : <DownOutlined />}</span>
       </div>
       {/* Items inside Category Component */}
       {showItem && (

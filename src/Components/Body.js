@@ -6,13 +6,14 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import Spinner from "./Spinner";
 import HomeFooter from "./HomeFooter";
 import BodyCarousel from "./BodyCarousel";
+import { RESTAURANTS_URL } from "../utils/constants";
 // import data from '../utils/RestaurantData';
-import PopupComp from "./PopupComp";
+// import PopupComp from "./PopupComp";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const [popup, setPopup] = useState(true);
+  // const [popup, setPopup] = useState(true);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
@@ -50,13 +51,12 @@ const Body = () => {
 
     // New way to fetch api for mobile and desktop (testing)
     // const data = await fetch(
-    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    // "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.7040592%26lng%3D77.10249019999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
+
     // );
-    const data = await fetch(
-      "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.7040592%26lng%3D77.10249019999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTAURANTS_URL);
     const json = await data.json();
-    const restaurants = json.data.cards
+    const restaurants = json?.data?.cards
       ?.filter(
         (y) =>
           y?.card?.card?.["@type"] ===
@@ -90,8 +90,8 @@ const Body = () => {
   return listOfRestaurant.length === 0 ? (
     [
       <Spinner key={0} />,
-      <PopupComp key={1} popup={popup} setPopup={setPopup} />,
-      <Shimmer key={2} />,
+      // <PopupComp key={1} popup={popup} setPopup={setPopup} />,
+      <Shimmer key={1} />,
     ]
   ) : (
     <div className="body">
@@ -106,7 +106,7 @@ const Body = () => {
       >
         <img
           className="w-[90%]"
-          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/faxdufvkcllzse67eqry"
+          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/faxdufvkcllzse67eqry"
           alt="home-carousel"
         />
       </div>
@@ -206,7 +206,7 @@ const Body = () => {
         </div>
       </div>
       {/* Body Section */}
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center gap-5 my-4">
         {filteredRestaurants.map((restaurant, index) => {
           return (
             <Link

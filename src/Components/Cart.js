@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "antd";
 import {
   decreaseQuantity,
   increaseQuantity,
@@ -416,22 +417,41 @@ const Cart = () => {
           {/* Proceed to pay */}
           <div className="flex justify-end">
             {userDetails.isLoggedIn ? (
-              <Link
-                to="/order/success"
-                style={{ backgroundColor: "#7BBB64" }}
-                onClick={() => dispatch(clearCart())}
-                className="p-3 font-bold text-md text-white w-[100%] text-center"
-              >
-                CLICK TO ORDER
-              </Link>
+              <>
+                {tick ? (
+                  <Link
+                    to="/order/success"
+                    style={{ backgroundColor: "#7BBB64" }}
+                    onClick={() => dispatch(clearCart())}
+                    className="p-3 font-bold text-md text-white w-[100%] text-center"
+                  >
+                    CLICK TO ORDER
+                  </Link>
+                ) : (
+                  <p
+                    style={{ backgroundColor: "#7BBB64" }}
+                    className="p-3 text-md text-white w-[100%] text-center"
+                  >
+                    Please confirm address by clicking on Deliver Here
+                  </p>
+                )}
+              </>
             ) : (
-              <button
-                disabled={true}
+              // <button
+              //   disabled={true}
+              //   style={{ backgroundColor: "#7BBB64" }}
+              //   className="p-3 font-bold text-md text-white w-[100%] text-center"
+              // >
+              //   LOGIN TO ORDER
+              // </button>
+              <Button
+                disabled
+                block
                 style={{ backgroundColor: "#7BBB64" }}
-                className="p-3 font-bold text-md text-white w-[100%] text-center"
+                className="font-bold text-md"
               >
                 LOGIN TO ORDER
-              </button>
+              </Button>
             )}
           </div>
         </div>

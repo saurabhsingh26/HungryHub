@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { CDN_URL, SUGGESTION, RESTAURANT_INFO } from "../utils/constants";
 import SearchCuisines from "../utils/SearchCuisines";
+// import axios from "axios";
 
 const Search = () => {
   const [value, setValue] = useState("");
@@ -10,11 +10,13 @@ const Search = () => {
   // console.log("suggestions", suggestions);
   const navigate = useNavigate();
   const getRestInfo = async (metaData) => {
-    const { data } = await axios(`${RESTAURANT_INFO}` + metaData);
+    const metadataJson = JSON.parse(metaData);
+    // const { data } = await axios(`${RESTAURANT_INFO}` + metaData);
     // console.log("data", data);
-    const { id } =
-      data?.data?.cards?.[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.[0]
-        ?.card?.card?.info;
+    // const { id } =
+    //   data?.data?.cards?.[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.[0]
+    //     ?.card?.card?.info;
+    const id = metadataJson?.data?.primaryRestaurantId;
     navigate(`/restaurant/${id}`);
   };
 
@@ -36,7 +38,6 @@ const Search = () => {
       clearTimeout(debounce);
     };
   }, [value]);
-
 
   const handleClick = (text) => {
     setValue(text);

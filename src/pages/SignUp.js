@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { HUNGRYHUB } from "../utils/constants";
 import { getFormBody } from "../utils";
+import { Button } from "antd";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -73,7 +74,7 @@ const SignUp = () => {
           <div>
             <img
               className="w-[100px] h-[105px]"
-              src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/Image-login_btpq7r"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/Image-login_btpq7r"
               alt="cart"
             />
           </div>
@@ -124,13 +125,31 @@ const SignUp = () => {
               required
               onChange={(e) => setAddress(e.target.value)}
             />
-            <button
+            {signingUp ? (
+              <Button
+                loading
+                disabled={true}
+                size="large"
+                style={{ backgroundColor: "#FC8019", color: "#ffffff" }}
+                className="text-lg font-bold"
+              >
+                Please wait...
+              </Button>
+            ) : (
+              <button
+                style={{ backgroundColor: "#FC8019" }}
+                className="text-white p-2 text-lg font-bold"
+              >
+                SIGN UP
+              </button>
+            )}
+            {/* <button
               disabled={signingUp}
               style={{ backgroundColor: "#FC8019" }}
               className="text-white p-3 cursor-pointer text-lg font-bold"
             >
               {signingUp ? "SIGNING UP..." : "SIGN UP"}
-            </button>
+            </button> */}
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>
                 By clicking on Sign Up, I accept the &nbsp;

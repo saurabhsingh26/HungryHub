@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { setUser } from "../Redux/features/userSlice";
 import { getFormBody } from "../utils";
 import { HUNGRYHUB } from "../utils/constants";
+import { Button } from "antd";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,8 +14,7 @@ const Login = () => {
   const [loggingIn, setLoggingIn] = useState(false);
   const [show, setShow] = useState(false);
 
-
-  const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn)
+  const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -39,29 +39,27 @@ const Login = () => {
 
       const data = await response.json();
 
-
       if (data.success) {
         localStorage.setItem("__hungryhub_token__", data.data.token);
         const userToken = localStorage.getItem("__hungryhub_token__");
         if (userToken) {
           const userDetails = jwt(userToken);
           dispatch(setUser(userDetails));
-          toast.success("Sign in successfully");
-          navigate("/cart")
           setLoggingIn(false);
+          toast.success("Sign in successfully");
+          navigate("/cart");
         }
-      }else{
+      } else {
         toast.warn(data.message);
         setLoggingIn(false);
       }
-
     } catch (err) {
       toast.error(err);
     }
   };
 
-  if(isUserLoggedIn){
-    navigate('/cart');
+  if (isUserLoggedIn) {
+    navigate("/cart");
   }
 
   return (
@@ -82,7 +80,7 @@ const Login = () => {
           <div>
             <img
               className="w-[100px] h-[105px]"
-              src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/Image-login_btpq7r"
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/Image-login_btpq7r"
               alt="cart"
             />
           </div>
@@ -117,13 +115,25 @@ const Login = () => {
                 onClick={() => setShow(!show)}
               />
             </div>
-            <button
-              disabled={loggingIn}
-              style={{ backgroundColor: "#FC8019" }}
-              className="text-white p-3 text-lg font-bold"
-            >
-              {loggingIn ? "LOGGING IN..." : "LOG IN"}
-            </button>
+            {loggingIn ? (
+              <Button
+                loading
+                disabled={true}
+                size="large"
+                style={{ backgroundColor: "#FC8019", color: "#ffffff" }}
+                className="text-lg font-bold"
+              >
+                Please wait...
+              </Button>
+            ) : (
+              <button
+                style={{ backgroundColor: "#FC8019" }}
+                className="text-white p-2 text-lg font-bold"
+              >
+                LOG IN
+              </button>
+            )}
+
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>
                 By clicking on Login, I accept the &nbsp;

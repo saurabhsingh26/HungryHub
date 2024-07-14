@@ -5,7 +5,7 @@ const Shimmer = () => {
       {new Array(12).fill(0).map((card, index) => (
         <div
           key={index}
-          className="m-5 p-2 w-64 rounded-2xl shadow-sm animate-pulse"
+          className="m-5 p-2 w-64 rounded-2xl shadow-md animate-pulse"
         >
           <div style={style.color} className="h-52 rounded-xl"></div>
           <div>
@@ -26,7 +26,8 @@ const Shimmer = () => {
 
 const style = {
   color: {
-    backgroundColor: "#F2F2F2",
+    // backgroundColor: "#F2F2F2",
+    backgroundColor: "#d9d9d9",
   },
 };
 
