@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ItemList from "./ItemList";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
-const RestaurantCategory = ({ category, restaurantData }) => {
+const RestaurantCategory = ({ category, restaurantData, last }) => {
   const { title, itemCards } = category.card.card;
 
   const [showItem, setShowItem] = useState(false);
@@ -27,7 +27,7 @@ const RestaurantCategory = ({ category, restaurantData }) => {
       {showItem && (
         <ItemList items={itemCards} restaurantData={restaurantData} />
       )}
-      <div className="bg-gray-100 shadow-sm h-5"></div>
+      {title !== last && <div className="bg-gray-100 shadow-sm h-4"></div>}
     </div>
   );
 };

@@ -31,9 +31,23 @@ const PopupComp = ({ popup, setPopup }) => {
         ]}
       >
         <p>
-          Apologies for the inconvenience. We are experiencing technical issues
+          {/* Apologies for the inconvenience. We are experiencing technical issues
           from the Swiggy side and are working to resolve them. Please try again
-          later. Thank you for your patience.
+          later. Thank you for your patience. */}
+          Apologies for the inconvenience. We are experiencing technical issues
+          on the Swiggy side and are working to resolve them. Meanwhile, you can
+          install a CORS extension in your browser{" "}
+          <span>
+            <a
+              href="https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en&pli=1"
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-500"
+            >
+              <strong>here</strong>
+            </a>
+          </span>
+          , and you should be good to go.
         </p>
       </Modal>
     </>

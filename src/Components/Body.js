@@ -8,12 +8,12 @@ import HomeFooter from "./HomeFooter";
 import BodyCarousel from "./BodyCarousel";
 import { RESTAURANTS_URL } from "../utils/constants";
 // import data from '../utils/RestaurantData';
-// import PopupComp from "./PopupComp";
+import PopupComp from "./PopupComp";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  // const [popup, setPopup] = useState(true);
+  const [popup, setPopup] = useState(false);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
@@ -73,6 +73,15 @@ const Body = () => {
     setFilteredRestaurants(restaurants[0]);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (listOfRestaurant?.length === 0) {
+        setPopup(true);
+      }
+    }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
@@ -90,7 +99,7 @@ const Body = () => {
   return listOfRestaurant.length === 0 ? (
     [
       <Spinner key={0} />,
-      // <PopupComp key={1} popup={popup} setPopup={setPopup} />,
+      <PopupComp key={1} popup={popup} setPopup={setPopup} />,
       <Shimmer key={1} />,
     ]
   ) : (

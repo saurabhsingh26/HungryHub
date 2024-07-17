@@ -179,27 +179,35 @@ const RestaurantMenu = () => {
           </div>
         </div>
         {/* Categories Card */}
-        {categories[0].length === 0 ? (
-          <div className="pb-12">
-            <h1 style={{ color: "#686B78" }} className="text-md md:text-base ">
-              We regret to inform you that we encountered some challenges while
-              attempting to fetch the items you selected. We apologize for any
-              inconvenience this may have caused. <br />
-              We would like to kindly suggest considering an alternative
-              selection from our menu. Our menu features a wide array of
-              delectable options that we are sure will satisfy your palate.
-            </h1>
-          </div>
-        ) : (
-          categories[0]?.map((category, index) => (
-            // RestaurantCategory is a controlled component by RestaurantMenu.
-            <RestaurantCategory
-              key={category?.card?.card.title}
-              category={category}
-              restaurantData={restaurantData}
-            />
-          ))
-        )}
+        <div className="mb-10">
+          {categories[0].length === 0 ? (
+            <div className="pb-12">
+              <h1
+                style={{ color: "#686B78" }}
+                className="text-md md:text-base "
+              >
+                We regret to inform you that we encountered some challenges
+                while attempting to fetch the items you selected. We apologize
+                for any inconvenience this may have caused. <br />
+                We would like to kindly suggest considering an alternative
+                selection from our menu. Our menu features a wide array of
+                delectable options that we are sure will satisfy your palate.
+              </h1>
+            </div>
+          ) : (
+            categories[0]?.map((category, index) => (
+              // RestaurantCategory is a controlled component by RestaurantMenu.
+              <RestaurantCategory
+                key={category?.card?.card.title}
+                category={category}
+                restaurantData={restaurantData}
+                last={
+                  categories[0][categories[0]?.length - 1]?.card?.card?.title
+                }
+              />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

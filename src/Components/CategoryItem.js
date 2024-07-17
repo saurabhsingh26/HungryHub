@@ -73,11 +73,14 @@ const CategoryItem = ({ item, restaurantData }) => {
               alt="item"
             />
           ) : (
-            <img
-              className="w-28 h-24 rounded-lg"
-              src={CDN_URL + "/e7f40335a66b230f5eda766022dfecbd"}
-              alt="item"
-            />
+            // <img
+            //   className="w-28 h-24 rounded-lg"
+            //   src={CDN_URL + "/e7f40335a66b230f5eda766022dfecbd"}
+            //   alt="item"
+            // />
+            <div className="w-28 h-24 rounded-lg border-[1px] border-gray-300 flex justify-center items-center bg-slate-100 font-bold">
+              No Image
+            </div>
           )}
 
           <div className="absolute z-10 top-20 right-4 sm:right-4">
