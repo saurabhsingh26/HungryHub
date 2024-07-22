@@ -31,6 +31,7 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.items.length = 0;
+      state.restDetails = null;
     },
     increaseQuantity: (state, action) => {
       const item = state.items.find(
@@ -44,6 +45,7 @@ const cartSlice = createSlice({
       );
       item.inStock = item.inStock - 1;
       if (item.inStock === 0) {
+        state.restDetails = null;
         const index = state.items.findIndex((el) => el.inStock === 0);
         state.items.splice(index, 1);
       }

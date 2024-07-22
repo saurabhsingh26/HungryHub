@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Button } from "antd";
 import {
   decreaseQuantity,
@@ -14,6 +15,8 @@ import { CDN_URL } from "../utils";
 const Cart = () => {
   const [checked, setChecked] = useState();
   const [tick, setTick] = useState(false);
+  const [couponCode, setCouponCode] = useState("");
+  const [couponDiscount, setCouponDiscount] = useState(0);
   const cartItems = useSelector((store) => store.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,6 +28,48 @@ const Cart = () => {
 
   const handleChange = (e) => {
     setChecked(e.target.checked);
+  };
+
+  const handleCouponCode = () => {
+    if (couponCode === "SWIGGYWEEKENDS") {
+      if (totalPrice > 199) {
+        const discount = 125;
+        setCouponDiscount(discount);
+        toast.success(`Cool! You've saved ₹${discount}`);
+      } else {
+        toast.warn(
+          "To apply this coupon, the total cart value should be above ₹199"
+        );
+      }
+    } else if (couponCode === "TRYNEW") {
+      if (totalPrice > 149) {
+        const discount = (totalPrice * 50) / 100;
+        if (discount > 100) {
+          setCouponDiscount(100);
+          toast.success(`Cool! You've saved ₹100`);
+        } else {
+          setCouponDiscount(discount);
+          toast.success(`Cool! You've saved ₹${discount}`);
+        }
+      } else {
+        toast.warn(
+          "To apply this coupon, the total cart value should be above ₹149"
+        );
+      }
+    } else if (couponCode === "PARTY") {
+      if (totalPrice > 1000) {
+        const discount = (totalPrice * 15) / 100;
+        setCouponDiscount(discount);
+        toast.success(`Cool! You've saved ₹${discount}`);
+      } else {
+        toast.warn(
+          "To apply this coupon, the total cart value should be above ₹1000"
+        );
+      }
+    } else {
+      setCouponDiscount(0);
+      toast.error("Please apply a valid coupon code");
+    }
   };
 
   if (cartItems.length === 0) {
@@ -318,6 +363,22 @@ const Cart = () => {
                   placeholder="Any suggestions? We will pass it on..."
                 />
               </div>
+              <div className="mb-4 mr-2 flex justify-between flex-wrap">
+                <input
+                  className="w-[55%] p-2 rounded-lg outline-none border-[1px] border-gray-500"
+                  type="text"
+                  placeholder="COUPON CODE"
+                  value={couponCode}
+                  onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                />
+                <button
+                  className="bg-[#7BBB64] py-2 px-3 font-bold text-white rounded-lg"
+                  onClick={handleCouponCode}
+                  disabled={couponCode === ""}
+                >
+                  APPLY COUPON
+                </button>
+              </div>
               {/* No-Contact Delivery */}
               <div className="border flex px-3 py-1 mr-1">
                 <div className="mr-3">
@@ -357,6 +418,26 @@ const Cart = () => {
                   <div>Item Total</div>
                   <div>₹{totalPrice}</div>
                 </div>
+                {couponDiscount !== 0 && (
+                  <div
+                    style={{ color: "#686b78" }}
+                    className="flex justify-between text-sm mb-3"
+                  >
+                    <div>
+                      Coupon Discount{" "}
+                      <button
+                        onClick={() => {
+                          setCouponDiscount(0);
+                          setCouponCode("");
+                        }}
+                        className="bg-red-500 px-2 rounded-xl py-[2px] text-black"
+                      >
+                        remove
+                      </button>
+                    </div>
+                    <div className="text-green-400">-₹{couponDiscount}</div>
+                  </div>
+                )}
                 <div
                   style={{ color: "#686b78" }}
                   className="flex justify-between text-sm"
@@ -385,7 +466,9 @@ const Cart = () => {
             >
               <div>TO PAY</div>
               <div>
-                ₹{Math.round(totalPrice + 50 + (totalPrice * 18) / 100)}
+                ₹
+                {Math.round(totalPrice + 50 + (totalPrice * 18) / 100) -
+                  couponDiscount}
               </div>
             </div>
           </div>

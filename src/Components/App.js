@@ -11,12 +11,9 @@ import {
   Cart,
   Header,
   Congratulations,
-  Footer,
   Search,
-  FixedFooter,
   ProtectedRoute,
 } from "./";
-
 
 // import Grocery from "./Grocery";
 const Grocery = lazy(() => import("./Grocery")); // syntax of lazy loading
@@ -62,8 +59,8 @@ const App = () => {
           />
           <Route path="*" element={<Error />} />
         </Routes>
-        <FixedFooter />
-        <Footer />
+        {/* <FixedFooter /> */}
+        {/* <Footer /> */}
       </Router>
     </div>
   );

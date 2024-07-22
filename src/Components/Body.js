@@ -9,6 +9,7 @@ import BodyCarousel from "./BodyCarousel";
 import { RESTAURANTS_URL } from "../utils/constants";
 // import data from '../utils/RestaurantData';
 import PopupComp from "./PopupComp";
+import { Footer, FixedFooter } from "./";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -100,7 +101,7 @@ const Body = () => {
     [
       <Spinner key={0} />,
       <PopupComp key={1} popup={popup} setPopup={setPopup} />,
-      <Shimmer key={1} />,
+      <Shimmer key={2} />,
     ]
   ) : (
     <div className="body">
@@ -231,7 +232,9 @@ const Body = () => {
           );
         })}
       </div>
+      <FixedFooter />
       <HomeFooter />
+      <Footer />
     </div>
   );
 };

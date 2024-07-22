@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -6,14 +7,17 @@ import PromoCodes from "../utils/PromoCode";
 import star from "../assets/star.png";
 import clock from "../assets/clock.svg";
 import rupee from "../assets/rupee.svg";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
+  const [vegStatus, setVegStatus] = useState("ALL");
   const params = useParams();
   const navigate = useNavigate();
 
   const { resId } = params; //extracting restaurant id from urls
 
   const resInfo = useRestaurantMenu(resId);
+  const cartItems = useSelector((store) => store.cart.items);
 
   // console.log(resInfo);
 
@@ -178,6 +182,35 @@ const RestaurantMenu = () => {
             ))}
           </div>
         </div>
+        <div className="flex gap-4">
+          <button
+            onClick={() => setVegStatus("ALL")}
+            className={
+              "py-1 px-3 rounded-md text-white font-bold " +
+              (vegStatus === "ALL" ? "bg-blue-500" : "bg-slate-300")
+            }
+          >
+            All
+          </button>
+          <button
+            onClick={() => setVegStatus("VEG")}
+            className={
+              "py-1 px-3 rounded-md text-white font-bold " +
+              (vegStatus === "VEG" ? "bg-green-500" : "bg-slate-300")
+            }
+          >
+            Veg
+          </button>
+          <button
+            onClick={() => setVegStatus("NONVEG")}
+            className={
+              "py-1 px-3 rounded-md text-white font-bold " +
+              (vegStatus === "NONVEG" ? "bg-red-500" : "bg-slate-300")
+            }
+          >
+            Non Veg
+          </button>
+        </div>
         {/* Categories Card */}
         <div className="mb-10">
           {categories[0].length === 0 ? (
@@ -204,8 +237,19 @@ const RestaurantMenu = () => {
                 last={
                   categories[0][categories[0]?.length - 1]?.card?.card?.title
                 }
+                vegStatus={vegStatus}
               />
             ))
+          )}
+        </div>
+        <div className="flex justify-center">
+          {cartItems?.length ? (
+            <div className="bg-[#60B246] h-12 fixed bottom-0 w-[88%] md:w-[64%] flex justify-between items-center font-bold px-4 text-white z-[100]">
+              <div>{cartItems?.length} item added</div>
+              <Link to="/cart">VIEW CART</Link>
+            </div>
+          ) : (
+            ""
           )}
         </div>
       </div>
