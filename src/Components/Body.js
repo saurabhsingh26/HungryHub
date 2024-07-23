@@ -15,6 +15,7 @@ const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [popup, setPopup] = useState(false);
+  const [filterName, setFilterName] = useState("Relevance");
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
@@ -140,9 +141,14 @@ const Body = () => {
                   style={{ color: "#686B78" }}
                   onClick={() => {
                     setFilteredRestaurants(listOfRestaurant);
+                    setFilterName("Relevance");
                   }}
                 >
-                  Relevance
+                  {filterName === "Relevance" ? (
+                    <span className="text-[#FC8019]">Relevance</span>
+                  ) : (
+                    <span>Relevance</span>
+                  )}
                 </li>
                 <li
                   style={{ color: "#686B78" }}
@@ -158,9 +164,14 @@ const Body = () => {
                       )
                       .slice();
                     setFilteredRestaurants(filteredDeliveryTime);
+                    setFilterName("Delivery Time");
                   }}
                 >
-                  Delivery Time
+                  {filterName === "Delivery Time" ? (
+                    <span className="text-[#FC8019]">Delivery Time</span>
+                  ) : (
+                    <span>Delivery Time</span>
+                  )}
                 </li>
                 <li
                   className="mx-1 text-[16px] font-medium"
@@ -171,9 +182,14 @@ const Body = () => {
                       .sort((a, b) => b?.info?.avgRating - a?.info?.avgRating)
                       .slice();
                     setFilteredRestaurants(filteredRating);
+                    setFilterName("Rating");
                   }}
                 >
-                  Rating
+                  {filterName === "Rating" ? (
+                    <span className="text-[#FC8019]">Rating</span>
+                  ) : (
+                    <span>Rating</span>
+                  )}
                 </li>
                 <li
                   style={{ color: "#686B78" }}
@@ -188,9 +204,14 @@ const Body = () => {
                       )
                       .slice();
                     setFilteredRestaurants(filteredLowToHight);
+                    setFilterName("Cost: Low To High");
                   }}
                 >
-                  Cost: Low To High
+                  {filterName === "Cost: Low To High" ? (
+                    <span className="text-[#FC8019]">Cost: Low To High</span>
+                  ) : (
+                    <span>Cost: Low To High</span>
+                  )}
                 </li>
                 <li
                   style={{ color: "#686B78" }}
@@ -205,9 +226,14 @@ const Body = () => {
                       )
                       .slice();
                     setFilteredRestaurants(filteredHightToLow);
+                    setFilterName("Cost: High To Low");
                   }}
                 >
-                  Cost: High To Low
+                  {filterName === "Cost: High To Low" ? (
+                    <span className="text-[#FC8019]">Cost: High To Low</span>
+                  ) : (
+                    <span>Cost: High To Low</span>
+                  )}
                 </li>
               </ul>
             </div>
