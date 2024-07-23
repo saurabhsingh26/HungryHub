@@ -12,6 +12,7 @@ import emptycart from "../assets/emptycart.png";
 import location from "../assets/location.png";
 import { CDN_URL } from "../utils";
 import FixedFooter from "./FixedFooter";
+import DrawerComponent from "./DrawerComponent";
 
 const Cart = () => {
   const [checked, setChecked] = useState();
@@ -19,6 +20,7 @@ const Cart = () => {
   const [couponCode, setCouponCode] = useState("");
   const [couponDiscount, setCouponDiscount] = useState(0);
   const cartItems = useSelector((store) => store.cart.items);
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -71,6 +73,13 @@ const Cart = () => {
       setCouponDiscount(0);
       toast.error("Please apply a valid coupon code");
     }
+  };
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
   };
 
   if (cartItems.length === 0) {
@@ -175,7 +184,7 @@ const Cart = () => {
                   </p>
                   <div className="flex flex-wrap mt-8">
                     <div className="border inline-block py-2 px-11 mx-1 my-1 hover:shadow">
-                      <Link to="/login">
+                      <div onClick={showDrawer} className="cursor-pointer">
                         <p
                           style={{ color: "#60B246" }}
                           className="text-[13px] w-28"
@@ -188,13 +197,13 @@ const Cart = () => {
                         >
                           LOG IN
                         </h1>
-                      </Link>
+                      </div>
                     </div>
                     <div
                       style={{ backgroundColor: "#7BBB64" }}
                       className="border inline-block py-2 px-11 mx-1 my-1 hover:shadow"
                     >
-                      <Link to="/create">
+                      <div onClick={showDrawer} className="cursor-pointer">
                         <p
                           style={{ color: "#ffffff" }}
                           className="text-[13px] w-28"
@@ -207,7 +216,7 @@ const Cart = () => {
                         >
                           SIGN UP
                         </h1>
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -558,6 +567,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <DrawerComponent open={open} onClose={onClose} />
       <FixedFooter />
     </>
   );

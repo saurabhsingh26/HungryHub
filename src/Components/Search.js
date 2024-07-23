@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CDN_URL, SUGGESTION, RESTAURANT_INFO } from "../utils/constants";
+import { CDN_URL, SUGGESTION } from "../utils/constants";
 import SearchCuisines from "../utils/SearchCuisines";
 import FixedFooter from "./FixedFooter";
 // import axios from "axios";
