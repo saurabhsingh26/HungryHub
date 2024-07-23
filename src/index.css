@@ -26,3 +26,6 @@
 .modal .ant-modal-close {
   display: none;
 }
+.saurabh .ant-drawer-header {
+  border-bottom: none !important;
+}

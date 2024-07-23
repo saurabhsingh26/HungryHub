@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Login, SignUp, Profile } from "../pages";
+import { Profile } from "../pages";
 import {
   Body,
   About,
@@ -29,8 +29,8 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/offers" element={<OfferCard />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/create" element={<SignUp />} />
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/create" element={<SignUp />} /> */}
           <Route
             path="/users/profile"
             element={

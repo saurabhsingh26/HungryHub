@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { HUNGRYHUB } from "../utils/constants";
 import { getFormBody } from "../utils";
-import { Button } from "antd";
+import { Button, Input } from "antd";
 
-const SignUp = () => {
+const SignUp = ({ setIsLoginPage }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +40,7 @@ const SignUp = () => {
       const data = await response.json();
 
       if (data.success) {
-        navigate("/login");
+        setIsLoginPage(true);
         toast.success(data.message);
         setSigningUp(false);
       } else {
@@ -58,7 +58,8 @@ const SignUp = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] pt-5 pb-10 min-h-[100vh]">
+      {/* <div className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] pt-5 pb-10 min-h-[100vh]"> */}
+      <div className="w-[70%]">
         <div className="flex justify-between items-center mb-4">
           <div>
             <div style={{ color: "#282C3F" }} className="text-3xl font-bold">
@@ -66,9 +67,12 @@ const SignUp = () => {
             </div>
             <div className="text-base mt-2">
               or &nbsp;
-              <Link to="/login" style={{ color: "#FC8019" }}>
+              <span
+                className="text-[#FC8019] cursor-pointer"
+                onClick={() => setIsLoginPage(true)}
+              >
                 login to your account
-              </Link>
+              </span>
             </div>
           </div>
           <div>
@@ -80,45 +84,35 @@ const SignUp = () => {
           </div>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-col">
-            <input
-              className="p-3 outline-none border rounded"
+          <div className="flex flex-col gap-4">
+            <Input
               type="text"
               value={name}
               placeholder="Name"
+              size="large"
               required
               onChange={(e) => setName(e.target.value)}
             />
-            <input
-              className="p-3 outline-none border rounded my-4"
+            <Input
               type="email"
               value={email}
               placeholder="Email"
+              size="large"
               required
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="flex items-center justify-between gap-2">
-              <input
-                className="p-3 outline-none border rounded w-full"
-                type={show ? "text" : "password"}
-                value={password}
-                placeholder="Password"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <img
-                className="w-7 h-7 cursor-pointer"
-                src={
-                  show
-                    ? "https://cdn-icons-png.flaticon.com/128/709/709612.png"
-                    : "https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
-                }
-                alt="eye"
-                onClick={() => setShow(!show)}
-              />
-            </div>
-            <input
-              className="p-3 outline-none border rounded my-4"
+            <Input.Password
+              placeholder="Password"
+              visibilityToggle={{
+                visible: show,
+                onVisibleChange: setShow,
+              }}
+              size="large"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Input.TextArea
               type="text"
               value={address}
               placeholder="Address"
@@ -138,18 +132,11 @@ const SignUp = () => {
             ) : (
               <button
                 style={{ backgroundColor: "#FC8019" }}
-                className="text-white p-2 text-lg font-bold"
+                className="text-white p-2 font-bold rounded-lg"
               >
                 SIGN UP
               </button>
             )}
-            {/* <button
-              disabled={signingUp}
-              style={{ backgroundColor: "#FC8019" }}
-              className="text-white p-3 cursor-pointer text-lg font-bold"
-            >
-              {signingUp ? "SIGNING UP..." : "SIGN UP"}
-            </button> */}
             <p className="text-xs mt-2">
               <span style={{ color: "#686B78" }}>
                 By clicking on Sign Up, I accept the &nbsp;

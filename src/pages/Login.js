@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
 import { toast } from "react-toastify";
 import { setUser } from "../Redux/features/userSlice";
 import { getFormBody } from "../utils";
 import { HUNGRYHUB } from "../utils/constants";
-import { Button } from "antd";
+import { Button, Input } from "antd";
 
-const Login = () => {
+const Login = ({ setIsLoginPage, onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loggingIn, setLoggingIn] = useState(false);
   const [show, setShow] = useState(false);
 
-  const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn);
+  // const isUserLoggedIn = useSelector((store) => store.account.user.isLoggedIn);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -43,6 +43,9 @@ const Login = () => {
         localStorage.setItem("__hungryhub_token__", data.data.token);
         const userToken = localStorage.getItem("__hungryhub_token__");
         if (userToken) {
+          setEmail("");
+          setPassword("");
+          onClose();
           const userDetails = jwt(userToken);
           dispatch(setUser(userDetails));
           setLoggingIn(false);
@@ -58,23 +61,27 @@ const Login = () => {
     }
   };
 
-  if (isUserLoggedIn) {
-    navigate("/cart");
-  }
+  // if (isUserLoggedIn) {
+  //   navigate("/cart");
+  // }
 
   return (
     <div className="flex justify-center">
-      <div className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] pt-5 pb-10 min-h-[100vh]">
-        <div className="flex justify-between items-center mb-4 mt-1">
+      {/* <div className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] pt-5 pb-10 min-h-[100vh]"> */}
+      <div className="w-[90%] md:w-[70%]">
+        <div className="flex justify-between items-center mb-4">
           <div>
             <div style={{ color: "#282C3F" }} className="text-3xl font-bold">
               Login
             </div>
             <div className="text-base mt-2">
               or &nbsp;
-              <Link to="/create" style={{ color: "#FC8019" }}>
+              <span
+                className="text-[#FC8019] cursor-pointer"
+                onClick={() => setIsLoginPage(false)}
+              >
                 create an account
-              </Link>
+              </span>
             </div>
           </div>
           <div>
@@ -86,49 +93,40 @@ const Login = () => {
           </div>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-col">
-            <input
-              className="p-3 outline-none border rounded"
+          <div className="flex flex-col gap-4">
+            <Input
               type="email"
               value={email}
               placeholder="Email"
               required
+              size="large"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="flex items-center justify-between gap-2">
-              <input
-                className="p-3 outline-none border rounded my-4 w-full"
-                type={show ? "text" : "password"}
-                value={password}
-                placeholder="Password"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <img
-                className="w-7 h-7 cursor-pointer"
-                src={
-                  show
-                    ? "https://cdn-icons-png.flaticon.com/128/709/709612.png"
-                    : "https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
-                }
-                alt="eye"
-                onClick={() => setShow(!show)}
-              />
-            </div>
+            <Input.Password
+              placeholder="Password"
+              visibilityToggle={{
+                visible: show,
+                onVisibleChange: setShow,
+              }}
+              size="large"
+              value={password}
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
             {loggingIn ? (
               <Button
                 loading
                 disabled={true}
                 size="large"
                 style={{ backgroundColor: "#FC8019", color: "#ffffff" }}
-                className="text-lg font-bold"
+                className="font-bold"
               >
                 Please wait...
               </Button>
             ) : (
               <button
                 style={{ backgroundColor: "#FC8019" }}
-                className="text-white p-2 text-lg font-bold"
+                className="text-white p-2 font-bold rounded-lg"
               >
                 LOG IN
               </button>

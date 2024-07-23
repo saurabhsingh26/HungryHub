@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import jwt from "jwt-decode";
@@ -10,8 +10,11 @@ import { ReactComponent as Search } from "../assets/search.svg";
 import { ReactComponent as SignIn } from "../assets/signin.svg";
 import { ReactComponent as EmptyCart } from "../assets/cart.svg";
 import { ReactComponent as NonEmptyCart } from "../assets/cart2.svg";
+import DrawerComponent from "./DrawerComponent";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   // Subscribing to the store using Selector
   const cartItems = useSelector((store) => store.cart.items);
   const userInfo = useSelector((store) => store.account.user);
@@ -33,89 +36,103 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 md:p-8">
-      <NavLink
-        to="/"
-        className="logo-container hover:scale-110 hover:duration-300"
-      >
-        <img className="w-[30px] md:w-[34px]" src={swiggy} alt="logo" />
-      </NavLink>
-      <div
-        style={{ color: "#3D4152" }}
-        className="flex items-center text-base font-medium"
-      >
-        {size.width >= 768 ? (
-          <ul className="flex">
-            <li className="pr-10">
-              <NavLink to="/search" className="flex items-center">
-                <Search className="svg-class" />
-                <span className="pl-3">Search</span>
-              </NavLink>
-            </li>
-            <li className="pr-10">
-              <NavLink to="/offers" className="flex items-center">
-                <Offer className="svg-class" />
-                <span className="pl-3">Offers</span>
-              </NavLink>
-            </li>
-            {/* <li className="pr-3">
-            <NavLink to="/about">About</NavLink>
-          </li> */}
-
-            {/* <li className="pr-3">
-            <NavLink to="/grocery">Grocery</NavLink>
-          </li> */}
-
-            <li className="pr-10">
-              {userInfo.isLoggedIn ? (
-                <NavLink to="/users/profile" className="flex items-center">
-                  <SignIn className="svg-class" />
-                  <span className="pl-3">{userInfo.name}</span>
+    <>
+      <div className="flex justify-between sticky top-0 z-20 bg-white shadow-lg mb-2 w-auto items-center h-20 p-4 md:p-8">
+        <NavLink
+          to="/"
+          className="logo-container hover:scale-110 hover:duration-300"
+        >
+          <img className="w-[30px] md:w-[34px]" src={swiggy} alt="logo" />
+        </NavLink>
+        <div
+          style={{ color: "#3D4152" }}
+          className="flex items-center text-base font-medium"
+        >
+          {size.width >= 768 ? (
+            <ul className="flex">
+              <li className="pr-10">
+                <NavLink to="/search" className="flex items-center">
+                  <Search className="svg-class" />
+                  <span className="pl-3">Search</span>
                 </NavLink>
-              ) : (
-                <NavLink to="/login" className="flex items-center">
-                  <SignIn className="svg-class" />
-                  <span className="pl-3">Sign In</span>
+              </li>
+              <li className="pr-10">
+                <NavLink to="/offers" className="flex items-center">
+                  <Offer className="svg-class" />
+                  <span className="pl-3">Offers</span>
                 </NavLink>
-              )}
-            </li>
+              </li>
+              {/* <li className="pr-3">
+          <NavLink to="/about">About</NavLink>
+        </li> */}
 
-            <li>
-              {length !== 0 ? (
-                <NavLink to="/cart" className="flex items-center">
-                  <NonEmptyCart className="svg-class" />
-                  <span className="pl-3">Cart</span>
-                  <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative -top-[1px] right-[62px]">
-                    {length}
+              {/* <li className="pr-3">
+          <NavLink to="/grocery">Grocery</NavLink>
+        </li> */}
+
+              <li className="pr-10">
+                {userInfo.isLoggedIn ? (
+                  <NavLink to="/users/profile" className="flex items-center">
+                    <SignIn className="svg-class" />
+                    <span className="pl-3">{userInfo.name}</span>
+                  </NavLink>
+                ) : (
+                  // <NavLink to="/login" className="flex items-center">
+                  //   <SignIn className="svg-class" />
+                  //   <span className="pl-3">Sign In</span>
+                  // </NavLink>
+                  // <span className="pl-3">Sign In</span>
+                  <span className="cursor-pointer" onClick={showDrawer}>
+                    Sign In
                   </span>
+                )}
+              </li>
+
+              <li>
+                {length !== 0 ? (
+                  <NavLink to="/cart" className="flex items-center">
+                    <NonEmptyCart className="svg-class" />
+                    <span className="pl-3">Cart</span>
+                    <span className="flex justify-center items-center min-w-[18px]  text-[12px] text-center text-white relative -top-[1px] right-[62px]">
+                      {length}
+                    </span>
+                  </NavLink>
+                ) : (
+                  <NavLink to="/cart" className="flex items-center">
+                    <EmptyCart className="svg-class" />
+                    <span className="pl-3">Cart</span>
+                    <span
+                      style={{ color: "#686b78" }}
+                      className="flex justify-center items-center min-w-[18px]  text-sm text-center  relative -top-[1.5px] right-[62px]"
+                    >
+                      {length}
+                    </span>
+                  </NavLink>
+                )}
+              </li>
+            </ul>
+          ) : (
+            <ul className="flex">
+              <li className="">
+                <NavLink to="/offers" className="flex items-center">
+                  <Offer className="svg-class" />
+                  <span className="pl-3">Offers</span>
                 </NavLink>
-              ) : (
-                <NavLink to="/cart" className="flex items-center">
-                  <EmptyCart className="svg-class" />
-                  <span className="pl-3">Cart</span>
-                  <span
-                    style={{ color: "#686b78" }}
-                    className="flex justify-center items-center min-w-[18px]  text-sm text-center  relative -top-[1.5px] right-[62px]"
-                  >
-                    {length}
-                  </span>
-                </NavLink>
-              )}
-            </li>
-          </ul>
-        ) : (
-          <ul className="flex">
-            <li className="">
-              <NavLink to="/offers" className="flex items-center">
-                <Offer className="svg-class" />
-                <span className="pl-3">Offers</span>
-              </NavLink>
-            </li>
-          </ul>
-        )}
+              </li>
+            </ul>
+          )}
+        </div>
       </div>
-    </div>
+      <DrawerComponent open={open} onClose={onClose} />
+    </>
   );
 };
 
