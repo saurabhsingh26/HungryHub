@@ -42,3 +42,9 @@ export const RESTAURANT_INFO =
 
 export const SUGGESTION =
   "https://www.swiggy.com/dapi/restaurants/search/suggest?lat=25.6342587&lng=85.0584152&trackingId=undefined&str=";
+
+export const RESTAURANT_DETAILS =
+  "https://hungry-hub-api-v2.vercel.app/restaurantDetails";
+
+export const ALL_RESTAURANTS =
+  "https://hungry-hub-api-v2.vercel.app/restaurants";

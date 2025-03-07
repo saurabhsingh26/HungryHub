@@ -6,7 +6,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import Spinner from "./Spinner";
 import HomeFooter from "./HomeFooter";
 import BodyCarousel from "./BodyCarousel";
-import { RESTAURANTS_URL } from "../utils/constants";
+import { ALL_RESTAURANTS } from "../utils/constants";
 // import data from '../utils/RestaurantData';
 import PopupComp from "./PopupComp";
 import { Footer, FixedFooter } from "./";
@@ -56,7 +56,7 @@ const Body = () => {
     // "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.7040592%26lng%3D77.10249019999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
 
     // );
-    const data = await fetch(RESTAURANTS_URL);
+    const data = await fetch(ALL_RESTAURANTS);
     const json = await data.json();
     const restaurants = json?.data?.cards
       ?.filter(
