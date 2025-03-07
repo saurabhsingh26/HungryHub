@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CDN_URL, SUGGESTION } from "../utils/constants";
+import { CDN_URL, PRE_SEARCH } from "../utils/constants";
 import SearchCuisines from "../utils/SearchCuisines";
 import FixedFooter from "./FixedFooter";
 // import axios from "axios";
@@ -23,7 +23,13 @@ const Search = () => {
 
   useEffect(() => {
     const getSuggestions = async () => {
-      const data = await fetch(`${SUGGESTION}${value}`);
+      const data = await fetch(PRE_SEARCH, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ value }),
+      });
       // console.log('Hitted');
       const json = await data.json();
       setSuggestions(

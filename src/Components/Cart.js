@@ -135,7 +135,7 @@ const Cart = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: "#E4E7E9" }} className="-mt-3">
+      <div style={{ backgroundColor: "#E4E7E9" }} className="-mt-3 mb-[65px]">
         <div className="flex justify-between pt-3 pb-2 px-2 md:px-4 lg:px-8 md:pt-6 lg:pt-6">
           <div className="">
             <button
@@ -395,11 +395,11 @@ const Cart = () => {
                     }
                   />
                   <button
-                    className="bg-[#7BBB64] py-2 px-3 font-bold text-white rounded-lg"
+                    className="bg-[#7BBB64] p-2 font-bold text-white rounded-lg w-[40%] sm:w-[35%] md:w-[40%]"
                     onClick={handleCouponCode}
                     disabled={couponCode === ""}
                   >
-                    APPLY COUPON
+                    APPLY
                   </button>
                 </div>
                 {/* No-Contact Delivery */}

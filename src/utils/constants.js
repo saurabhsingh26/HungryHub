@@ -48,3 +48,5 @@ export const RESTAURANT_DETAILS =
 
 export const ALL_RESTAURANTS =
   "https://hungry-hub-api-v2.vercel.app/restaurants";
+
+export const PRE_SEARCH = "https://hungry-hub-api-v2.vercel.app/search";
